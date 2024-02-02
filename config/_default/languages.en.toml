@@ -1,0 +1,28 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Azure Buddy Online"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "img/azure-buddy-logo.png"
+  # secondaryLogo = "PATH"
+  description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  # copyright = "Copy, _right?_ :thinking_face:"
+
+[author]
+  name = "Azure Buddy"
+  image = "img/azure-buddy-logo.png"
+  headline = "Your Online Buddy for the latest Azure Knowledge"
+  bio = "Your buddy for Azure knowledge"
+
+  links = [
+    { x-twitter = "https://twitter.com/AzureBuddy" },
+    #{ mastodon = "https://masto.ai/@azureBuddy" },
+    { github = "https://github.com/azure-buddy" },
+  ]
+
+  
