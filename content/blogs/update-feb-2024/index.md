@@ -13,9 +13,14 @@ series_order: 2
 
 Let's look back what's happened at Azure and read about the latest product & feature updates regarding security, containers and management.
 
-## Important Security updates
+Let's first look at the most important updates about 'Azure Management` services.
 
-[Public preview: Disable Secure Shell (SSH) support in AKS](https://azure.microsoft.com/en-us/updates/public-preview-disable-secure-shell-ssh-support-in-aks-2/)
-[Private Preview: Upgrade existing Azure Gen1 VMs to Gen2-Trusted launch](https://azure.microsoft.com/en-us/updates/private-preview-upgrade-existing-azure-gen1-vms-to-gen2trusted-launch/)
-[General Availability: Premium SSD v2 and Ultra disks support with Trusted launch](https://azure.microsoft.com/en-us/updates/premium-ssd-v2-and-ultra-disks-support-with-trusted-launch-vm/)
+## Azure Security and Monitoring
 
+### Public Preview: Azure Monitor introduces Prometheus community recommended alerts
+
+Enable Prometheus community recommended alerts with one single click to monitor key signals to be promptly notified on potential critical issues within your AKS clusters. More info can be found at [Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-metric-alerts).
+
+### Announcing General Availability of Azure Monitor Metrics Data Plane API
+
+Great to hear that Azure Monitor Metrics Data Plane API is Now GA! Create enhanced insights into the monitoring of your Azure resources with our powerful API. More info can be found here [Microsoft Update](https://azure.microsoft.com/nl-nl/updates/generalavailabilityofazuremonitormetricsdataplaneapi/)
