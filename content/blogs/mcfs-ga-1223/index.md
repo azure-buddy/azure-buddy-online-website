@@ -16,6 +16,6 @@ Really proud to see `NCSC-NL` adopted this way to meet a wide range of national 
 ## Summary of our exploration journey
 
 > Our innovation teams are exploring ways to use advanced data and AI capabilities to reduce the time required to interpret signal data and produce advisories from days to minutes, delivering an EU leading rapid response and information sharing in a dynamic cyber threat landscape.<br>
-> — <cite>Arnoud van Petersen, CIO & Head of IT Services at NCSC-NL[^1]</cite>
+> — <cite>Arnoud van Petersen, CIO & Head of IT Services at NCSC-NL</cite>
 
 Read more about the announcement in the [Official release blog](https://blogs.microsoft.com/blog/2023/12/14/microsoft-cloud-for-sovereignty-now-generally-available-opening-new-pathways-for-government-innovation/).
