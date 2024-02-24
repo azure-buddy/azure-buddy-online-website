@@ -5,6 +5,8 @@ draft: false
 description: "Short example how to create an AKS Cluster using OpenTofu."
 slug: "create-aks-opentofu"
 tags: ["tips", "tricks", "AKS", "OpenTofu", "Introduction", "IaC" ]
+authors:
+  - "avwsolutions"
 ---
 
 # Introduction to the OpenTofu project part of the Linux Foundation
