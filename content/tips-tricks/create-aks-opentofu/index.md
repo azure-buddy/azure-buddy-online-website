@@ -1,12 +1,10 @@
 ---
 title: "How to create an AKS Cluster using OpenTofu"
-date: 2020-08-14
+date: 2023-08-14
 draft: false
 description: "Short example how to create an AKS Cluster using OpenTofu."
 slug: "create-aks-opentofu"
-tags: ["tips", "tricks", "AKS", "OpenTofu", "Introduction" ]
-series: ["Tips & Tricks"]
-series_order: 4
+tags: ["tips", "tricks", "AKS", "OpenTofu", "Introduction", "IaC" ]
 ---
 
 # Introduction to the OpenTofu project part of the Linux Foundation
@@ -282,3 +280,5 @@ Hopefully you liked this Tip & tricks introduction into the OpenTofu project art
 # Interested in the code?
 
 All code samples, including a link to the Azure sample repository is available at [Azure Buddy Github](https://github.com/azure-buddy/howto-create-aks-opentofu-example).
+
+Contributions or follow-up articles are more than appreciated!
