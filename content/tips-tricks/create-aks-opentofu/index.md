@@ -4,7 +4,7 @@ date: 2023-08-14
 draft: false
 description: "Short example how to create an AKS Cluster using OpenTofu."
 slug: "create-aks-opentofu"
-tags: ["tips", "tricks", "AKS", "OpenTofu", "Introduction", "IaC" ]
+tags: ["tips", "tricks", "AKS", "OpenTofu", "Introduction", "IaC", "AVM", "VerifiedModules" ]
 authors:
   - "avwsolutions"
 ---
@@ -20,7 +20,7 @@ Make sure you are using **OpenTofu version 1.61.1** or later to take advantage o
 
 # Migrating to OpenTofu from Terraform
 
-Since OpenTofu (1.6) release is compatible with Terraform 1.6 release you currently will not expect big issues, but over time this can change when new features are introduced. This blog is about applying [Microsoft Learn Terraform Quickstarts](https://learn.microsoft.com/en-us/azure/developer/terraform/) with OpenTofu and actually experience the compatbility.
+Since OpenTofu (1.6) release is compatible with Terraform 1.6 release you currently will not expect big issues, but over time this can change when new features are introduced. This blog is about applying [Microsoft Learn Terraform Quickstarts](https://learn.microsoft.com/en-us/azure/developer/terraform/) with OpenTofu and actually experience the compatbility. You may also want to have a look at [Azure Verified Modules](https://azure.github.io/Azure-Verified-Modules/), which are available for Terraform.
 
 This first series we are going to look at the Quickstart how to deploy an Azure Kubernetes Service (AKS) cluster using OpenTofu instead of Terraform. 
 
