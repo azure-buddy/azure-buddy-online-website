@@ -1,9 +1,9 @@
 ---
 title: "How to test your application for resilience using Azure Chaos Studio"
-date: 2023-08-14
+date: 2024-03-01
 draft: false
-description: "Short example how to create an AKS Cluster using OpenTofu."
-slug: "create-aks-opentofu"
+description: "Short introduction to Chaos Engineering and Azure Chaos Studio."
+slug: "intro-chaos-studio"
 tags: ["tips", "tricks", "Azure Chaos Studio", "Chaos Engineering", "Chaos", "Resilience", "Testing", "Validation" , "Continuous Testing", "automation" ]
 authors:
   - "avwsolutions"
