@@ -19,4 +19,6 @@ Azure coming events! Get inspired :tada:
 
 Find all planned events like Conferences and Meetups, global and near Azure Buddy!
 
+Next event for Azure Buddy is KubeCon + CloudNativeCon Europe (Paris, FR). Come join us and meet your Azure Buddy, at the [Azure Day with Kubernetes](https://azureday.eventbuilder.com/event/81082).
+
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Tips, Tricks"
+title: "Tips & Tricks"
 description: "Tips and tricks,  such as short introductions til full blown experiments with the newest Azure related technology."
 
 showLikes: true
