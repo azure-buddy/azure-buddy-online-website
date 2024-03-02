@@ -17,6 +17,8 @@ cascade:
 Azure Buddy is a personal initiative, started with :heart: passsion by 'Arnold van Wijnbergen' :sparkles:
 {{< /lead >}}
 
+# Who is Arnold van Wijnbergen
+
 Arnold is a dad, husband, technology geek and energetic person. He is an advisor, architect, chief and subject expert in the field of Cloud Native technology, especially around Observability and Security. Since Last three years Arnold specialized in designing complex Azure Cloud environments and leading Azure platform teams. Most interest is in the area of high-secure hosting of applications and reliable data platforms. Lately he’s more and more involved in Confidential Computing implementations. That’s why he recently started the Sovereign Cloud community within the Netherlands with his partner in-crime Dinant Paardenkooper. Actually you can see us as Azure Buddies. That’s how the name of this personal blog was born. Recently we started our roadshow across various local meetups to share our experiences on the Sovereign cloud topic, otherwise better known as Microsoft Cloud for Sovereignty.
 
 During his career Arnold worked at various tech companies and startups like Beyond Blue, Fullstaq and Devoteam as Lead Principal Consultant advising management and customers for innovative solutions. Customers vary from banking, retail to government institutes. You can find him at almost every interesting Meetup near Amsterdam, which covers interesting Azure, DevSecOps, Cloud Native or Continuous Delivery topics. Next to this Arnold is also part-time active in CNCF working groups around Observability or eBPF technology.
@@ -29,3 +31,18 @@ Nowadays Arnold is self-employed and is part-time teacher and content writer at 
 
 Invites are welcome ! I’m open to connect.
 
+# Online videos
+
+Some impressions about my talks. This is just a selection, since not every talk or local meetup is recorded.
+
+Interview at KubeCon | CloudNativeCon 2023 Amsterdam.
+
+{{< youtube IIPV2e4oQO4 >}}
+
+Lightning talk (2022) at Elastic Community days about Elastic Cloud Kubernetes (ECK) on Azure AKS.
+
+{{< youtube gPrZrydFvpQ >}}
+
+Talk on DevOpsDays Amsterdam in 2018 about 'Why Tooling (only) isn’t the answer'.
+
+{{< youtube zKS0bm4kumU >}}
