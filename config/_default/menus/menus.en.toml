@@ -30,6 +30,50 @@
   pageRef = "events"
   weight = 40
 
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 50
+
+[[main]]
+  name = "Links"
+  pageRef = "links"
+  weight = 60
+
+[[main]]
+  parent = "Links"
+  name = "Sovereign Cloud Community - NL"
+  url = "https://sovereign-cloud.nl"
+
+[[main]]
+  parent = "Links"
+  name = "Microsoft Community Hub"
+  url = "https://techcommunity.microsoft.com/"
+
+[[main]]
+  parent = "Links"
+  name = "Microsoft Learn"
+  url = "https://learn.microsoft.com/"
+
+[[main]]
+  parent = "Links"
+  name = "Azure Well-Architected Framework"
+  url = "https://learn.microsoft.com/en-us/azure/well-architected/"
+
+[[main]]
+  parent = "Links"
+  name = "Reliability Engineering | DevOps Leadership | Coaching"
+  url = "https://qensus.com"
+
+[[main]]
+  parent = "Links"
+  name = "Observability Experts | Training"
+  url = "https://www.observion.nl/"
+
+[[main]]
+  parent = "Links"
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/company/sovereign-cloud-nl-community"
 #[[main]]
 #  name = "Merch"
 #  url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
