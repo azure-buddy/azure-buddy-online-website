@@ -43,7 +43,7 @@ Chaos testing brings more operational responsibilities in an automated way. Chao
 
 See below an overview on Azure Chaos Studio, which shows all features that are available to 
 
-{{< carousel images="{azurechaosstudio.webp}" >}}
+{{< carousel images="{azure-chaos-studio.webp}" >}}
 
 - Create experiments using an Azure portal UI.
 - Provide an API for automation.
