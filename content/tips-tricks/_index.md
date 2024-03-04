@@ -14,5 +14,5 @@ cascade:
 ---
 
 {{< lead >}}
-Learn more about the newest and coolest technology and start experimenting with cloud native computing using Azure Cloud!  :tada:
+Learn more about the newest, coolest and innovative Technology and start experimenting with Cloud Native Computing using Azure services!  :tada:
 {{< /lead >}}

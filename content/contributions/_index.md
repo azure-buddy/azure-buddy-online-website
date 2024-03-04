@@ -24,5 +24,5 @@ I periodically write guest blogs with
 - Elastic on Azure
 - Clickhouse using Azure services
 
-Follow us and don't miss another external contribution.
+Follow us and don't miss another external contribution is the space of cloud native computing and opensource initiatives!
 ---

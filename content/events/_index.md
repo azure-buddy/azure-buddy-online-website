@@ -14,7 +14,7 @@ cascade:
 ---
 
 {{< lead >}}
-Azure coming events! Get inspired :tada:
+Don't miss Azure, Cloud native and Security related events that are coming your way! Get inspired :tada:
 {{< /lead >}}
 
 Find all planned events like global conferences and local meetups near Azure Buddy!
