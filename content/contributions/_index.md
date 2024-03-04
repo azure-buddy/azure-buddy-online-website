@@ -14,15 +14,9 @@ cascade:
 ---
 
 {{< lead >}}
-Our external contributions!  :tada:
+Here you will find all our external contributions in collaboration with other communities! :tada:
 {{< /lead >}}
 
-Find all our external guest contributions like blog posts or other here! 
-I periodically write guest blogs with
-- Cilium (Isovalent)
-- eBPF technology
-- Elastic on Azure
-- Clickhouse using Azure services
-
 Follow us and don't miss another external contribution is the space of cloud native computing and opensource initiatives!
+
 ---
