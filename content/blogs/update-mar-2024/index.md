@@ -26,7 +26,7 @@ Most important update is **Kubernetes 1.29** support in **AKS** has entered `Pub
 Look at the comprehensive list below for more information.
 
 ## Azure updates
-- 
+
 - [General Availability: Encryption at host for Premium SSD v2 and Ultra Disks is now available in more regions](https://azure.microsoft.com/en-us/updates/general-availability-encryption-at-host-for-premium-ssd-v2-and-ultra-disks-is-now-available-in-more-regions/)
 - [Public preview: Internet inbound for Network Virtual Appliances in Virtual WAN Hubs](https://azure.microsoft.com/en-us/updates/public-preview-internet-inbound-for-network-virtual-appliances-in-virtual-wan-hubs/)
 - [Public preview: Azure Functions Support for HTTP Streams in Node.js](https://azure.microsoft.com/en-us/updates/public-preview-azure-functions-support-for-http-streams-in-nodejs/)
@@ -38,7 +38,7 @@ Look at the comprehensive list below for more information.
 - [Public preview: Disable network policy in AKS for migration](https://azure.microsoft.com/en-us/updates/public-preview-disable-network-policy-for-migration-in-aks/)
 - [Public preview: AKS support for node soak duration for upgrades](https://azure.microsoft.com/en-us/updates/public-preview-aks-support-for-node-soak-duration-for-upgrades/)
 - [Public Preview: Azure SQL updates for late-February 2024](https://azure.microsoft.com/en-us/updates/public-preview-azure-sql-updates-for-latefebruary-2024/)
-- [General availability: Latest PostgreSQL minor versions supported by Azure Database for PostgreSQL - Flexible Server](https://azure.microsoft.com/en-us/updates/general-availability-latest-postgresql-minor-versions-supported-by-azure-database-for-postgresql-flex)ible-server-3/
+- [General availability: Latest PostgreSQL minor versions supported by Azure Database for PostgreSQL - Flexible Server](https://azure.microsoft.com/en-us/updates/general-availability-latest-postgresql-minor-versions-supported-by-azure-database-for-postgresql-flexible-server-3/)
 - [General availability: Azure SDKs support for Azure Cosmos DB for PostgreSQL](https://azure.microsoft.com/en-us/updates/general-availability-azure-sdks-support-for-azure-cosmos-db-for-postgresql/)
 - [General availability: Azure CLI support for Azure Cosmos DB for PostgreSQL](https://azure.microsoft.com/en-us/updates/general-availability-azure-cli-support-for-azure-cosmos-db-for-postgresql/)
 - [General availability: Application Gateway for Containers](https://azure.microsoft.com/en-us/updates/general-availability-application-gateway-for-containers/)
@@ -71,7 +71,7 @@ Look at the comprehensive list below for more information.
 - [Azure Ultra Disk Storage is now available in Canada East](https://azure.microsoft.com/en-us/updates/azure-ultra-disk-storage-is-now-available-in-canada-east/)
 - [Mount Azure Storage as a local share in App Service Linux Now supports NFS](https://azure.microsoft.com/en-us/updates/mount-azure-storage-as-a-local-share-in-app-service-linux-now-supports-nfs/)
 - [Announcing General Availability to migrate Virtual Network injected Azure Data Explorer Cluster to Private Endpoints](https://azure.microsoft.com/en-us/updates/adx-vnet-migration-ga/)
-- [Support for log alert rules that use cross-workspace queries with resource names or qualified name identifiers will be retired on 31 May 2024](https://azure.microsoft.com/en-us/updates/support-for-log-alert-rules-that-use-crossworkspace-queries-with-resource-n)ames-or-qualified-name-identifiers-will-be-retired/
+- [Support for log alert rules that use cross-workspace queries with resource names or qualified name identifiers will be retired on 31 May 2024](https://azure.microsoft.com/en-us/updates/support-for-log-alert-rules-that-use-crossworkspace-queries-with-resource-names-or-qualified-name-identifiers-will-be-retired/)
 - [Azure Virtual Network Manager security admin rule generally available in 30 regions](https://azure.microsoft.com/en-us/updates/azure-virtual-network-manager-security-admin-rule-generally-available-in-30-regions/)
 - [Azure Virtual Network Manager topology view now generally available](https://azure.microsoft.com/en-us/updates/azure-virtual-network-manager-topology-view-now-generally-available/)
 - [Private Preview: Azure Site Recovery support for Azure Trusted Launch VMs (Windows OS)](https://azure.microsoft.com/en-us/updates/private-preview-azure-site-recovery-support-for-azure-trusted-launch-vms-windows-os/)
