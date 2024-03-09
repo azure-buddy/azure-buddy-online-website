@@ -2,15 +2,15 @@
 title: "Tips & Tricks"
 description: "Tips and tricks,  such as short introductions til full blown experiments with the newest Azure related technology."
 
-showLikes: true
-showViews: true
+showLikes: false
+showViews: false
 
 cascade:
   showEdit: false
   showReadingTime: true
   showSummary: false
-  showLikes: true
-  showViews: true
+  showLikes: false
+  showViews: false
 ---
 
 {{< lead >}}
