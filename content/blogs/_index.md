@@ -2,8 +2,8 @@
 title: "Blogs"
 description: "Blog posts & more."
 
-showLikes: true
-showViews: true
+showLikes: false
+showViews: false
 
 cascade:
   showEdit: false
