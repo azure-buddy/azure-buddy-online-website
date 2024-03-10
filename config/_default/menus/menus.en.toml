@@ -70,6 +70,11 @@
   name = "Observability Experts | Training"
   url = "https://www.observion.nl/"
 
+  [[main]]
+  parent = "Links"
+  name = "Sessionize | Speaker profile"
+  url = "https://sessionize.com/devmonops"
+
 [[main]]
   parent = "Links"
   name = "LinkedIn"
