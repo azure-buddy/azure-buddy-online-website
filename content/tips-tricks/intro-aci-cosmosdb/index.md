@@ -16,7 +16,7 @@ Easter is always fun with family time and telling stories. Yesterday I was expla
 To show them such a classic we watched the movie PacMan together. After this I got inspired to host my own PacMan game, play together and write this blog to share the tip and tricks how to set this up with Azure Container Instance (ACI) and Azure CosmosDB.
 
 {{< alert >}}
-Enjoy reading and you can always share your **high score** with `AzureBuddy` on Social Media like LinkedIn.
+Enjoy reading and you can always share your **high score** with `AzureBuddy` on Social Media like LinkedIn!
 {{< /alert >}}
 
 
@@ -96,7 +96,7 @@ Below an example of such `idx.json` file
 ```
 Now it's time to create the **Database** and the **Collection** with an defined index as shown above.
 
-Creation of these resouces can be easily created using the Azure portal or using the Command below.
+Creation of these resouces can be easily done using the Azure portal or the Command below.
 
 ```
 az cosmosdb mongodb collection create --account-name pacman --name highscore --database-name highscore --idx '@idx.json' --resource-group my-playground-sandbox
@@ -170,9 +170,9 @@ Let's give the conversion of our `parameters_DB.json` a try and ensure you have 
 az bicep decompile-params --file parameters_DB.json
 ```
 
-After running above command a new file called `parameters_DB.bicepparam` is created for us. Great now let's update some manual settings.
+After running above command a new file called `parameters_DB.bicepparam` is created for us. Great now let's update some settings here.
 
-Set the `Using ''` to your newly created bicep template with DB parameters set.
+Replace the `Using ''` to your newly created bicep template with DB parameters set.
 
 ```
 Using 'template_custom_DB.bicep'
@@ -205,9 +205,9 @@ az resource list  --resource-group my-playground-sandbox --output=table
 
 # Conclusion
 
-Most scenario's you can easily migrate existing Terraform code with minor adjustments towards OpenTofu. Import to keep in mind is that over time products will differentiate and tool specific features are introduced. We can't look into the future, but for now OpenTofu is a drop-in replacement for Terraform and compatible with 1.5.x and 1.6.x releases.
+If you are looking for an easy way of deploying containerized resources you may want to have a look at ACI. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or development integration you may be better off with AKS. During our experiment we still found some limitations, such as pulling container images directly from *quay.io*.  This resulted in container *Waiting* state. 
 
-Hopefully you liked this Tip & tricks introduction into the OpenTofu project article and how to reuse Microsoft Learn Quickstart material to create an AKS Cluster using OpenTofu.
+Hopefully you liked this Tip & tricks how to article, which explains the basics of getting up & running with Azure Container Instances and Azure Cosmos DB. Now it’s time to host and play your own retro arcade game Pac-Man! 
 
 # Interested in the code?
 
