@@ -211,6 +211,6 @@ Hopefully you liked this Tip & tricks introduction into the OpenTofu project art
 
 # Interested in the code?
 
-All code samples, including a link to the Azure sample repository is available at [Azure Buddy Github](https://github.com/azure-buddy/howto-create-aks-opentofu-example).
+All code samples, including local scripts is available at [Azure Buddy Github](https://github.com/azure-buddy/intro-pacman-aci-cosmosdb).
 
 Contributions or follow-up articles are more than appreciated!
