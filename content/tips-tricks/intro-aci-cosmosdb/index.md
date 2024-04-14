@@ -1,10 +1,10 @@
 ---
 title: "How to host your own Retro Arcade Game Pac-Man with ACI and CosmosDB"
-date: 2023-08-14
+date: 2024-04-14
 draft: false
 description: "Short example to experiment in an entertaining way ACI and Cosmos DB  during holidays like Easter."
 slug: "intro-aci-cosmosdb"
-tags: ["tips", "tricks", "AKS", "OpenTofu", "Introduction", "IaC", "AVM", "VerifiedModules" ]
+tags: ["tips", "tricks", "ACI", "CosmosDB", "Introduction", "PacMan", "NodeJS", "Containers", "Development", "Bicep" ]
 authors:
   - "avwsolutions"
 ---
