@@ -221,19 +221,25 @@ Now verify if the container has successfully pulled and started. Here I will sho
 
 ![Starting container...](img/container-startup.png "Container startup..")
 
-Awesome! if the container has been started we can also look into the logs again.
+Awesome! if the container has been started we can also look if the configuration has been applied correctly and the *MONGO_AUTH_PWD* value is not visible. 
 
-```
-az container logs --resource-group my-playground-sandbox --name pacman-aci-demo
-```
+![Hidden variable...](img/hidden-secret-variable.png "Hidden variable..")
 
-Now start a browser,  open a session again to port `8080` and start your first game. You might still remember where the FQDN can be found :)
+You will find a *hidden* value like shown above.
+
+Ready to play your first *persistent* **Pac-Man** game?
+
+Sstart a browser,  open a session again to port `8080` and start your first game. You might still remember where the FQDN can be found :)
 When you got *Game Over* it's time to save the score.
 
 ![Persistent score..](img/first-highscore.png "first high score..")
 
 
-Great. First you may want to verify the actual resources are created
+Great. First you may want to verify the actual resources are created. We can first have a look into the actual container logs.
+
+```
+az container logs --resource-group my-playground-sandbox --name pacman-aci-demo
+```
 
 
 
