@@ -13,7 +13,7 @@ authors:
 
 Easter is always fun with family time and telling stories. Yesterday I was explaining to my youngest about classic games I do like, better known as retro arcade games. They shine due their simplicity, no fancy graphics , just for fun! Who didn’t go to the arcade halls these old days, spending their last pennies.
 
-To show them such a classic we watched the movie PacMan together. After this I got inspired to host my own PacMan game, play together and write this blog to share the tip and tricks how to set this up with Azure Container Instance (ACI) and Azure CosmosDB.
+To show them such a classic we watched the movie Pac-Man together. After this I got inspired to host my own Pac-Man game, play together and write this blog to share the tip and tricks how to set this up with Azure Container Instances (ACI) and Azure Cosmos DB (CDB).
 
 {{< alert >}}
 Enjoy reading and you can always share your **high score** with `AzureBuddy` on Social Media like LinkedIn!
@@ -22,17 +22,19 @@ Enjoy reading and you can always share your **high score** with `AzureBuddy` on 
 
 # Running container workloads with ACI
 
-When multiple containers or dependencies are involved you may want to go for AKS, but running a simple `Node.JS` app you may want to look at Azure Container Instance, in short ACI. One of the biggest advantages is that you don't have to manage the container orchestration tool like with AKS. All management of the orchestration platform and underlying instances is done by the Azure team. Next to that you don't pay for the instance capacity, but solely for the resources the container image is consuming. In this use case a very good and easy fit for hosting my **Pac-Man** `Node.JS` app. Let's start with an experiment.
+When multiple containers or dependencies are involved you may want to go for AKS, but running a simple `Node.JS` app you may want to look at Azure Container Instances, in short ACI. One of the biggest advantages is that you don't have to manage the container orchestration tool like with AKS. All management of the orchestration platform and underlying instances is done by the Azure team. Next to that you don't pay for the instance capacity, but solely for the resources the container image is consuming. In this use case a very good and easy fit for hosting my **Pac-Man** `Node.JS` app.
 
-For convinience I have created a repository with all sample material where I saved all my ARM templates. We will use Bicep to deploy the services, but for this I actually had to convert the ARM templates (aka JSON style) to Bicep syntax. 
+Let's start with our experiment!
+
+For convenience I have created a repository with all the sample material during this blog. This repository contains my saved ARM templates and other reference material. We will use Bicep to deploy the services, but for this I have chosen to convert the ARM templates (aka JSON style) to Bicep syntax. 
 This can be done using the following command.
 
 ```
  az bicep decompile --file template.json
 ```
 
-This creates a *template.json* which we have to fix a minor thing to support **float** values. This can be fixed replacing 'float(memory)' for 'json(memory)'.
-More can be found on this [Github issue 1386](https://github.com/Azure/bicep/issues/1386) on Bicep support for float values.
+This creates a **template.json** which we have to fix a minor thing to support **float** values. This can be fixed by replacing *'float(memory)'* for *'json(memory)'*.
+More can be found on this [Github Issue 1386](https://github.com/Azure/bicep/issues/1386), which is the feature request for Bicep to natively support float values.
 
 Adjust the **parameters.json** for your needs and we are ready to deploy our container.
 
@@ -40,12 +42,13 @@ Adjust the **parameters.json** for your needs and we are ready to deploy our con
 az deployment group create --resource-group 'my-playground-sandbox' --template-file template_custom.bicep --parameters '@parameters.json'
 ```
 
-Now open the FQDN (under Essentials) in a browser and open a session to port 8080. You will see the actual game  Pac-Man loading ...
+Now let’s open the newly started service FQDN (found under Essentials) in a browser and open a session to port 8080. You will see the actual game  Pac-Man loading ...
 
+![Pac-Man loading...](img/initial-screen.png "Pac-Man loading...")
 
-You have now succesfully deployed the **Pac-Man** `Node.JS` app as ACI workload, but how is persistency arranged of your High Scores? To implement this we are going to deploy CosmosDB, which is  described in the section below. 
+If you see this screen you now have  succesfully deployed the **Pac-Man** `Node.JS` app as ACI workload, but how is persistency arranged? Let's look further how to ensure our high scores are stored in a persistent way and don't get lost. To implement this we are going to use an Azure Cosmos DB. More specific we are going to look at *MongoDB* compatible engine. How to set up this service is described in the section below. 
 
-You may have seen errors in the container logs or you can try the Command below to look into the MongoDB failures.
+You may already have seen errors in the container logs? If not, just try the command below to look for  *MongoDB connection failures*.
 
 ```
 az container logs --resource-group my-playground-sandbox --name pacman-aci-demo
