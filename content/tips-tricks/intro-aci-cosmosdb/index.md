@@ -62,7 +62,7 @@ As may have noticed, the high scores are not saved yet, since there is no persis
 
 First we are going to create a template again using the Azure portal and convert this using the `az bicep decompile` command.
 
-As we have learned during the `ACI` deployment, a file **template.bicep** is created, which seems to work well, but notice the warnings that are displayed.
+As we have learned during the `ACI` deployment, a file **template.bicep** is created, which seems to work well, but notice the warnings that are displayed. Mainly related to *unused params* and *readonly properties*.
 
 Adjust the **parameters.json** for your needs and we are ready to deploy our Azure Cosmos DB account. Ensure that to chose an unique name, since during writing of this article **Pac-Man** was not yet taken as account name.
 
@@ -217,11 +217,11 @@ After the deployment has succeeded we can validate if all the resources are avai
 ```
 az resource list  --resource-group my-playground-sandbox --output=table
 ```
-Now verify if the container has successfully pulled and started. Here I will show an Azure Portal snippet.
+Now verify in the **Azure Portal** at `ACI` *Settings\Containers\Events* if the container has successfully pulled and started. Here I will show an Azure Portal snippet.
 
 ![Starting container...](img/container-startup.png "Container startup..")
 
-Awesome! if the container has been started we can also look if the configuration has been applied correctly and the *MONGO_AUTH_PWD* value is not visible. 
+Awesome! if the container has been started we can also look if the configuration has been applied correctly and the *MONGO_AUTH_PWD* value is not visible. This is shown at the `ACI` *Settings\Containers\Properies*.
 
 ![Hidden variable...](img/hidden-secret-variable.png "Hidden variable..")
 
@@ -230,27 +230,27 @@ You will find a *hidden* value like shown above.
 Ready to play your first *persistent* **Pac-Man** game?
 
 Sstart a browser,  open a session again to port `8080` and start your first game. You might still remember where the FQDN can be found :)
-When you got *Game Over* it's time to save the score.
+When you got *Game Over* it's time to save the score and view the highscore list.
 
 ![Persistent score..](img/first-highscore.png "first high score..")
 
-
-Great. First you may want to verify the actual resources are created. We can first have a look into the actual container logs.
+Great. First you may want to verify if the actual **document** is added to `CDB`. First place to look are the actual container logs.
 
 ```
 az container logs --resource-group my-playground-sandbox --name pacman-aci-demo
 ```
 
+Secondly we are using the **Azure Portal** were we can also browse through the *Collection* using the **Data Explorer**. Just open the *pacman* `CDB` account and open *Data Explorer*. This will opens the actual **MongoDB API** connection, see below.
 
+![MongoDB API Connection..](img/mongodb-api.png "MongoDB API Connection..")
 
+One thing that is still not working well in `ACI` is updating the *cloud*, *zone* and *host* values. This seems not (yet) to work with `ACI`, but coming month I will update the code to fix this bug.
 
-
-
-
+For now enjoy playing **Pac-Man** and share your highest score with us!
 
 # Conclusion
 
-If you are looking for an easy way of deploying containerized resources you may want to have a look at ACI. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or development integration you may be better off with AKS. During our experiment we still found some limitations, such as pulling container images directly from *quay.io*.  This resulted in container *Waiting* state. 
+If you are looking for an easy way of deploying containerized resources you may want to have a look at `ACI`. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or development integration you may be better off with `AKS`. During our experiment we still found some limitations, such as pulling container images directly from *quay.io*.  This resulted in container *Waiting* state. 
 
 Hopefully you liked this Tip & tricks how to article, which explains the basics of getting up & running with Azure Container Instances and Azure Cosmos DB. Now it’s time to host and play your own retro arcade game Pac-Man! 
 
