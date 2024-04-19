@@ -244,7 +244,105 @@ Secondly we are using the **Azure Portal** were we can also browse through the *
 
 ![MongoDB API Connection..](img/mongodb-api.png "MongoDB API Connection..")
 
-One thing that is still not working well in `ACI` is updating the *cloud*, *zone* and *host* values. This seems not (yet) to work with `ACI`, but coming month I will update the code to fix this bug.
+Thing that is still not working well in `ACI` is updating the *cloud*, *zone* and *host* values. This seems not (yet) to work with `ACI`, but coming month I will update the code to fix this bug. also `HTTPS` *Encryption in Transit* is not yet available, let's solve this challenge in our next part!
+
+# Enable automatic HTTPS by introducing Caddy as Reverse Proxy
+
+During my first game I still missed some *basic security* feature related to *Encryption in transit*. In these cases we either use an `Azure Load Balancer` or an `Reverse Proxy`. In this **sandbox** chose the *common practice* of using a *sidecar* container. The sidecar will run [Caddy](https://caddyserver.com/) as `Reverse Proxy`. To acommplish this I need to update the `ACI` deployment Bicep code and ensure we have an `Azure Storage Account` called *123pacman* for persistency. The `ST` is needed to store three particular file shares of the *Caddy configuration*, namely the **Caddyfile** which contains the *site definition*, **Config** directory which contains the *configuration files* and the **data** directory which contains the actual *data files*.
+
+First create the `ST`. For this deployment I have created a *Bicep template* with a minimal *parameters* file. You can find the example in the repository under [Deployment-template-STG](https://github.com/azure-buddy/intro-pacman-aci-cosmosdb/tree/main/arm/depoyment-template-stg).
+
+```
+cd arm/deployment-template-stg
+az deployment group create --resource-group 'my-playground-sandbox' --template-file template.bicep --parameters parameters.bicepparam
+```
+
+After creation we can start uploading an initial **Caddyfile** to the *proxy-caddyfile* share. Ensure that it contains the following *site block* that is actual your FQDN with the reverse_proxy reference to the `Node.JS` app port `8080`.
+
+```
+pacman-aci-demo.ema5asetfaguf9a9.westus.azurecontainer.io {
+    reverse_proxy http://localhost:8080
+}
+```
+
+Last step is to integrate the *sidecar* into the *ContainerGroups* configuration. Below a snippet of the *Caddy* container. Take extra care with the curly brackets. When you are ready save the file as **template_custom_DB_HTTPS.bicep**. 
+
+```
+{
+  name: 'reverse-proxy'
+  properties: {
+    image: caddyImage
+    ports: [
+      {
+        protocol: 'TCP'
+        port: 80
+      }
+      {
+        protocol: 'TCP'
+        port: 443
+      }
+    ]
+    volumeMounts: [
+      {
+        name: 'proxy-caddyfile'
+        mountPath: '/etc/caddy'
+      }
+      {
+        name: 'proxy-data'
+        mountPath: '/data'
+      }
+      {
+        name: 'proxy-config'
+        mountPath: '/config'
+      }
+    ]
+    resources: {
+      requests: {
+        cpu: json('1.0')
+        memoryInGB: json('1.0')
+      }
+      limits: {
+        cpu: json('1.0')
+        memoryInGB: json('1.0')
+      }
+    }
+  }
+}
+```
+
+I've also added three additional *params* to the **parameters_DB.bicepparam** and included the **ACCESS_KEY** as *Environment Variable*. When you are ready save the new *bicepparam* file as **parameters_DB_HTTPS.bicepparam**.
+
+```
+param caddyImage = 'caddy:2.6'
+
+param storageAccountName = '123pacman'
+
+param storageAccountKey = readEnvironmentVariable('ACCESS_KEY')
+```
+
+Looking for the complete example? Just have a look at the [Deployment-template-ACI](https://github.com/azure-buddy/intro-pacman-aci-cosmosdb/tree/main/arm/deployment-template-aci)
+
+
+Last thing to remind is to update your local *.env* file to include the **ACCESS_KEY**.
+
+We are now ready to redeploy the `ACI` instance again, which now includes a *sidecar* to force *HTTPS* TLS encrypted traffic using a *Reverse Proxy*.
+
+```
+source .env
+cd arm/deployment-template-aci
+az deployment group create --resource-group 'my-playground-sandbox' --template-file template_custom_DB_HTTPS.bicep --parameters parameters_DB_HTTPS.bicepparam
+```
+
+Use the **Azure Portal** to verify if all containers entered the *Running state*.
+
+When you verified the deployment, open the browser and open the *FQDN* again with `https://` ( so without `8080` ).  Does the page open well and is `HTTPS` shown?
+
+![HTTPS Set...](img/https_set.png "HTTPS Set..")
+
+Additional you can  verify if a certificate is automatically issued by the *Let's Encrypt* service. By default the certificate is renewed after 3 months.
+
+![Cerficate validation...](img/verify_certificate.png "Certificate is  valid..")
+
 
 For now enjoy playing **Pac-Man** and share your highest score with us!
 
