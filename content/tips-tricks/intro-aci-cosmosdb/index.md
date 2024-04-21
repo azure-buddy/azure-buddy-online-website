@@ -19,7 +19,7 @@ To show them such a classic we watched the movie Pac-Man together. After this I 
 Enjoy reading and you can always share your **high score** with `AzureBuddy` on Social Media like LinkedIn!
 {{< /alert >}}
 
-Credits to [Ivan Font](https://github.com/font) for developing the initial Pac-Man `Node.JS` app.
+Credits to [Ivan Font](https://github.com/font) for developing the amazing Pac-Man `Node.JS` app.
 
 # Running container workloads with ACI
 
