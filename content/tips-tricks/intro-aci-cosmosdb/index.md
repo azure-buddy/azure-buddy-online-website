@@ -19,6 +19,7 @@ To show them such a classic we watched the movie Pac-Man together. After this I 
 Enjoy reading and you can always share your **high score** with `AzureBuddy` on Social Media like LinkedIn!
 {{< /alert >}}
 
+Credits to [Ivan Font](https://github.com/font) for developing the initial Pac-Man `Node.JS` app.
 
 # Running container workloads with ACI
 
@@ -344,11 +345,13 @@ Additional you can  verify if a certificate is automatically issued by the *Let'
 ![Cerficate validation...](img/verify_certificate.png "Certificate is  valid..")
 
 
-For now enjoy playing **Pac-Man** and share your highest score with us!
+Now quickly start playing and enjoy **Pac-Man**. Which level did you reach? You can share your highest score with us!
 
 # Conclusion
 
-If you are looking for an easy way of deploying containerized resources you may want to have a look at `ACI`. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or development integration you may be better off with `AKS`. During our experiment we still found some limitations, such as pulling container images directly from *quay.io*.  This resulted in container *Waiting* state. 
+If you are looking for an easy way of deploying containerized resources you may want to have a look at `ACI`. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or platform integration you may be better off with `AKS`. Last thing to remember is that `ACI` does support `Confidential Containers` using `AMD EPYC` processors that provide `Confidential Computing` capabilities. Additional for this *use case* that is does require an *Attestation*, included as *sidecar*.
+
+Unfortunately during our experiment we still found some limitations, such as pulling container images directly from *quay.io*. This resulted in container *Waiting* state.
 
 Hopefully you liked this Tip & tricks how to article, which explains the basics of getting up & running with Azure Container Instances and Azure Cosmos DB. Now it’s time to host and play your own retro arcade game Pac-Man! 
 
