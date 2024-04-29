@@ -1,6 +1,6 @@
 ---
 title: "Get ready and become a Microsoft Copilot for Security Ninja"
-date: 2024-05-01
+date: 2024-04-29
 draft: false
 description: "Complete Level 400 Training provided by the Microsoft Tech Community"
 slug: "sec-copilot-ninja24"
