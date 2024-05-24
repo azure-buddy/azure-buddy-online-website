@@ -4,7 +4,7 @@ date: 2024-05-24
 draft: false
 description: "Personal selection of sessions at Microsoft Build 2024."
 slug: "ms-build-2024"
-tags: ["blogs", "azure", "cloud-native", "Cloud", "Security", "MSBuild", "Confidential", "Github", "AI", "Copilot", "LLM", "Redteaming", "defense tactics", "Developer", "Experience"]
+tags: ["blogs", "azure", "cloud-native", "Cloud", "Security", "MSBuild", "Confidential", "Github", "AI", "Copilot", "LLM", "Redteaming", "defense tactics", "Observability"]
 ---
 
 # Introduction
@@ -27,7 +27,7 @@ Already tired of AI? Let’s dive into container security. Ever thought about se
 
 Looking for more **Cloud Security** related sessions? Just visit the landing page [here](https://build.microsoft.com/en-US/sessions?filter=topic%2FlogicalValue%3ESecurity).
 
-I will end this blog with some Observability. Also on this topic there was a very interesting session. The talk takes us *from Code to Cloud*, as we nowadays expect from *Modern Observability* tools.  Learn about using *E2E Diagnostics*, diving into *Azure Monitor Pipeline*, extend *Cloud Native Monitoring* with *Managed Grafana or Prometheus* and embrace techniques like *Chaos Engineering*, which is called `Azure Chaos Studio`. All available on the Azure platform today. Brought by **Rahul Bagaria** and **Evgeny Ternovsky**.
+I will end this blog with some **Observability**. Also on this topic there was a very interesting session. The talk takes us *from Code to Cloud*, as we nowadays expect from *Modern Observability* tools.  Learn about using *E2E Diagnostics*, diving into *Azure Monitor Pipeline*, extend *Cloud Native Monitoring* with *Managed Grafana or Prometheus* and embrace techniques like *Chaos Engineering*, which is called `Azure Chaos Studio`. All available on the Azure platform today. Brought by **Rahul Bagaria** and **Evgeny Ternovsky**.
 
 # Closing thoughts
 
