@@ -25,7 +25,9 @@ The first session you don’t want to miss as a **Security Professional** is the
 
 {{< youtube f0MDjS9-dNw >}}
 
-Another one of my favorites is the session delivered by the **GitHub Team**. The [talk](https://build.microsoft.com/en-US/sessions/33c3052c-6030-4924-a727-3c5b22d0eee8?source=sessions) is about *‘baking Security into your workflow with GitHub Advanced Security and AI’* and as expected live demo. It gives a good inside view on the features of using **GitHub Advanced Security**. `Copilot` included. **Justin Hutchings** and **Madison Oliver** deliver a well prepared session on how to prevent most security vulnerabilities entering your enterprise repositories.  Expect some `Dependabot` and AI to fastly fix most of the coding issues that cause vulnerabilities.  
+Another one of my favorites is the session delivered by the **GitHub Team**. The [talk](https://build.microsoft.com/en-US/sessions/33c3052c-6030-4924-a727-3c5b22d0eee8?source=sessions) is about *‘baking Security into your workflow with GitHub Advanced Security and AI’* and as expected, a live demo. It gives a good inside view of the features provided by **GitHub Advanced Security**. `Copilot` included. **Justin Hutchings** and **Madison Oliver** deliver a well prepared session on how to prevent most security vulnerabilities entering your enterprise repositories.  Expect some `Dependabot` and AI to quickly fix most of the coding issues that cause vulnerabilities.
+
+{{< youtube aIP80lrDObE >}}
 
 Are you more into lessons learned and sharing practices? Then you don’t want to miss the session on red teaming, especially when AI comes around the corner. It’s about *‘how Microsoft Approaches AI Red Teaming’*. You can expect a good deepdive into the AI Red Team (`AIRT`) that serves as the *independent red team for high-risk AI across Microsoft*, identifying vulnerabilities in pre-ship products and driving research to scale insights across the company. All about *Processes, Techniques and Tools* like **PyRIT**. Learn more about their tooling here, which is Open Source available at [GitHub](https://github.com/Azure/PyRIT).
 
