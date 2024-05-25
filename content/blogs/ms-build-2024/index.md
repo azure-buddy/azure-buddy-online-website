@@ -39,7 +39,7 @@ Already tired of AI? Let’s dive into container security. Ever thought about se
 
 Looking for more **Cloud Security** related sessions? Just visit the landing page [here](https://build.microsoft.com/en-US/sessions?filter=topic%2FlogicalValue%3ESecurity).
 
-I will end this blog with some **Observability**. Also on this topic there was a very interesting session. The talk takes us *from Code to Cloud*, as we nowadays expect from *Modern Observability* tools.  Learn about using *E2E Diagnostics*, diving into *Azure Monitor Pipeline*, extend *Cloud Native Monitoring* with *Managed Grafana or Prometheus* and embrace techniques like *Chaos Engineering*, which is called `Azure Chaos Studio`. All available on the Azure platform today. Brought by **Rahul Bagaria** and **Evgeny Ternovsky**.
+I will end this blog with some **Observability**. Also on this topic there was a very interesting session. The talk takes us *from Code to Cloud*, as we nowadays expect from *Modern Observability* tools.  Learn about using *E2E Diagnostics*, diving into the *Azure Monitor Pipeline*, extending *Cloud Native Monitoring* with *Managed Grafana or Prometheus*, and embracing techniques like *Chaos Engineering*, which is called `Azure Chaos Studio`. All are available on the Azure platform today. Brought by **Rahul Bagaria** and many others from the Azure Monitor team.
 
 {{< youtube QmsbSMp41As >}}
 
