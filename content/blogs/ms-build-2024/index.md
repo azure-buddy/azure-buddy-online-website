@@ -21,7 +21,7 @@ Below, I will go through a selection of my sessions you don't want to miss.
 
 # Selection of sessions you don't want to miss
 
-The first session you don’t want to miss as a **Security Professional** is the [talk](https://build.microsoft.com/en-US/sessions/d29a16d5-f9ea-4f5b-9adf-fae0bd688ff3?source=/home) about `AI Security` called *'Inside AI Security with Mark Russinovich’*. **Mark Russinovich** takes us through the landscape of AI security, with the focus on *threat modeling*, *defense tactics*, *red teaming approaches*, and the path to *confidential AI*. All based on Microsoft's experiences developing and operating OpenAI services at scale. During the talk we learn about the various kinds of attacks in AI systems like LLMs and possible defense techniques, such as backdoors, poison data, prompt injection attacks, and more.
+The first session you don’t want to miss as a **Security Professional** is the [talk](https://build.microsoft.com/en-US/sessions/d29a16d5-f9ea-4f5b-9adf-fae0bd688ff3?source=/home) about `AI Security` called *'Inside AI Security with Mark Russinovich’*. **Mark Russinovich** takes us through the landscape of AI security, with a focus on *threat modeling*, *defense tactics*, *red teaming approaches*, and the path to *confidential AI*. All based on Microsoft's experiences developing and operating OpenAI services at scale. During the talk, we learn about the various kinds of attacks in AI systems like LLMs and possible defense techniques, such as backdoors, poison data, prompt injection attacks, and more.
 
 {{< youtube f0MDjS9-dNw >}}
 
