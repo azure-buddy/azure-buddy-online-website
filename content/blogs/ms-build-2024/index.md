@@ -9,11 +9,11 @@ tags: ["blogs", "azure", "cloud-native", "Cloud", "Security", "MSBuild", "Confid
 
 # Introduction
 
-This week Microsoft organized `MS Build 2024`. At this event you can expect everything about the latest technology trends, (potential) new innovative features and technology to build the future. Goal is to bring together developers, industry disruptors and technologists that share their ideas, connect with their peers and help the **Microsoft Community** to have the opportunity to learn new skills.
+This week, Microsoft organized `MS Build 2024`. At this event, you can expect everything about the latest technology trends, potential new innovative features, and technology to build the future. The goal is to bring together developers, industry disruptors, and technologists who share their ideas, connect with their peers, and help the **Microsoft Community** have the opportunity to learn new skills.
 
-If you weren't at the Conference, no problem at all. Expect everything about `Azure`, `DevOps`, `Cloud Security`,`Windows` and of course `Copilot`.  Luckily most sessions are recorded and available on the [Conference Landing Page](https://build.microsoft.com/en-US/home).  You may want to see the excellent and promising  opening keynote by **Satya Nadella, Rajesh Jha, and Kevin Scott**. Incredible to hear about all the opportunities that are unlocked in the era of AI like **Developer Productivity**.
+If you weren't at the conference, no problem at all. Expect everything about `Azure`, `DevOps`, `Cloud Security`, `Windows` and, of course, `Copilot`. Luckily, most sessions are recorded and available on the [Conference Landing Page] (https://build.microsoft.com/en-US/home). You may want to see the excellent and promising opening keynote by **Satya Nadella, Rajesh Jha, and Kevin Scott**. It is incredible to hear about all the opportunities that are unlocked in the era of AI, like accelerating **Cloud Security Remediation**.
 
-Below I will go through a selection of my sessions you don't want to miss.
+Below, I will go through a selection of my sessions you don't want to miss.
 
 # Selection of sessions you don't want to miss
 
@@ -31,9 +31,8 @@ I will end this blog with some **Observability**. Also on this topic there was a
 
 # Closing thoughts
 
-Personally I feel this is one of the best conferences to visit as an Azure Cloud-Native or Cloud Security specialist. 
+In my opinion, this is one of the greatest conferences for experts in Cloud Security, or Azure Cloud-Native, to attend.
 
-Follow me for more Azure Cloud-Native and Cloud Security facts 🔔
-You may want to have a look at https://azurebuddy.online
+For more great content about Azure Cloud-Native and Cloud Security, follow me or check out my other blogs at [Azure Buddy Online](https://azurebuddy.online).
 
-I would appreciate it if you would repost my content to support it 😊
+To support my work, I would be more than grateful if you could repost it. 😊
