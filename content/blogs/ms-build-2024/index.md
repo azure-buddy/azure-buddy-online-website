@@ -13,6 +13,10 @@ This week, Microsoft organized `MS Build 2024`. At this event, you can expect ev
 
 If you weren't at the conference, no problem at all. Expect everything about `Azure`, `DevOps`, `Cloud Security`, `Windows` and, of course, `Copilot`. Luckily, most sessions are recorded and available on the [Conference Landing Page] (https://build.microsoft.com/en-US/home). You may want to see the excellent and promising opening keynote by **Satya Nadella, Rajesh Jha, and Kevin Scott**. It is incredible to hear about all the opportunities that are unlocked in the era of AI, like accelerating **Cloud Security Remediation**.
 
+You can watch the recorded keynote below. Enjoy!
+
+{{< youtube _r9em36n2b0 >}}
+
 Below, I will go through a selection of my sessions you don't want to miss.
 
 # Selection of sessions you don't want to miss
