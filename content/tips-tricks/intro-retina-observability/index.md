@@ -185,7 +185,7 @@ See my Github Gist, [DNS json](https://gist.github.com/avwsolutions/311624ca6111
 
 ![Dashboard DNS...](img/graf-dash-dns.png "Dashboard DNS..")
 
-<script src="https://gist.github.com/avwsolutions/311624ca61119fee8a5966dd100d8c21.js"></script>
+{{< gist avwsolutions 311624ca61119fee8a5966dd100d8c21 >}}
 
 Second Pod Traffic, see https://github.com/avwsolutions/retina/blob/fixes-avws/deploy/grafana/dashboards/pod-level.json 
 
@@ -193,7 +193,7 @@ See my Github Gist, [Pod-level json](https://gist.github.com/avwsolutions/9c9fb2
 
 ![Dashboard Pod-level...](img/graf-dash-podlevel.png "Dashboard Pod-level..")
 
-<script src="https://gist.github.com/avwsolutions/9c9fb20f212eb6fa3af96f2f7c744a97.js"></script>
+{{< gist avwsolutions 9c9fb20f212eb6fa3af96f2f7c744a97 >}}
 
 # Deploying a sample web application workload
 
