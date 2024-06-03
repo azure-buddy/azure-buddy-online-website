@@ -31,7 +31,7 @@ Another one of my favorites is the session delivered by the **GitHub Team**. The
 
 Are you more into lessons learned and sharing practices? Then you don’t want to miss the [session on Red Teaming](https://build.microsoft.com/en-US/sessions/0106b5b1-d727-4240-bb2e-dea325cb8519?source=sessions), especially when AI comes around the corner. It’s about *‘How Microsoft Approaches AI Red Teaming’*. You can expect a good deep dive into the AI Red Team (`AIRT`) which serves as the *independent red team for high-risk AI across Microsoft*, identifying vulnerabilities in pre-ship products and driving research to scale insights across the company. All about *Processes, Techniques and Tools* like **PyRIT**. Learn more about their tooling here, which is Open Source and available at [GitHub](https://github.com/Azure/PyRIT) for download.
 
-At the moment of writing, unfortunately, I couldn't yet find the Youtube video, so you owe me this to add later.
+{{< youtube zFRn_RMSPI4 >}}
 
 Already tired of AI? Let’s dive into container security. Ever thought about securing `AKS` and taking the Supply Chain approach. Listen to the talk about *‘Securing the Containers’ Supply Chain for Azure Kubernetes Service’* delivered by **Payal Mahesh** and **Toddy Mladenov**. They take us into the world of **Containers Secure Supply Chain** (`CSSC`) framework.  We learn about the various stages during a live demo. Very informative session. If you are ready to learn more, just go through the documentation at [Microsoft Learn](https://learn.microsoft.com/nl-nl/azure/security/container-secure-supply-chain/).
 
