@@ -13,7 +13,7 @@ In this blog I want to share my experiences and thoughts on a subject that's bec
 
 ## Benefits of using Microsoft Defender for Endpoint
 
-What the benefits of using Defender for Endpoint? Let's look into this what you can expect when using Microsoft Defender for Endpoint. Below some *key benefits*, which are interesting for most organisations:
+What are the benefits of using Defender for Endpoint? Let's look into this and what you can expect when using Microsoft Defender for Endpoint. Below some *key benefits*, which are interesting for most organisations:
 
 1. *Comprehensive Protection*: Defender for Endpoint provides extensive protection against a wide range of threats, including malware, ransomware, and phishing attacks.
 2. *ML Powerered Real-Time Detection*: With advanced machine learning and behavioral analysis, it detects threats in real-time, alerting you instantly to suspicious activities.
