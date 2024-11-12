@@ -15,7 +15,7 @@ An easy-to-scan roundup of our newest, most important highlights. Let's have a l
 
 Again a month of `retired` services like around **Azure Logic Apps** and deprecation of outdated security protocols, like `TLS 1.0` and `TLS 1.1`.
 
-Most important is about requiring multifactor based authentication for tenant. Users must use multifactor authentication (MFA) to sign into the **Azure portal**, **Microsoft Entra admin center**, and **Intune admin center**. To ensure your users can maintain access, you’ll need to enable MFA by 15 October 2024. 
+Most important is about `requiring multifactor` based authentication for tenant. Users must use multifactor authentication (MFA) to sign into the **Azure portal**, **Microsoft Entra admin center**, and **Intune admin center**. To ensure your users can maintain access, you’ll need to enable MFA by 15 October 2024. 
 
 ## Top 5 you don't want to miss
 
