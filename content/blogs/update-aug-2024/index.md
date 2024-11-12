@@ -1,5 +1,5 @@
 ---
-title: "Azure Buddy Monthly recap: July 2024"
+title: "Azure Buddy Monthly recap: August 2024"
 date: 2024-08-02
 draft: false
 description: "Monthly recap of Azure updates."
