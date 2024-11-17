@@ -21,7 +21,7 @@ This month seems all about updates and features going `Generally Available`. `Re
 2. Starting with FinOps, but still looking for some guiding documentation that includes best practices? Don't look further and dive into the FinOps Toolkit. Freely available to accelerate your FinOps journey here [FinOps Toolkit](https://microsoft.github.io/finops-toolkit/).
 3. Having performance issues with **PostgreSQL Azure Databases**? Things get easier to troubleshoot and diagnose by setting performance management server parameters. Think about **parallel workers**, **temp file limit**, **enabling incremental sort** and more.
 4. The **Azure Storage Account** default egress limit has been increased from 120 Gbps to 200 Gbps for both existing and new storage accounts.
-5. In large environments it's crucial to do efficient **IP Address Managmeent (IPAM)**. To simplify this a new feature is under `Public Preview` called **Azure Virtual Network IP address management**. It helps to plan and allocate both cloud, on-premise IPs and ensures there are no overlaps or misconfigurations and provides a clear overview of the **Azure Virtual Network Manager** managed resources.
+5. In large environments it's crucial to do efficient **IP Address Management (IPAM)**. To simplify this a new feature is under `Public Preview` called **Azure Virtual Network IP address management**. It helps to plan and allocate both cloud, on-premise IPs and ensures there are no overlaps or misconfigurations and provides a clear overview of the **Azure Virtual Network Manager** managed resources.
 
 Look at the comprehensive list below for more information.
 
