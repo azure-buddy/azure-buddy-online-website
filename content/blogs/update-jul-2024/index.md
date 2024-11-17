@@ -3,7 +3,7 @@ title: "Azure Buddy Monthly recap: July 2024"
 date: 2024-07-02
 draft: false
 description: "Monthly recap of Azure updates."
-slug: "updateful-2024"
+slug: "update-jul-2024"
 tags: ["blogs", "azure", "updates", "monthly", "security", "containers", "management"]
 series: ["Monthly recap of Azure updates"]
 series_order: 7
@@ -15,7 +15,7 @@ An easy-to-scan roundup of our newest, most important highlights. Let's have a l
 
 This month a lot of things went `Generally Available`, next to `retired` services like the *Microsoft.AlertsManagement.Alerts* API.
 
-Most important two around `Security` / `Sovereign Engineering` are the possibility of using `Customer Managed Keys` for encryption in **Backup Vaults** and the support of `Azure Trusted Launch VMs` in **Azure Site Recovery**.
+Most important two around `Security` / `Sovereign Engineering` are the possibility of using `Customer Managed Keys` for encryption in **Backup Vaults** and the support of `Azure Trusted Launch VMs` in **Azure Site Recovery** is starting with Windows VMs.
 
 ## Top 5 you don't want to miss
 
