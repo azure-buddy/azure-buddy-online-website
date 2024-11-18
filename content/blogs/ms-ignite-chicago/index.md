@@ -28,7 +28,6 @@ To watch the session online you have to register for a free Digital Pass. Go to 
 | 8:12 PM - 8:16 PM CET   | [Provide a new level of protection with Confidential Virtual Machines](https://ignite.microsoft.com/en-US/sessions/StudioFP105?source=azurebuddy) |
 | 9:45 PM - 10:30 PM CET  | [Secure and govern your data estate with Microsoft Purview](https://ignite.microsoft.com/en-US/sessions/BRK317?source=azurebuddy) | 
 
-|
 
 ## Wednesday (20 November 2024)
 
