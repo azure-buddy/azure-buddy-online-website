@@ -18,6 +18,8 @@ As always the first day is kicked off by a keynote from Satya Nadella, followed 
 Finally my selection of sessions you can easily watch Online. 
 To watch the session online you have to register for a free Digital Pass. Go to [Ignite registration](https://register.ignite.microsoft.com/ ), complete your registration and get ready for Ignite 2024 Chicago.
 
+You can always create your personal backpack with you favorites at the [Session catalog](https://ignite.microsoft.com/en-US/sessions).
+
 # List of Sessions you don't want to miss
 
 ## Tuesday (19 November 2024)
