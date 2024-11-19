@@ -19,6 +19,6 @@ Don't miss Azure, Cloud native and Security related events that are coming your 
 
 Find all planned events like global conferences and local meetups near Azure Buddy!
 
-Next event for Azure Buddy is KubeCon + CloudNativeCon Europe (Paris, FR). Come join us and meet your Azure Buddy, at the [Azure Day with Kubernetes](https://azureday.eventbuilder.com/event/81082).
+Next event for Azure Buddy is KubeCon + CloudNativeCon Europe (London, UK). Come join us and meet your Azure Buddy, at **Azure Day with Kubernetes**. Get a glance of this Azure dedicated co-located event by reading the blogpost of the last edition organized at KubeCon + CloudNativeCon North America 2024, which is  available at [Microsoft Techcommunity](https://techcommunity.microsoft.com/blog/appsonazureblog/azure-at-kubecon-north-america-2024--salt-lake-city-utah---november-12-15/4278879).
 
 ---
