@@ -9,7 +9,7 @@ tags: ["blogs", "azure", "MCT", "cloud", "security", "Train-the-Trainer", "Train
 
 ### Introduction
 
-Arnold alias AzureBuddy is proud to share that he recently achieved the status of Microsoft Certified Trainer (MCT), a certification that means a lot to me as a Microsoft Technology Expert and Microsoft Valuable Professional (MVP). For me, this step not only symbolizes the confirmation of my technical knowledge and experience, but especially my dedication to educating, coaching, mentoring and didactically supporting professionals in their own learning process.
+Arnold alias Azure Buddy is proud to share that he recently achieved the status of Microsoft Certified Trainer (MCT), a certification that means a lot to me as a Microsoft Technology Expert and Microsoft Valuable Professional (MVP). For me, this step not only symbolizes the confirmation of my technical knowledge and experience, but especially my dedication to educating, coaching, mentoring and didactically supporting professionals in their own learning process.
 
 The route to the MCT certification is one of in-depth knowledge and didactic skills, but it is also a learning process in which you discover how you can help others to make complex material understandable and easily consumable. An important part was the 'Train-the-Trainer' course by RBL Training, which helped to get prepared, work on essential skills and finally be ready to get certified as a classroom trainer. This training really gave me new valuable insights into the different learning styles and techniques to effectively transfer technical knowledge, with a focus on interaction and practical exercises.
 
