@@ -27,7 +27,7 @@ What also makes the MCT status special is the network of fellow trainers and exp
 
 The ‘Train-the-Trainer’ course at RBL Training proved to be a crucial link in obtaining the MCT certification. RBL Training uses a hands-on approach, where you not only gain theoretical knowledge, but also receive direct feedback on your own training style and approach. In this course I learned how to present technical topics in an accessible way, and I was given practical tools to create interactive and engaging training sessions.
 
-Thanks to the ‘Train-the-Trainer’ training, I now feel more equipped than ever to guide my target group in a coaching and inspiring way. This experience has deepened my vision on training and given me extra confidence to make complex cloud security solutions clear and accessible. Many thanks and big shoutout to Rick Kerssens. More info on the training can be found on the [RBL Training]](https://www.rbl-training.com/) website.
+Thanks to the ‘Train-the-Trainer’ training, I now feel more equipped than ever to guide my target group in a coaching and inspiring way. This experience has deepened my vision on training and given me extra confidence to make complex cloud security solutions clear and accessible. Many thanks and big shoutout to Rick Kerssens. More info on the training can be found on the [RBL Training](https://www.rbl-training.com/) website.
 
 ## Now what?
 
