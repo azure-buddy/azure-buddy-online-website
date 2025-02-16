@@ -1,7 +1,7 @@
 ---
 title: "Threat Modeling by Example using STRIDE"
 date: 2025-02-04
-draft: false
+draft: true
 description: "An introduction in Threat Modeling using the STRIDE model"
 slug: "stride-tm-intro"
 tags: ["blogs", "threat", "modeling", "OWASP", "Stride", "Cybersecurity", "Security", "Process", "Introductiom", "Microsoft" ]
@@ -90,14 +90,15 @@ Impact of *Spoofing* is that it could lead to unauthorized access to confidentia
 
 # Threat Modeling in Action
 
-This last chapter we are going to walk through the *Threat Modeling* process and apply the *STRIDE* model against a typical web application. We are going to ask ourself four key questions:
+This last chapter we are going to walk through the *Threat Modeling* process and apply the *STRIDE* model against a typical web application. At the start we are going to ask ourself four key questions:
 
 - What are we working on?
 - What can go wrong?
 - What are we going to do about it?
 - Did we do a good enough job?
 
-
+These four simple questions help us to focus, work to apply *Techniques*, such as provided by the *STRIDE model*. Most Threat Modeling Techniques will answer one or more of those questions. 
+Let's quickly look into the process itself.
 
 ## Process steps
 
@@ -110,9 +111,19 @@ The process is built on four steps:
 - Look for Countermeasures, eventually Fixes and Mitigations
 - Review and assess your work - Outcome
 
-
 ## Scope
 
-We always start with deciding the actual scope. A good scope is important for delivering high-quality input. Input here can be seen in the context of *Data Flow Diagrams* (DFD), known *Entry Points* and *Exit Points* of the system and a list of all involved *Assets* including a brief Description and Trust Levels. 
+We always start with deciding the actual scope. A good scope is important for delivering high-quality input. Input here can be seen in the context of:
+
+- *Use cases* that provide Business value.
+- *Scenarios* of typical interactions with the system.
+- List of involved *Assets* that include a brief Description and their corresponding Trust Levels.
+- Data Flow Diagrams* (DFD), such as Architecture Models that include the known *Entry Points* and *Exit Points* of the system.
+
+Below we are going to explain and show examples of *Input* we will provide during scoping.
+
+### Data Flow Diagram (DFD)
+
+A diagrams worth ten thousand words. Diagrams help to visualize 
 
 -Azure Buddy
