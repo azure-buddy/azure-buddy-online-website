@@ -15,11 +15,13 @@ Nowadays worldwide Cybersecurity attacks happen almost every 10 seconds. Attacks
 
 Taking the *shift-left approach* with *DevSecOps* we want to look into these potential threats as early as Development is started, before they become *Zero-Day Vulnerabilities* and learn from these. Some questions arise here:
 
-- From a workload perspective what are the business risks and related security threats introduced by the application underlying software system?
+- From a system perspective what are the business risks and related security threats introduced by the application underlying software system?
 - Can we quickly identify such technical threats, take mitigation measures and continuously validate these?
 - Are there any best practices, examples or other resources available to organize and support such proces?
 
-It's all about properly organizing *Threat Modeling* sessions and how we can ensure *Threat Modeling* becomes part of the Software Delivery Lifecyle.
+It's all about properly organizing *Threat Modeling* sessions and how we can ensure *Threat Modeling* becomes part of the Software Delivery Lifecyle. Actually performing *Threat Modeling*, you begin to recognize what can go wrong in a software system. It helps to easily pinpoint potential issues in your design or implementation that require mitigation, whether it's during *Development* or throughout the lifetime of the Software system.
+
+This blog is for everybody that is concerned about the Privacy, Safety and Security of their Software system.
 
 ## Software Delivery Lifecycle (SDL) towards DevSecOps
 
@@ -27,7 +29,7 @@ As already mentioned with *DevSecOps* want to start as early in the SDL as possi
 
 Threat Modeling becomes an important part of *Continuous Security* and especially around *Planning and Development* of Secure Software. More about DevSecOps can be read [here](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops)
 
-For many years as Product Owner  I've been using the *OWASP Threat Modeling Project* as blueprint for the Threat Modeling process. It provides a structured way to identify and document threats in software systems. Let’s first look into what *OWASP Threat Modeling Project* delivers and it's leverages the *STRIDE Model* for discovering these potential threats.
+For many years as Product Owner I've been using the *OWASP Threat Modeling Project* as blueprint for the Threat Modeling process. It provides a structured way to identify threats, get common understanding of the risks and later fix those findings in our Software system.  Let’s first look into what *OWASP Threat Modeling Project* delivers and it's leverages the *STRIDE Model* for discovering these potential threats.
 
 # Useful Threat Modeling Resources
 
@@ -86,5 +88,31 @@ Impact of *Spoofing* is that it could lead to unauthorized access to confidentia
 #### Elevation of Privilege
 *Elevation of Privilege* is all about gaining authorizations to compromise the system. *Elevation of Privilege* occurs when an attacker may *exploit vulnerabilities* with the intention to gain high privileges like administrative rights. When elevation succeeds, the attacker could manipulate system settings, control access to sensitive data or even cause damage to the application or the data. Imagine how this could have serious implications for the security, integrity and availability of an application. Addressing and fixing these vulnerabilities is crucial for maintaining a secure application system.
 
+# Threat Modeling in Action
+
+This last chapter we are going to walk through the *Threat Modeling* process and apply the *STRIDE* model against a typical web application. We are going to ask ourself four key questions:
+
+- What are we working on?
+- What can go wrong?
+- What are we going to do about it?
+- Did we do a good enough job?
+
+
+
+## Process steps
+
+Like every process it's a good practice to have a good understanding of the steps and activities taken place. *Continuous Improvement* is key for high-quality Input and meaningful and measurable outcomes. Below we are going to look into the process.
+
+The process is built on four steps:
+
+- Prepare on Scope - Your Input
+- Determine Threats
+- Look for Countermeasures, eventually Fixes and Mitigations
+- Review and assess your work - Outcome
+
+
+## Scope
+
+We always start with deciding the actual scope. A good scope is important for delivering high-quality input. Input here can be seen in the context of *Data Flow Diagrams* (DFD), known *Entry Points* and *Exit Points* of the system and a list of all involved *Assets* including a brief Description and Trust Levels. 
 
 -Azure Buddy
