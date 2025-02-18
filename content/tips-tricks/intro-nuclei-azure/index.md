@@ -428,24 +428,93 @@ You can now load the *System Variables* and store your first scan results. We ad
 nuclei -silent -u https://azurebuddy.online -j | ingest2LAW
 ```
 
+After  +/- 5 minutes you will see records being created in the *nuclei_CL* table. 
 
+Let's now try some other KQL queries to play with the scan data.
 
+We assume that you have used *azurebuddy.online* as scan target.
 
-![Cerficate validation...](img/verify_certificate.png "Certificate is  valid..")
+**Display only the HTTP type related records within the last 30 minutes from my current scan target.**
+```
+nuclei_CL
+| where host == 'azurebuddy.online' and nuclei_type == 'http' and TimeGenerated > ago(30m)
+```
 
+**Display all other types related records except HTTP within the last 30 minutes from my current scan target.**
+```
+nuclei_CL
+| where host == 'azurebuddy.online' and nuclei_type != 'http' and TimeGenerated > ago(30m)
+```
 
-Now quickly start playing and enjoy **Pac-Man**. Which level did you reach? You can share your highest score with us!
+**Summarize the total numeber of checks of every type within the last 30 minutes ordered by Total number count.**
+```
+nuclei_CL
+| where host == 'azurebuddy.online' and TimeGenerated > ago(30m)
+| summarize Total_checks = count() by nuclei_type
+| order by Total_checks desc
+```
 
-# Conclusion
+**Display the records of SSL checks that report the use of older TLS Versions.**
+```
+nuclei_CL
+| where host == 'azurebuddy.online' and nuclei_type == 'ssl' and info contains "TLS Version" and
+ extracted_results !contains 'tls13' and TimeGenerated > ago(30m)
+```
 
-If you are looking for an easy way of deploying containerized resources you may want to have a look at `ACI`. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or platform integration you may be better off with `AKS`. Last thing to remember is that `ACI` does support `Confidential Containers` using `AMD EPYC` processors that provide `Confidential Computing` capabilities. Additional for this *use case* that is does require an *Attestation*, included as *sidecar*.
+**Display the record if any WAF is detected.**
+```
+nuclei_CL
+| where host == 'azurebuddy.online' and nuclei_type == 'http' and
+ template_id == 'waf-detect' and TimeGenerated > ago(30m)
+| project info
+```
 
-Unfortunately during our experiment we still found some limitations, such as pulling container images directly from *quay.io*. This resulted in container *Waiting* state.
+As you may suspect you aren't limited to storing *network target* scans.
 
-Hopefully you liked this Tip & tricks how to article, which explains the basics of getting up & running with Azure Container Instances and Azure Cosmos DB. Now it’s time to host and play your own retro arcade game Pac-Man! 
+For example storing the [AKS Code Review](#azure-cloud-community-templates-for-aks-config-review) results in youru `LAW` for analysis.
+
+```
+nuclei -silent -tags aks -code -esc -j | ingest2LAW
+```
+
+After a successfull scan you can review the newly added records using this **KQL**.
+
+```
+nuclei_CL
+| where template_id contains 'azure-aks' and TimeGenerated > ago(30m)
+| project extracted_results
+```
+
+Now let's format a table of the actual *scan results* using **KQL**.
+
+```
+nuclei_CL
+| where template_id contains 'azure-aks' and TimeGenerated > ago(30m)
+| extend ScanInfo = parse_json(info)
+| project Name = ScanInfo.name, Description = ScanInfo.description, Impact = ScanInfo.impact, Severity = ScanInfo.severity, Reference = ScanInfo.reference, Remediation = ScanInfo.remediation
+```
+
+We can repeat this exercise for our own developed template. 
+
+```
+nuclei -silent -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code -j | ingest2LAW
+```
+
+Now run a **KQL** to only get our specific *Nuclei Template* results. Here I'm filtering on *author*.
+
+```
+nuclei_CL
+| where info contains 'avwsolutions' and TimeGenerated > ago(365d)
+| extend ScanInfo = parse_json(info)
+| project Name = ScanInfo.name, Description = ScanInfo.description, Impact = ScanInfo.impact, Severity = ScanInfo.severity, Reference = ScanInfo.reference, Remediation = ScanInfo.remediation
+```
+
+## Conclusion
+
+Going through this blog, working with *Nuclei* gives us a good understanding of the *value* it provides during *penetration testing*. It's can support both *Security Engineers* and *Security Analysts* to include these *data sets* for further analysis. Besides the *powerful* scan engine and simplicity adding new functionality you can easily *integrate* scan results with your *Microsoft Security Toolsl* using a `LAW`.
 
 # Interested in the code?
 
-All code samples, including local scripts is available at [Azure Buddy Github](https://github.com/azure-buddy/intro-pacman-aci-cosmosdb).
+All code samples, including local scripts is available at [Azure Buddy Github](https://github.com/azure-buddy/nuclei-kusto-db-integration).
 
 Contributions or follow-up articles are more than appreciated!
