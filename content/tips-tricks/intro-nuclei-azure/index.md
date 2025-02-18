@@ -318,7 +318,7 @@ Let's start to setup `Ingest2LAW`. It's a simple tool, created with Python using
 
 During the following subchapters I'm going to explain how to setup the required infrastructure, followed by some real examples shoing scan results entering your newly created tables. Let's get started.
 
-### Azure Infrastructure Setup
+### Required Azure Infrastructure Setup
 
 To deploy the required *Azure Infrastructure* I've created some supporting *Bicep* code, but first look into the *architecture*.
 
@@ -329,8 +329,9 @@ The following Azure resources are going to be deployment:
 - Authentication of publishing data from the DCR into the LAW we are going to use a Service Principal (SPN), which you have to create first in Entra ID. An addtional PowerShell script for this is included.
 
 Below a picture of the architecture:
+![Solution Architecture](img/solution-architecture.png "Solution Architecture")
 
-### Azure Infrastructure Deployment 
+### Solution approach to deploy Azure Resources
 
 Now that you know the solution approach we can start cloning the actual repository. I do expect you are familiar with the basics of using `Git` CLI.
 
