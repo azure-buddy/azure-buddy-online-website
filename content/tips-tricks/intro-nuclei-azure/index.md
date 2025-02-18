@@ -25,7 +25,7 @@ Credits to [Project Discovery](https://github.com/projectdiscovery) for developi
 
 ## Quickly get started with Nuclei
 
-## Get familiar with Nuclei for Network Scanning
+### Get familiar with Nuclei for Network Scanning
 
 Let's first start using Nuclei as a simple network scanner against web hosts, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can contain multiple targets to scan.
 
@@ -77,7 +77,7 @@ After some minutes the following output is returned.
 
 You may recognize several templates are executed. Let's look further into **Nuclei Templates**.
 
-## Understanding Nuclei Templates
+### Understanding Nuclei Templates
 
 Nuclei templates are the way to extend Nuclei with new functionality. Many Nuclei templates exist, build by the community and vary in functionality. We are going to have a look into an Azure Nuclei template, which is used to validate the **Azure Cloud Environment** connection. Later during this blog we are going to develop our own Azure Nuclei template which provides a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
 
@@ -154,7 +154,7 @@ The following will be show when the **Azure CLI** is already logged in using `az
 
 Now that you know more about working with **Nuclei Templates**, we can start exploring all *Community Templates* that already are available for you!.
 
-## Learn about Community-Powered Azure Nuclei Templates
+## Work with Community-Powered Azure Nuclei Templates
 
 ### Azure Cloud Config Review
 
