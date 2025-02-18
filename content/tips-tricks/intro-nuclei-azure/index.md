@@ -77,7 +77,7 @@ After some minutes the following output is returned:
 [rdap-whois:status] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["client transfer prohibited","auto renew period"]
 ```
 
-You may recognize several templates are executed. Let's look further into **Nuclei Templates**.
+You may recognize several templates are executed. Let's now look further into those **Nuclei Templates**.
 
 ### Understanding Nuclei Templates
 
