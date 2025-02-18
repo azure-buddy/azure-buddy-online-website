@@ -9,7 +9,7 @@ authors:
   - "avwsolutions"
 ---
 
-# Introduction
+## Introduction
 
 This blog post I’m going to look into Nuclei. Nuclei is one of the popular tools used by Penetration Testers. Pentesting in-short is important because it helps identify security vulnerabilities before attackers can exploit them. It simulates real-world cyberattacks that help to asses and get an understanding the effectiveness of defenses, validates your system hardening, reduces the risk of data breaches, and ensures compliance with security standards. All these activities like vulnerability scans and configuration reviews can be automated using this multifunctional called Nuclei.
 
@@ -17,13 +17,13 @@ This blog post I’m going to look into Nuclei. Nuclei is one of the popular too
 Enjoy reading and you can always share your **ideas** with `AzureBuddy` on Social Media like LinkedIn!
 {{< /alert >}}
 
-# What is Nuclei?
+## What is Nuclei?
 
 Nuclei is an Open Source CLI-based tool to perform those vulnerability scans against targets like network resources. It leverages YAML based templates to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific Nuclei templates, used for configuration review and how they are executed. After getting a basic understanding of the foundational concepts using templates, we will go through some hands-on examples.
 
 Credits to [Project Discovery](https://github.com/projectdiscovery) for developing the powerfull `Nuclei` CLI.
 
-# Quickly get started with Nuclei
+## Quickly get started with Nuclei
 
 Let's first start using Nuclei as a simple network scanner against web hosts, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can contain multiple targets to scan.
 
@@ -75,7 +75,7 @@ After some minutes the following output is returned.
 
 You may recognize several templates are executed. Let's look further into **Nuclei Templates**.
 
-# Nuclei Templates
+## Nuclei Templates
 
 Nuclei templates are the way to extend Nuclei with new functionality. Many Nuclei templates exist, build by the community and vary in functionality. We are going to have a look into an Azure Nuclei template, which is used to validate the **Azure Cloud Environment** connection. Later during this blog we are going to develop our own Azure Nuclei template which provides a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
 
@@ -152,7 +152,7 @@ The following will be show when the **Azure CLI** is already logged in using `az
 
 Now that you know more about working with **Nuclei Templates**, we can start exploring all *Community Templates* that already are available for you!.
 
-# Azure Cloud Config Review
+## Azure Cloud Config Review
 
 Nuclei ships with a lots of templates. **Nuclei Templates** differ from Cloud, DAST and Code like CVEs and Operating System Audits. A lot to mention, just take a look into [Nuclei Templates repository](https://github.com/projectdiscovery/nuclei-templates/tree/main) on GitHub.
 
@@ -168,7 +168,7 @@ Additional you may want to include code execution and self-contained scripts.
 
 Next chapter we will dive into a subset of *Azure Config Review* templates. These can be easily scanned and give you more details about the capabilities it provides to you.
 
-# Azure Cloud Community Templates for AKS Config Review
+## Azure Cloud Community Templates for AKS Config Review
 
 Let's look into a specific **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we easily provide the tag **aks**. Don't forget to include the *code* and *esc* parameters. 
 
@@ -198,7 +198,7 @@ You even can scan **cluster objects** by have a configured **kubectl** available
 
 Let's start with developing our own **Nuclei Template**.
 
-# Developing our own Nuclei Template for Azure Monitor
+## Developing our own Nuclei Template for Azure Monitor
 
 Some cases a template isn't yet available.These situations you can easily develop and create your own. Below the **Nuclei Template** wich was already mentioned in the previous chapter about *Nuclei Templates*. The goal of our template is to provide a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
 
@@ -306,7 +306,7 @@ The following ourput is shown within a minute.
 
 Hopefully this shows how easily you can extend functionality for `nuclei` and make your own *custom scans*. Let's dive into the last chapter, which makes our *Ninja training for Azure pentesting* complete. Here we will use a small tool I've developed to send your scan results directly into a *Kusto Table*.
 
-# Storing Nuclei results into a Kusto table
+## Storing Nuclei results into a Kusto table
 
 You have reached the last part of the blog. This chapter we are going to store our `Nuclei` scan results into a *Kusto Table*, so you can combine it with other important datasets from Microsoft Defender (XDR) or Microsoft Sentinel (SIEM/SOAR). Storing your scan results can help you as *Security Engineer* or *Security Analysts* to further analyze, report and visualize by using *Kusto Query Language* over time. Another use case would be period endpoints scans and storing *historical data* for audit trail. These are just two simple examples. 
 
@@ -314,7 +314,7 @@ Let's start to setup `Ingest2LAW`. It's a simple tool, created with Python using
 
 During the following subchapters I'm going to explain how to setup the required infrastructure, followed by some real examples shoing scan results entering your newly created tables. Let's get started.
 
-## Azure Infrastructure Setup
+### Azure Infrastructure Setup
 
 To deploy the required *Azure Infrastructure* I've created some supporting *Bicep* code, but first look into the *architecture*.
 
@@ -326,7 +326,7 @@ The following Azure resources are going to be deployment:
 
 Below a picture of the architecture:
 
-## Azure Infrastructure Deployment 
+### Azure Infrastructure Deployment 
 
 Now that you know the solution approach we can start cloning the actual repository. I do expect you are familiar with the basics of using `Git` CLI.
 
@@ -334,7 +334,7 @@ Now that you know the solution approach we can start cloning the actual reposito
 git clone https://github.com/avwsolutions/nuclei-kusto-db-integration.git
 ```
 
-### Entra ID Service Principal creation
+#### Create your required Entra ID Service Principal Name.
 
 Let's first create Service Principal. Additional ensure that you are logged in the **Azure CLI**.  For convinience I've added a PowerShell script to create the object. Look into the script and execute the following command.
 
@@ -355,7 +355,7 @@ PasswordCredentials                : < save this block as Secret note for later 
 
 Ensure that you write down the **Object ID** and **Password Credentials** because you need it later configuring the actual deployment.
 
-### Azure Resource deployment using Bicep
+#### Deploy required Azure resources using Bicep
 
 Now take a look at the *deployment/azure* folder and parameterize the `params.json` for your needs. Most important here is the **Object ID*8 from your newly created SPN.
 
@@ -388,7 +388,7 @@ az deployment group create --resource-group 'nuclei-sandbox' --template-file dep
 
 Are some minutes everything the actual *Azure Resource* creation is finished. It will return a *JSON* output.
 
-### Installing the Ingest2LAW App on Linux
+#### Installing the Ingest2LAW App on a Linux VM
 
 Now we are at the moment we can install the *App* locally ('/usr/local/bin`), ensure dependencies are set and include it in our *runtime environment* (privilege escalation required!).
 
