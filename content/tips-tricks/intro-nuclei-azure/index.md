@@ -11,7 +11,7 @@ authors:
 
 ## Introduction
 
-This blog post I’m going to look into Nuclei. Nuclei is one of the popular tools used by Penetration Testers. Pentesting in-short is important because it helps identify security vulnerabilities before attackers can exploit them. It simulates real-world cyberattacks that help to asses and get an understanding the effectiveness of defenses, validates your system hardening, reduces the risk of data breaches, and ensures compliance with security standards. All these activities like vulnerability scans and configuration reviews can be automated using this multifunctional called Nuclei.
+This blog post I’m going to look into Nuclei. Nuclei is one of the popular tools used by Penetration Testers. Pentesting in-short is important because it helps identify security vulnerabilities before attackers can exploit them. It simulates real-world cyberattacks that help to assess and get an understanding of the effectiveness of defenses, validates your system hardening, reduces the risk of data breaches, and ensures compliance with security standards. All these activities like vulnerability scans and configuration reviews can be automated using this multifunctional called Nuclei.
 
 {{< alert >}}
 Enjoy reading and you can always share your **ideas** with `AzureBuddy` on Social Media like LinkedIn!
@@ -19,23 +19,25 @@ Enjoy reading and you can always share your **ideas** with `AzureBuddy` on Socia
 
 ## What is Nuclei?
 
-Nuclei is an Open Source CLI-based tool to perform those vulnerability scans against targets like network resources. It leverages YAML based templates to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific Nuclei templates, used for configuration review and how they are executed. After getting a basic understanding of the foundational concepts using templates, we will go through some hands-on examples.
+Nuclei is an *Open Source CLI-based tool* to perform those *vulnerability scans* against targets like network resources. It *leverages YAML* based *templates* to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific *Nuclei templates*, used for *configuration review* and how they are executed. After getting a basic understanding of the **foundational concepts** using templates, we will go through some **hands-on examples**.
 
-Credits to [Project Discovery](https://github.com/projectdiscovery) for developing the powerfull `Nuclei` CLI.
+{{< alert >}}
+Credits to [Project Discovery](https://github.com/projectdiscovery) for developing such powerful `Nuclei` CLI Tool.
+{{< /alert >}}
 
-## Quickly get started with Nuclei
+## Quickly getting started
 
-### Get familiar with Nuclei for Network Scanning
+### Get familiar with the Network Vulnerability Scanning capabilities
 
-Let's first start using Nuclei as a simple network scanner against web hosts, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can contain multiple targets to scan.
+Let's first start using Nuclei as a simple *network vulnerability scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can even contain *multiple targets* to scan.
 
-Example below we are scanning the **Azure Buddy Online**, which is actually a *Hugo* based static website hosted on **Github**.
+Example below shows how to we can execute a scan  against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
 
 ```
 nuclei -u https://azurebuddy.online
 ```
 
-After some minutes the following output is returned.
+After some minutes the following output is returned:
 
 ```
 [INF] Current nuclei version: v3.3.8 (latest)
