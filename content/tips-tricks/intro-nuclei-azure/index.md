@@ -430,9 +430,13 @@ nuclei -silent -u https://azurebuddy.online -j | ingest2LAW
 
 After  +/- 5 minutes you will see records being created in the *nuclei_CL* table. 
 
-Let's now try some other KQL queries to play with the scan data.
+### Play with Scan Results using Kusto Query Language (KQL)
 
-We assume that you have used *azurebuddy.online* as scan target.
+Let's now try some other KQL queries to play with the scan results. To build and execute the `KQL` queries we are going to use the `Azure Portal`. Now open your newly created `LAW` and start with a simple query to get ten records using `take 10`.
+
+![Log Analytics Workspace](img/law-query-console.png "Log Analytics Workspace")
+
+In the following example queries we assume that you have used *azurebuddy.online* as scan target. Other cases, just update the *host ==* part.
 
 **Display only the HTTP type related records within the last 30 minutes from my current scan target.**
 ```
