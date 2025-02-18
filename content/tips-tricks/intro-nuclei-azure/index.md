@@ -1,0 +1,446 @@
+---
+title: "How to use Nuclei and Ingest scan results into your Log Analytics Workspace"
+date: 2024-04-14
+draft: false
+description: "Introduction how to use Nuclei with Microsoft Technologies and integrate this with Kusto Query Language."
+slug: "intro-nuclei-azure"
+tags: ["tips", "tricks", "Microsoft", "Security", "Azure", "Nuclei", "Pentesting", "DevSecOps", "LAW", "Data Collection Rules", "Data Collection Enpoints", "Kusto", "KQL", "Python", "Tool", "Integration" ]
+authors:
+  - "avwsolutions"
+---
+
+# Introduction
+
+This blog post I’m going to look into Nuclei. Nuclei is one of the popular tools used by Penetration Testers. Pentesting in-short is important because it helps identify security vulnerabilities before attackers can exploit them. It simulates real-world cyberattacks that help to asses and get an understanding the effectiveness of defenses, validates your system hardening, reduces the risk of data breaches, and ensures compliance with security standards. All these activities like vulnerability scans and configuration reviews can be automated using this multifunctional called Nuclei.
+
+{{< alert >}}
+Enjoy reading and you can always share your **ideas** with `AzureBuddy` on Social Media like LinkedIn!
+{{< /alert >}}
+
+# What is Nuclei?
+
+Nuclei is an Open Source CLI-based tool to perform those vulnerability scans against targets like network resources. It leverages YAML based templates to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific Nuclei templates, used for configuration review and how they are executed. After getting a basic understanding of the foundational concepts using templates, we will go through some hands-on examples.
+
+Credits to [Project Discovery](https://github.com/projectdiscovery) for developing the powerfull `Nuclei` CLI.
+
+# Quickly get started with Nuclei
+
+Let's first start using Nuclei as a simple network scanner against web hosts, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can contain multiple targets to scan.
+
+Example below we are scanning the **Azure Buddy Online**, which is actually a *Hugo* based static website hosted on **Github**.
+
+```
+nuclei -u https://azurebuddy.online
+```
+
+After some minutes the following output is returned.
+
+```
+[INF] Current nuclei version: v3.3.8 (latest)
+[INF] Current nuclei-templates version: v10.1.2 (latest)
+[WRN] Scan results upload to cloud is disabled.
+[INF] New templates added in latest release: 52
+[INF] Templates loaded for current scan: 7656
+[WRN] Loading 380 unsigned templates for scan. Use with caution.
+[INF] Executing 7276 signed templates from projectdiscovery/nuclei-templates
+[INF] Targets loaded for current scan: 1
+[INF] Templates clustered: 1698 (Reduced 1598 Requests)
+[INF] Using Interactsh Server: oast.me
+[missing-sri] [http] [info] https://azurebuddy.online ["https://github.github.com/pages-staticassets/primer-tiny.css"]
+[waf-detect:varnish] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:x-frame-options] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:referrer-policy] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:strict-transport-security] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:content-security-policy] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:clear-site-data] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:permissions-policy] [http] [info] https://azurebuddy.online
+[http-missing-security-headers:x-content-type-options] [http] [info] https://azurebuddy.online
+[tls-version] [ssl] [info] azurebuddy.online:443 ["tls12"]
+[tls-version] [ssl] [info] azurebuddy.online:443 ["tls13"]
+[ssl-issuer] [ssl] [info] azurebuddy.online:443 ["Let's Encrypt"]
+[ssl-dns-names] [ssl] [info] azurebuddy.online:443 ["www.azurebuddy.online","azurebuddy.online"]
+[rdap-whois:registrationDate] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["2024-02-01T20:32:07.0Z"]
+[rdap-whois:lastChangeDate] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["2025-02-02T00:15:31.0Z"]
+[rdap-whois:expirationDate] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["2026-02-01T23:59:59.0Z"]
+[rdap-whois:registrantName] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online [""]
+[rdap-whois:registrantCountry] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online [""]
+[rdap-whois:nameServers] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["ns.zxcs.nl","ns.zxcs.be","ns.zxcs.eu"]
+[rdap-whois:secureDNS] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["false"]
+[rdap-whois:status] [http] [info] https://rdap.centralnic.com/online/domain/azurebuddy.online ["client transfer prohibited","auto renew period"]
+```
+
+You may recognize several templates are executed. Let's look further into **Nuclei Templates**.
+
+# Nuclei Templates
+
+Nuclei templates are the way to extend Nuclei with new functionality. Many Nuclei templates exist, build by the community and vary in functionality. We are going to have a look into an Azure Nuclei template, which is used to validate the **Azure Cloud Environment** connection. Later during this blog we are going to develop our own Azure Nuclei template which provides a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
+
+So let's first starting looking into the actual **azure-env** Nuclei template below:
+
+```
+id: azure-env
+info:
+  name: Azure Environment Validation
+  author: princechaddha
+  severity: info
+  description: |
+    Checks if Azure CLI is set up and all necessary tools are installed on the environment.
+  reference:
+    - https://portal.azure.com/
+  metadata:
+    max-request: 2
+  tags: cloud,devops,microsoft,azure,azure-cloud-config
+
+self-contained: true
+code:
+  - engine:
+      - sh
+      - bash
+    source: |
+      az account show
+
+    matchers:
+      - type: word
+        words:
+          - '"homeTenantId":'
+
+    extractors:
+      - type: json
+        name: environmentname
+        json:
+          - '.environmentName'
+        internal: true
+
+      - type: dsl
+        dsl:
+          - '"Azure CLI is properly configured for environment \"" + environmentname + "\"."'
+# digest: 490a0046304402207bf332a0f7de6876768c2772dcac7c909873dd60a265c517ee8927b9c62f652902200f13766da38ea080f0bc1efadf056b760b3fe1b654e6244ac8a811f508471bc0:922c64590222798bb761d5b6d8e72950
+```
+The **YAML** file contains *id*, *info* Array, *flow* Array and atual *code* Array to execute and report results. Important *Variable* here is *self-contained*, which actually means that it's a stand-alone template that does not require any input parameter, such as a target or URL. Instead it requires you to have a valid logged-in **Azure CLI** available. Something to keep in mind, that actually **Azure CLI** is a dependency here.
+
+You may also noticed the last line where a *digest* is set. This *digest* is actually the signature of the *Nuclei template*. New template always have to be signed, before they can be executed. Actually this *core* template is already signed, so we can easily execute this to verify our connection.
+
+Let's get ready to execute this piece of code to validate our **Azure CLI** connection is set and ready to execute our **Configuration scans**. 
+
+```
+nuclei -id azure-env -code
+```
+
+The following will be show when the **Azure CLI** is already logged in using `az login`.
+
+```
+                     __     _
+   ____  __  _______/ /__  (_)
+  / __ \/ / / / ___/ / _ \/ /
+ / / / / /_/ / /__/ /  __/ /
+/_/ /_/\__,_/\___/_/\___/_/   v3.3.8
+
+		projectdiscovery.io
+
+[INF] Current nuclei version: v3.3.8 (latest)
+[INF] Current nuclei-templates version: v10.1.2 (latest)
+[WRN] Scan results upload to cloud is disabled.
+[INF] New templates added in latest release: 52
+[INF] Templates loaded for current scan: 1
+[INF] Executing 1 signed templates from projectdiscovery/nuclei-templates
+[azure-env] [code] [info]  ["Azure CLI is properly configured for environment "AzureCloud"."]
+```
+
+Now that you know more about working with **Nuclei Templates**, we can start exploring all *Community Templates* that already are available for you!.
+
+# Azure Cloud Config Review
+
+Nuclei ships with a lots of templates. **Nuclei Templates** differ from Cloud, DAST and Code like CVEs and Operating System Audits. A lot to mention, just take a look into [Nuclei Templates repository](https://github.com/projectdiscovery/nuclei-templates/tree/main) on GitHub.
+
+Our focus is **Azure Cloud**, so we will look into the *Azure Cloud Config Review* capabilities. A rich set of *Nuclei Templates* is already available for us.
+
+You can start a full *Config Review* by using a profile called *azure-cloud-config*. Take notice this required you to have enough system resources to process and can be a little bit too much, so don't run this on Production environments.
+
+Additional you may want to include code execution and self-contained scripts.
+
+```
+ azure-cloud-config [-code] [-esc]
+```
+
+Next chapter we will dive into a subset of *Azure Config Review* templates. These can be easily scanned and give you more details about the capabilities it provides to you.
+
+# Azure Cloud Community Templates for AKS Config Review
+
+Let's look into a specific **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we easily provide the tag **aks**. Don't forget to include the *code* and *esc* parameters. 
+
+For this demo, I've deployed a badly configured **AKS** cluster.
+
+```
+nuclei -tags aks -code -esc
+```
+
+The scan completes after approx. a minute and returns the following output with 5 findings.
+
+```
+[INF] Current nuclei version: v3.3.8 (latest)
+[INF] Current nuclei-templates version: v10.1.2 (latest)
+[WRN] Scan results upload to cloud is disabled.
+[INF] New templates added in latest release: 52
+[INF] Templates loaded for current scan: 8
+[INF] Executing 8 signed templates from projectdiscovery/nuclei-templates
+[azure-aks-api-unrestricted] [code] [high]  ["sandbox in azure-buddy-playground-sandbox does not have authorized IP ranges configured for AKS API server access"]
+[azure-aks-cni-not-configured] [code] [medium]  ["sandbox in azure-buddy-playground-sandbox is using Kubenet instead of Azure CNI"]
+[azure-aks-not-user-assigned] [code] [high]  ["sandbox in resource group 1azure-buddy-playground-sandbox does not use user-assigned managed identities"]
+[azure-aks-entra-id-unintegrated] [code] [high]  ["sandbox in azure-buddy-playground-sandbox does not have Microsoft Entra ID integration configured"]
+[azure-aks-network-contrib-unassigned] [code] [medium]  ["sandbox in resource group azure-buddy-playground-sandbox does not have Network Contributor role assigned"]
+```
+
+You even can scan **cluster objects** by have a configured **kubectl** available. Great isn't it?
+
+Let's start with developing our own **Nuclei Template**.
+
+# Developing our own Nuclei Template for Azure Monitor
+
+Some cases a template isn't yet available.These situations you can easily develop and create your own. Below the **Nuclei Template** wich was already mentioned in the previous chapter about *Nuclei Templates*. The goal of our template is to provide a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
+
+You may recognize sections like *info*, *flow* and *code*? Writing templates isn't hard if you are familiar with Python and have foundational coding skills.
+
+As Id we have set **azure-monitor-law-public-network-acces-enabled**.  
+
+Below the actual code, which you can save as `azure-monitor-law-public-network-acces-enabled.yaml`.
+
+```
+id: azure-monitor-law-public-network-acces-enabled
+info:
+  name: Azure Log Analytics Workspace Public Network Acces Enabled
+  author: avwsolutions
+  severity: medium
+  description: |
+    Ensure that public network access is disabled for Log Analytics Workspaces (LAWs) in order to protect against persistent and advanced attacks against unauthorized data access.
+  impact: |
+    Not disabling public access for log anaytics workspaces can leave them susceptible to advanced persistent threats and compromise the network integrity and security of your Log Analytics APIs.
+  remediation: |
+    Disable public network access for Log Analytics Workspaces (LAWs) and only make it accessible for Azure Private Link configured resources.
+  reference:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs
+  tags: cloud,devops,azure,microsoft,monitor,log-analytics,azure-cloud-config
+
+flow: |
+  code(1);
+  for (let LawData of iterate(template.lawList)) {
+    set("ids", LawData);
+    code(2);
+  }
+
+self-contained: true
+code:
+  - engine:
+      - sh
+      - bash
+    source: |
+      az monitor log-analytics workspace list --query '[*].id'
+
+    extractors:
+      - type: json
+        name: lawList
+        internal: true
+        json:
+          - '.[]'
+
+  - engine:
+      - sh
+      - bash
+    source: |
+      az monitor log-analytics workspace show --ids "$ids" --query '{"publicNetworkAccessForIngestion": publicNetworkAccessForIngestion, "publicNetworkAccessForQuery": publicNetworkAccessForQuery}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '"publicNetworkAccessForIngestion": "Enabled"'
+          - '"publicNetworkAccessForQuery": "Enabled"'
+
+    extractors:
+      - type: dsl
+        dsl:
+          - 'ids + " does have Public Network Access enabled"'
+
+```
+
+Also keep in mind we didn'te yet signed the template. Below the full nuclei command that does the initial signing. You may want to increase *Debug* logging.
+
+```
+nuclei -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code --debug -sign
+```
+
+The following output is returned. You may recognize a new comment line called *Digest* has been added, which contains the signature.
+
+```
+[INF] All templates signatures were elaborated success=1 failed=0
+```
+
+Now we are ready to execute this newly developed template. We will now directly point to the actual template file using the '-t' flag. You may want to include *Debug* logging.
+
+```
+nuclei -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code [-debug]
+```
+
+The following ourput is shown within a minute. 
+
+```
+                     __     _
+   ____  __  _______/ /__  (_)
+  / __ \/ / / / ___/ / _ \/ /
+ / / / / /_/ / /__/ /  __/ /
+/_/ /_/\__,_/\___/_/\___/_/   v3.3.8
+
+		projectdiscovery.io
+
+[INF] Current nuclei version: v3.3.8 (latest)
+[INF] Current nuclei-templates version: v10.1.2 (latest)
+[WRN] Scan results upload to cloud is disabled.
+[INF] New templates added in latest release: 52
+[INF] Templates loaded for current scan: 1
+[INF] Executing 1 signed templates from avwsolutions
+[azure-monitor-law-public-network-acces-enabled] [code] [medium]  ["/subscriptions/80ea444e8-afce-4851-928a-9e2219724c69/resourceGroups/azure-buddyplayground-sandbox/providers/Microsoft.OperationalInsights/workspaces/sandbox does have Public Network Access enabled"]
+```
+
+Hopefully this shows how easily you can extend functionality for `nuclei` and make your own *custom scans*. Let's dive into the last chapter, which makes our *Ninja training for Azure pentesting* complete. Here we will use a small tool I've developed to send your scan results directly into a *Kusto Table*.
+
+# Storing Nuclei results into a Kusto table
+
+You have reached the last part of the blog. This chapter we are going to store our `Nuclei` scan results into a *Kusto Table*, so you can combine it with other important datasets from Microsoft Defender (XDR) or Microsoft Sentinel (SIEM/SOAR). Storing your scan results can help you as *Security Engineer* or *Security Analysts* to further analyze, report and visualize by using *Kusto Query Language* over time. Another use case would be period endpoints scans and storing *historical data* for audit trail. These are just two simple examples. 
+
+Let's start to setup `Ingest2LAW`. It's a simple tool, created with Python using official **PyPI** Microsoft packages to ingest Azure Monitor data.
+
+During the following subchapters I'm going to explain how to setup the required infrastructure, followed by some real examples shoing scan results entering your newly created tables. Let's get started.
+
+## Azure Infrastructure Setup
+
+To deploy the required *Azure Infrastructure* I've created some supporting *Bicep* code, but first look into the *architecture*.
+
+The following Azure resources are going to be deployment:
+- Log Analytics Workspace (LAW), including a custom *Kusto table* for storing the actual *JSON* formatted reports.
+- Azure Monitor Data Collection Rule (DCR) that handles the data flow, additional parsing/transformation and underlying schema storing the data into the *Kusto table*.
+- Azure Monitor Data Collection Endpoint (DCE) that actually is the receiving endpoint, which is used by the tool called `Ingest2LAW` and forwards towards the newly setup DCR.
+- Authentication of publishing data from the DCR into the LAW we are going to use a Service Principal (SPN), which you have to create first in Entra ID. An addtional PowerShell script for this is included.
+
+Below a picture of the architecture:
+
+## Azure Infrastructure Deployment 
+
+Now that you know the solution approach we can start cloning the actual repository. I do expect you are familiar with the basics of using `Git` CLI.
+
+```
+git clone https://github.com/avwsolutions/nuclei-kusto-db-integration.git
+```
+
+### Entra ID Service Principal creation
+
+Let's first create Service Principal. Additional ensure that you are logged in the **Azure CLI**.  For convinience I've added a PowerShell script to create the object. Look into the script and execute the following command.
+
+```
+pwsh ./deployment/entra/createSPN.ps1
+```
+
+The following are the most important parts that are returned.
+
+```
+AccountEnabled                     : True
+...
+AppDisplayName                     : nuclei-security-scanner
+...
+Id                                 : 84770ec3-9f80-47d3-b5e8-a92b319910ff
+PasswordCredentials                : < save this block as Secret note for later >
+```
+
+Ensure that you write down the **Object ID** and **Password Credentials** because you need it later configuring the actual deployment.
+
+### Azure Resource deployment using Bicep
+
+Now take a look at the *deployment/azure* folder and parameterize the `params.json` for your needs. Most important here is the **Object ID*8 from your newly created SPN.
+
+```
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "nuclei"
+    },
+    "environment": {
+      "value": "sandbox"
+    },
+    "location": {
+      "value": "eastus"
+    },
+    "servicepPrincipalObjectId": {
+      "value": "<put your Object ID here>"
+    }
+  }
+}
+```
+
+Now let's start the actual deployment. In my scenario I already have created a *Azure Resource Group* called *nuclei-sandbox*.
+
+```
+az deployment group create --resource-group 'nuclei-sandbox' --template-file deployment/azure/solution.bicep --parameters '@deployment/azure/params.json'
+```
+
+Are some minutes everything the actual *Azure Resource* creation is finished. It will return a *JSON* output.
+
+### Installing the Ingest2LAW App on Linux
+
+Now we are at the moment we can install the *App* locally ('/usr/local/bin`), ensure dependencies are set and include it in our *runtime environment* (privilege escalation required!).
+
+Start by cloning the actual repository and run the `install.sh` script. Ensure you have both the Python 3.x and Pip packages installed.
+
+```
+git clone https://github.com/avwsolutions/nuclei-kusto-db-integration.git
+
+cd app
+./install.sh
+```
+
+### Start ingesting scan results in your Log Analytics Workspace
+
+Almost everything is ready to ingest your scan results. Only thing that you need are some *System Variables* to be set. These are required by the used *Microsoft Python packages*.  Personally I always create a *.env* file. I've included an example called `example-env`. 
+
+Complete the following example and save the file as `.env`. Take notice it does include a *personal secret*, so set appropiate permissions and handle with care. 
+
+```
+export LOGS_DCR_RULE_ID=dcr-xxxxxxxxxxxxxxxxx
+export LOGS_DCR_STREAM_NAME=Custom-nuclei_CL
+export DATA_COLLECTION_ENDPOINT=https://nuclei-ingest-endpoint-eeee.eastus-1.ingest.monitor.azure.com
+export AZURE_TENANT_ID=
+export AZURE_CLIENT_ID=
+export AZURE_CLIENT_SECRET=
+```
+
+You can now load the *System Variables* and store your first scan results. We advice to always add the '*-silent*' and '*-j*' (JSON Output) options, everything else you already familiar with.
+
+```
+. .env
+nuclei -silent -u https://azurebuddy.online -j | ingest2LAW
+```
+
+
+
+
+![Cerficate validation...](img/verify_certificate.png "Certificate is  valid..")
+
+
+Now quickly start playing and enjoy **Pac-Man**. Which level did you reach? You can share your highest score with us!
+
+# Conclusion
+
+If you are looking for an easy way of deploying containerized resources you may want to have a look at `ACI`. It provides a straightforward process and takes away the complexity of managing a full-blown Kubernetes environment. Afaik there are some limitations, but these are mainly related when you are requiring more advanced features such as networking or platform integration you may be better off with `AKS`. Last thing to remember is that `ACI` does support `Confidential Containers` using `AMD EPYC` processors that provide `Confidential Computing` capabilities. Additional for this *use case* that is does require an *Attestation*, included as *sidecar*.
+
+Unfortunately during our experiment we still found some limitations, such as pulling container images directly from *quay.io*. This resulted in container *Waiting* state.
+
+Hopefully you liked this Tip & tricks how to article, which explains the basics of getting up & running with Azure Container Instances and Azure Cosmos DB. Now it’s time to host and play your own retro arcade game Pac-Man! 
+
+# Interested in the code?
+
+All code samples, including local scripts is available at [Azure Buddy Github](https://github.com/azure-buddy/intro-pacman-aci-cosmosdb).
+
+Contributions or follow-up articles are more than appreciated!
