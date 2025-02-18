@@ -4,7 +4,7 @@ date: 2024-04-14
 draft: false
 description: "Introduction how to use Nuclei with Microsoft Technologies and integrate this with Kusto Query Language."
 slug: "intro-nuclei-azure"
-tags: ["tips", "tricks", "Microsoft", "Security", "Azure", "Nuclei", "Pentesting", "DevSecOps", "LAW", "Data Collection Rules", "Data Collection Enpoints", "Kusto", "KQL", "Python", "Tool", "Integration" ]
+tags: ["tips", "tricks", "Microsoft", "Security", "Azure", "Nuclei", "Pentesting", "DevSecOps", "LAW", "Data Collection Rules", "Data Collection Enpoints", "Kusto", "KQL", "Python", "Tool", "Open Source", "Integration" ]
 authors:
   - "avwsolutions"
 ---
