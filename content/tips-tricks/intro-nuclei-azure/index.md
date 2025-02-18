@@ -31,7 +31,7 @@ Credits to [Project Discovery](https://github.com/projectdiscovery) for developi
 
 Let's first start using Nuclei as a simple *network vulnerability scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can even contain *multiple targets* to scan.
 
-Example below shows how to we can execute a scan  against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
+Example below shows how we can execute a scan against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
 
 ```
 nuclei -u https://azurebuddy.online
@@ -81,7 +81,7 @@ You may recognize several templates are executed. Let's now look further into th
 
 ### Understanding Nuclei Templates
 
-Nuclei templates are the way to extend Nuclei with new functionality. Many Nuclei templates exist, build by the community and vary in functionality. We are going to have a look into an Azure Nuclei template, which is used to validate the **Azure Cloud Environment** connection. Later during this blog we are going to develop our own Azure Nuclei template which provides a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
+Nuclei templates are the way to extend Nuclei with new functionality. Many great *Nuclei templates* exist, built by the community and vary in functionality. We are going to have a look into a specific Azure Nuclei template, which is used to validate the *Azure Cloud Environment connection*. Later during this blog we are going to develop our own Azure *Nuclei template* which provides a configuration review for validating if Public Network Access is enabled for Azure Monitoring `LAWs`.  If this condition is `true` a *warning* message is logged.
 
 So let's first starting looking into the actual **azure-env** Nuclei template below:
 
