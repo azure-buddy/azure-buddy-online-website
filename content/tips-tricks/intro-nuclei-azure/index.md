@@ -25,6 +25,8 @@ Credits to [Project Discovery](https://github.com/projectdiscovery) for developi
 
 ## Quickly get started with Nuclei
 
+## Get familiar with Nuclei for Network Scanning
+
 Let's first start using Nuclei as a simple network scanner against web hosts, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can contain multiple targets to scan.
 
 Example below we are scanning the **Azure Buddy Online**, which is actually a *Hugo* based static website hosted on **Github**.
@@ -75,7 +77,7 @@ After some minutes the following output is returned.
 
 You may recognize several templates are executed. Let's look further into **Nuclei Templates**.
 
-## Nuclei Templates
+## Understanding Nuclei Templates
 
 Nuclei templates are the way to extend Nuclei with new functionality. Many Nuclei templates exist, build by the community and vary in functionality. We are going to have a look into an Azure Nuclei template, which is used to validate the **Azure Cloud Environment** connection. Later during this blog we are going to develop our own Azure Nuclei template which provides a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
 
@@ -152,7 +154,9 @@ The following will be show when the **Azure CLI** is already logged in using `az
 
 Now that you know more about working with **Nuclei Templates**, we can start exploring all *Community Templates* that already are available for you!.
 
-## Azure Cloud Config Review
+## Learn about Community-Powered Azure Nuclei Templates
+
+### Azure Cloud Config Review
 
 Nuclei ships with a lots of templates. **Nuclei Templates** differ from Cloud, DAST and Code like CVEs and Operating System Audits. A lot to mention, just take a look into [Nuclei Templates repository](https://github.com/projectdiscovery/nuclei-templates/tree/main) on GitHub.
 
@@ -168,7 +172,7 @@ Additional you may want to include code execution and self-contained scripts.
 
 Next chapter we will dive into a subset of *Azure Config Review* templates. These can be easily scanned and give you more details about the capabilities it provides to you.
 
-## Azure Cloud Community Templates for AKS Config Review
+### Azure Cloud Community Templates for AKS Config Review
 
 Let's look into a specific **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we easily provide the tag **aks**. Don't forget to include the *code* and *esc* parameters. 
 
@@ -198,7 +202,7 @@ You even can scan **cluster objects** by have a configured **kubectl** available
 
 Let's start with developing our own **Nuclei Template**.
 
-## Developing our own Nuclei Template for Azure Monitor
+### Developing our own Nuclei Template for Azure Monitor
 
 Some cases a template isn't yet available.These situations you can easily develop and create your own. Below the **Nuclei Template** wich was already mentioned in the previous chapter about *Nuclei Templates*. The goal of our template is to provide a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
 
