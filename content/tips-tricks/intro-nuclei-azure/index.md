@@ -164,9 +164,13 @@ Nuclei ships with a lot of templates. *Nuclei Templates* differ from Cloud, DAST
 
 Our focus during this blog is **Azure Cloud**, so we will dive further into the *Azure Cloud Config Review* capabilities. A rich set of *Nuclei Templates* that is already available for us.
 
-You can start a full *Config Review* by using a profile called *azure-cloud-config*. Take notice this required you to have enough system resources to process and can be a little bit too much, so don't run this on Production environments.
+You can start a full *Config Review* by executing a *predefined scanning profile* called *azure-cloud-config*. 
 
-Additional you may want to include code execution and self-contained scripts.
+{{< alert >}}
+Extra attention is needed, since executing this profile requires you to have enough system resources to process and can be a little bit too much, so don't run this on Production environments.
+{{< /alert >}}
+
+To maximize the number of *Nuclei Templates* that are executed, you may want to include *code execution* and *self-contained script* parameters.
 
 ```
  azure-cloud-config [-code] [-esc]
