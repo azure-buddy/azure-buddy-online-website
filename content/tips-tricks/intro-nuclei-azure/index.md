@@ -208,15 +208,15 @@ You can even include scanning **cluster objects** by have a configured `kubectl`
 
 Now it's time to start developing your own *Nuclei Template*.
 
-### Developing our own Nuclei Template for Azure Monitor
+### Developing your own Nuclei Template for Azure Monitor
 
-Some cases a template isn't yet available.These situations you can easily develop and create your own. Below the **Nuclei Template** wich was already mentioned in the previous chapter about *Nuclei Templates*. The goal of our template is to provide a configuration review for validating if Public Network Acces is enabled for Azure Monitoring LAWs.  If this condition is `true` a warning message is logged.
+Some cases a template isn't yet available.These situations you can easily develop and create your own. Below the **Nuclei Template** which was recently mentioned in the previous chapter about *Nuclei Templates*. The goal of this specific template is to provide a configuration review for validating if Public Network Acces is enabled for one or more discovered *Azure Monitoring LAW*. If this condition is `true` a warning message is logged.
 
-You may recognize sections like *info*, *flow* and *code*? Writing templates isn't hard if you are familiar with Python and have foundational coding skills.
+Did you recognize sections like *info*, *flow* and *code*? Writing templates isn't hard if you are familiar with PowerShell, Python or have *basic* coding skills.
 
 As Id we have set **azure-monitor-law-public-network-acces-enabled**.  
 
-Below the actual code, which you can save as `azure-monitor-law-public-network-acces-enabled.yaml`.
+Below the actual code. The *Nuclei Template* can be saved under filename: `azure-monitor-law-public-network-acces-enabled.yaml`.
 
 ```
 id: azure-monitor-law-public-network-acces-enabled
