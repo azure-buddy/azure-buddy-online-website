@@ -367,7 +367,7 @@ Ensure that you write down the **Object ID** and **Password Credentials** becaus
 
 #### Deploy required Azure resources using Bicep
 
-Now take a look at the *deployment/azure* folder and parameterize the `params.json` for your needs. Most important here is the **Object ID*8 from your newly created SPN.
+Now take a look at the *deployment/azure* folder and parameterize the `params.json` for your needs. Most important here is the **Object ID* from your newly created `SPN`.
 
 ```
 {
@@ -390,13 +390,13 @@ Now take a look at the *deployment/azure* folder and parameterize the `params.js
 }
 ```
 
-Now let's start the actual deployment. In my scenario I already have created a *Azure Resource Group* called *nuclei-sandbox*.
+Now you can start the actual deployment using `Bicep`. I already manually created the *Azure Resource Group* called *nuclei-sandbox*.
 
 ```
 az deployment group create --resource-group 'nuclei-sandbox' --template-file deployment/azure/solution.bicep --parameters '@deployment/azure/params.json'
 ```
 
-Are some minutes everything the actual *Azure Resource* creation is finished. It will return a *JSON* output.
+After some minutes everything is created and the actual *Azure Resource* deployment is finished. It will return a *JSON* output.
 
 #### Installing the Ingest2LAW App on a Linux VM
 
