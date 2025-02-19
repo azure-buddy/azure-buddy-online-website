@@ -124,9 +124,9 @@ code:
           - '"Azure CLI is properly configured for environment \"" + environmentname + "\"."'
 # digest: 490a0046304402207bf332a0f7de6876768c2772dcac7c909873dd60a265c517ee8927b9c62f652902200f13766da38ea080f0bc1efadf056b760b3fe1b654e6244ac8a811f508471bc0:922c64590222798bb761d5b6d8e72950
 ```
-The **YAML** file contains *id*, *info Array*, *flow Array* and the actual *code Array* to execute and report results. Important *Variable* that is set here is *self-contained*, this actually means that it's a *stand-alone template* that does not require any user input, such as a target or URL. Instead it requires you to have a *valid logged-in Azure CLI* available. Something to keep in mind during this blog, that actually the *Azure CLI* is a dependency here.
+The **YAML** file contains *id*, *info Array*, *flow Array* and the actual *code Array* to execute and report results. An important *Variable* that is set here is *self-contained*, this actually means that it's a *stand-alone template* that does not require any user input, such as a target or URL. Instead it requires you to have a *valid logged-in Azure CLI* available. Something to keep in mind during this blog, that actually the *Azure CLI* is a dependency here.
 
-You may also noticed that the last line a *digest* has been set. This *digest* is actually the signature of the *Nuclei template*. New templates always have to be signed, before you can execute them. Actually *azure-env* is a *core* template which already has been signed, so we can safely execute this to verify our connection.
+You may also notice that the last line a *digest* has been set. This *digest* is actually the signature of the *Nuclei template*. New templates always have to be signed, before you can execute them. Actually *azure-env* is a *core* template which has already been signed, so we can safely execute this to verify our connection.
 
 Let's now get ready to execute this piece of code to validate that our *Azure CLI* connection is properly set and you are ready to successfully execute the **Configuration scans** against **Microsoft Azure**.
 
