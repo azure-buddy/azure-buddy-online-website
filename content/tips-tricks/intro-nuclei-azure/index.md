@@ -180,7 +180,7 @@ Next chapter we will dive into a subset of *Azure Config Review* templates. Thes
 
 ### Azure Cloud Community Templates for AKS Config Review
 
-We will now look at a specific collection of **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we can easily provide the tag **aks**. Again we don't want to forget to include the *code* and *esc* parameters. 
+We will now look at a specific collection of **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we can easily provide the tag '*aks*'. Again we don't want to forget to include the *code* and *esc* parameters. 
 
 For the sake of this demo, I've deployed a badly configured `AKS` cluster.
 
@@ -206,7 +206,7 @@ The scan completes after approx. a minute and returns the following output with 
 
 You can even include scanning **cluster objects** by have a configured `kubectl` available. Great isn't it?
 
-Now it's time to start developing your own **Nuclei Template**.
+Now it's time to start developing your own *Nuclei Template*.
 
 ### Developing our own Nuclei Template for Azure Monitor
 
