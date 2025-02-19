@@ -313,7 +313,7 @@ After a successfull execution the following output is shown around a minute.
 [azure-monitor-law-public-network-acces-enabled] [code] [medium]  ["/subscriptions/80ea444e8-afce-4851-928a-9e2219724c69/resourceGroups/azure-buddyplayground-sandbox/providers/Microsoft.OperationalInsights/workspaces/sandbox does have Public Network Access enabled"]
 ```
 
-With this *hands-on example* I try to show you how easily you can extend functionality for `nuclei` and make your own *custom scans*. Let's dive into the last chapter, which makes our *Ninja training for Azure pentesting* complete. Here we will use a small tool I've developed to send your scan results directly into a *Kusto Table*.
+With this *hands-on example* I try to show you how easily you can extend functionality for `nuclei` and make your own *custom scans*. Let's dive into the last chapter, which makes your *Ninja training for Azure pentesting* complete. Here we will use a handy tool I've developed to forward and store your scan results directly into a *Kusto Table*.
 
 ## Storing Nuclei results into a Kusto table
 
