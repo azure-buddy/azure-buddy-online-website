@@ -19,7 +19,7 @@ Enjoy reading and you can always share your **ideas** with `AzureBuddy` on Socia
 
 ## What is Nuclei?
 
-Nuclei is an *Open Source CLI-based tool* to perform those *vulnerability scans* against targets like network resources. It *leverages YAML* based *templates* to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific *Nuclei templates*, used for *configuration review* and how they are executed. After getting a basic understanding of the **foundational concepts** using templates, we will go through some **hands-on examples**.
+Nuclei is an *Open Source CLI-based tool* to perform those *vulnerability scans* against targets like network resources. It *leverages YAML* based *templates* to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific *Nuclei templates*, used for *configuration review* and how they are executed. After getting a basic understanding of the **foundational concepts** using templates, I will guide you through some **hands-on examples**.
 
 {{< alert >}}
 Credits to [Project Discovery](https://github.com/projectdiscovery) for developing such powerful `Nuclei` CLI Tool.
@@ -31,7 +31,7 @@ Credits to [Project Discovery](https://github.com/projectdiscovery) for developi
 
 Let's first start using Nuclei as a simple *network vulnerability scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can even contain *multiple targets* to scan.
 
-Example below shows how we can execute a scan against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
+Example below shows how you can execute a scan against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
 
 ```
 nuclei -u https://azurebuddy.online
@@ -81,7 +81,7 @@ You may recognize several templates are executed. Let's now look further into th
 
 ### Understanding Nuclei Templates
 
-Nuclei templates are the way to extend Nuclei with new functionality. Many great *Nuclei templates* exist, built by the community and vary in functionality. We are going to have a look into a specific Azure Nuclei template, which is used to validate the *Azure Cloud Environment connection*. Later during this blog we are going to develop our own Azure *Nuclei template* which provides a configuration review for validating if *Public Network Access* is enabled for *Azure Monitoring LAWs*.  If this condition is `true` a *warning* message will be logged.
+Nuclei templates are the way to extend Nuclei with new functionality. Many great *Nuclei templates* exist, built by the community and vary in functionality. We are going to have a look into a specific Azure Nuclei template, which is used to validate the *Azure Cloud Environment connection*. Later during this blog you are going to develop your own Azure *Nuclei template* which provides a configuration review for validating if *Public Network Access* is enabled for *Azure Monitoring LAWs*.  If this condition is `true` a *warning* message will be logged.
 
 So let's first starting looking into the actual **azure-env** Nuclei template below:
 
@@ -128,7 +128,7 @@ The **YAML** file contains *id*, *info Array*, *flow Array* and the actual *code
 
 You may also notice that the last line a *digest* has been set. This *digest* is actually the signature of the *Nuclei template*. New templates always have to be signed, before you can execute them. Actually *azure-env* is a *core* template which has already been signed, so we can safely execute this to verify our connection.
 
-Let's now get ready to execute this piece of code to validate that our *Azure CLI* connection is properly set and you are ready to successfully execute the **Configuration scans** against **Microsoft Azure**.
+Let's now get ready to execute this piece of code to validate that your *Azure CLI* connection is properly set and you are ready to successfully execute the **Configuration scans** against **Microsoft Azure**.
 
 ```
 nuclei -id azure-env -code
