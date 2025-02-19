@@ -352,7 +352,7 @@ Let's first create the `SPN`. Additional ensure that you are logged in the **Azu
 pwsh ./deployment/entra/createSPN.ps1
 ```
 
-The following are the most important parts that are returned.
+The following is a snippet of the most important parts that are returned.
 
 ```
 AccountEnabled                     : True
