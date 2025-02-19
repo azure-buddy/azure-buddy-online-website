@@ -367,7 +367,7 @@ Ensure that you write down the **Object ID** and **Password Credentials** becaus
 
 #### Deploy required Azure resources using Bicep
 
-Now take a look at the *deployment/azure* folder and parameterize the `params.json` for your needs. Most important here is the **Object ID* from your newly created `SPN`.
+Now take a look at the *deployment/azure* folder and parameterize the `params.json` for your needs. Most important here is the *Object ID* from your newly created `SPN`.
 
 ```
 {
