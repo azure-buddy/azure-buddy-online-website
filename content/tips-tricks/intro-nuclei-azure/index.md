@@ -346,7 +346,7 @@ git clone https://github.com/avwsolutions/nuclei-kusto-db-integration.git
 
 #### Create your required Entra ID Service Principal Name.
 
-Let's first create the `SPN`. Additional ensure that you are logged in the **Azure CLI**.  For convinience I've added a *PowerShell* script to create the object. Take a look at the script and execute the following command.
+Let's first create the `SPN`. Additionally ensure that you are logged in the **Azure CLI**.  For convenience I've added a *PowerShell* script to create the object. Take a look at the script and execute the following command.
 
 ```
 pwsh ./deployment/entra/createSPN.ps1
@@ -390,7 +390,7 @@ Now take a look at the *deployment/azure* folder and parameterize the `params.js
 }
 ```
 
-Now you can start the actual deployment using `Bicep`. I already manually created the *Azure Resource Group* called *nuclei-sandbox*.
+Now you can start the actual deployment using `Bicep`. Ensure that you already have created the *Azure Resource Group* called *nuclei-sandbox*.
 
 ```
 az deployment group create --resource-group 'nuclei-sandbox' --template-file deployment/azure/solution.bicep --parameters '@deployment/azure/params.json'
@@ -400,7 +400,7 @@ After some minutes everything is created and the actual *Azure Resource* deploym
 
 #### Installing the Ingest2LAW App on a Linux VM
 
-You now entered the moment you can install the *App* locally ('/usr/local/bin`) on a Linux VM, ensure dependencies are set and include it in our *runtime environment* (privilege escalation required!).
+You now enter the moment you can install the *App* locally ('/usr/local/bin`) on a Linux VM. Ensure that the correct dependencies are set and include it in our *runtime environment* (privilege escalation required!).
 
 Also here you can start by cloning the actual repository and run the `install.sh` script. Ensure you have both the *Python 3.x* and *Pip* packages installed.
 
@@ -430,14 +430,14 @@ export AZURE_CLIENT_ID=
 export AZURE_CLIENT_SECRET=
 ```
 
-You can now load the *System Variables* and store your first scan results. We advice to always add the '*-silent*' and '*-j*' (JSON Output) options, everything else you already familiar with.
+You can now load the *System Variables* and store your first scan results. You are required set the '*-silent*' and '*-j*' (JSON Output) parameters, everything else you already familiar with.
 
 ```
 . .env
 nuclei -silent -u https://azurebuddy.online -j | ingest2LAW
 ```
 
-After  +/- 5 minutes you will see records being created in the *nuclei_CL* table. 
+After  +/- 5 minutes you will see records being created in the *nuclei_CL* table.
 
 ### Play with Scan Results using Kusto Query Language (KQL)
 
