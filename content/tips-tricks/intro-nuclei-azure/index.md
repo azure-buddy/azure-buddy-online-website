@@ -400,9 +400,9 @@ After some minutes everything is created and the actual *Azure Resource* deploym
 
 #### Installing the Ingest2LAW App on a Linux VM
 
-Now we are at the moment we can install the *App* locally ('/usr/local/bin`), ensure dependencies are set and include it in our *runtime environment* (privilege escalation required!).
+You now entered the moment you can install the *App* locally ('/usr/local/bin`) on a Linux VM, ensure dependencies are set and include it in our *runtime environment* (privilege escalation required!).
 
-Start by cloning the actual repository and run the `install.sh` script. Ensure you have both the Python 3.x and Pip packages installed.
+Also here you can start by cloning the actual repository and run the `install.sh` script. Ensure you have both the *Python 3.x* and *Pip* packages installed.
 
 ```
 git clone https://github.com/avwsolutions/nuclei-kusto-db-integration.git
@@ -413,9 +413,13 @@ cd app
 
 ### Start ingesting scan results in your Log Analytics Workspace
 
-Almost everything is ready to ingest your scan results. Only thing that you need are some *System Variables* to be set. These are required by the used *Microsoft Python packages*.  Personally I always create a *.env* file. I've included an example called `example-env`. 
+Almost everything is ready for ingesting your first scan results. Only thing that you need are some *System Variables* to be set. These are required by the used *Microsoft Python packages*. Personally I prefer creating a *.env* file. I've included an example called `example-env`. 
 
-Complete the following example and save the file as `.env`. Take notice it does include a *personal secret*, so set appropiate permissions and handle with care. 
+Complete the following example with your parameters and save the file as `.env`.
+
+{{< alert >}}
+Take notice it does include a *personal secret*, so set appropiate permissions and handle with care.
+{{< /alert >}}
 
 ```
 export LOGS_DCR_RULE_ID=dcr-xxxxxxxxxxxxxxxxx
