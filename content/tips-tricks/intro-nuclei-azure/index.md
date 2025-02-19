@@ -445,7 +445,7 @@ Let's now try some other `KQL` queries to play with the scan results. To build a
 
 ![Log Analytics Workspace](img/law-query-console.png "Log Analytics Workspace")
 
-During the following example queries I assume that you have used *azurebuddy.online* as scan target. Other cases, you just have to replace *azurebuddy.online* with your own scan target.
+During the following example queries I assume that you have used *azurebuddy.online* as a scan target. Other cases, you just have to replace *azurebuddy.online* with your own scan target.
 
 **Example 1**
 *Show only the HTTP related records recorded within the last 30 minutes for my current scan target..*
@@ -496,7 +496,7 @@ Let's try it out yourself!
 nuclei -silent -tags aks -code -esc -j | ingest2LAW
 ```
 
-After a successfull scan you can review the newly added records using `KQL` again. See again some examples below.
+After a successful scan you can review the newly added records using `KQL` again. See again some practical examples below.
 
 **Example 6**
 *Show only the AKS related records recorded within the last 30 minutes.*
