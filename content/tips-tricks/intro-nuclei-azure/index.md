@@ -176,11 +176,11 @@ To maximize the number of *Nuclei Templates* that are executed, you may want to 
  azure-cloud-config [-code] [-esc]
 ```
 
-Next chapter we will dive into a subset of *Azure Config Review* templates. These can be easily executed, help to catch configurations mistakes and give you more insights about what Nuclei provides for pentesting **Azure Cloud**.
+Next chapter we will dive into a subset of *Azure Config Review* templates. These can be easily executed, help to catch configuration mistakes and give you more insights about what Nuclei provides for pentesting **Azure Cloud**.
 
 ### Azure Cloud Community Templates for AKS Config Review
 
-We will now look in a specific collection of **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we easily provide the tag **aks**. Again we don't want to forget to include the *code* and *esc* parameters. 
+We will now look at a specific collection of **Nuclei Templates** for **Azure Kubernetes Services**. To execute all templates we can easily provide the tag **aks**. Again we don't want to forget to include the *code* and *esc* parameters. 
 
 For the sake of this demo, I've deployed a badly configured `AKS` cluster.
 
