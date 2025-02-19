@@ -430,7 +430,7 @@ export AZURE_CLIENT_ID=
 export AZURE_CLIENT_SECRET=
 ```
 
-You can now load the *System Variables* and store your first scan results. You are required set the '*-silent*' and '*-j*' (JSON Output) parameters, everything else you already familiar with.
+You can now load the *System Variables* and store your first scan results. You are required set the '*-silent*' and '*-j*' (JSON Output) parameters, everything else you are already familiar with.
 
 ```
 . .env
@@ -441,25 +441,28 @@ After  +/- 5 minutes you will see records being created in the *nuclei_CL* table
 
 ### Play with Scan Results using Kusto Query Language (KQL)
 
-Let's now try some other KQL queries to play with the scan results. To build and execute the `KQL` queries we are going to use the `Azure Portal`. Now open your newly created `LAW` and start with a simple query to get ten records using `take 10`.
+Let's now try some other `KQL` queries to play with the scan results. To build and execute the `KQL` queries we are going to use the `Azure Portal`. Now open your newly created `LAW` and start with a simple query to get ten records using `take 10`.
 
 ![Log Analytics Workspace](img/law-query-console.png "Log Analytics Workspace")
 
-In the following example queries we assume that you have used *azurebuddy.online* as scan target. Other cases, just update the *host ==* part.
+During the following example queries I assume that you have used *azurebuddy.online* as scan target. Other cases, you just have to replace *azurebuddy.online* with your own scan target.
 
-**Display only the HTTP type related records within the last 30 minutes from my current scan target.**
+**Example 1**
+*Display only the HTTP type related records within the last 30 minutes from my current scan target.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type == 'http' and TimeGenerated > ago(30m)
 ```
 
-**Display all other types related records except HTTP within the last 30 minutes from my current scan target.**
+**Example 2**
+*Display all other types related records except HTTP within the last 30 minutes from my current scan target.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type != 'http' and TimeGenerated > ago(30m)
 ```
 
-**Summarize the total numeber of checks of every type within the last 30 minutes ordered by Total number count.**
+**Example 3**
+*Summarize the total numeber of checks of every type within the last 30 minutes ordered by Total number count.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and TimeGenerated > ago(30m)
@@ -467,14 +470,16 @@ nuclei_CL
 | order by Total_checks desc
 ```
 
-**Display the records of SSL checks that report the use of older TLS Versions.**
+**Example 4**
+*Display the records of SSL checks that report the use of older TLS Versions.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type == 'ssl' and info contains "TLS Version" and
  extracted_results !contains 'tls13' and TimeGenerated > ago(30m)
 ```
 
-**Display the record if any WAF is detected.**
+**Example 5**
+*Display the record if any WAF is detected.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type == 'http' and
