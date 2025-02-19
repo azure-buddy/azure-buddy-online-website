@@ -154,15 +154,15 @@ The following will be show when the **Azure CLI** is successfully logged in usin
 [azure-env] [code] [info]  ["Azure CLI is properly configured for environment "AzureCloud"."]
 ```
 
-Now that you know more about working with **Nuclei Templates**, we can start exploring all *Community Templates* that already are available for you!.
+Now that you know more about working with *Nuclei Templates*, we can start exploring all *Community Templates* that already are available for you!.
 
 ## Work with Community-Powered Azure Nuclei Templates
 
 ### Azure Cloud Config Review
 
-Nuclei ships with a lots of templates. **Nuclei Templates** differ from Cloud, DAST and Code like CVEs and Operating System Audits. A lot to mention, just take a look into [Nuclei Templates repository](https://github.com/projectdiscovery/nuclei-templates/tree/main) on GitHub.
+Nuclei ships with a lot of templates. *Nuclei Templates* differ from Cloud, DAST, CVE Checks and Operating System Audits. A lot to mention, just take a quick look at the [Nuclei Templates repository](https://github.com/projectdiscovery/nuclei-templates/tree/main), which is hosted on GitHub.
 
-Our focus is **Azure Cloud**, so we will look into the *Azure Cloud Config Review* capabilities. A rich set of *Nuclei Templates* is already available for us.
+Our focus during this blog is **Azure Cloud**, so we will dive further into the *Azure Cloud Config Review* capabilities. A rich set of *Nuclei Templates* that is already available for us.
 
 You can start a full *Config Review* by using a profile called *azure-cloud-config*. Take notice this required you to have enough system resources to process and can be a little bit too much, so don't run this on Production environments.
 
