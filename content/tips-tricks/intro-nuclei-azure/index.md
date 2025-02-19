@@ -81,7 +81,7 @@ You may recognize several templates are executed. Let's now look further into th
 
 ### Understanding Nuclei Templates
 
-Nuclei templates are the way to extend Nuclei with new functionality. Many great *Nuclei templates* exist, built by the community and vary in functionality. We are going to have a look into a specific Azure Nuclei template, which is used to validate the *Azure Cloud Environment connection*. Later during this blog we are going to develop our own Azure *Nuclei template* which provides a configuration review for validating if Public Network Access is enabled for Azure Monitoring `LAWs`.  If this condition is `true` a *warning* message is logged.
+Nuclei templates are the way to extend Nuclei with new functionality. Many great *Nuclei templates* exist, built by the community and vary in functionality. We are going to have a look into a specific Azure Nuclei template, which is used to validate the *Azure Cloud Environment connection*. Later during this blog we are going to develop our own Azure *Nuclei template* which provides a configuration review for validating if *Public Network Access* is enabled for *Azure Monitoring LAWs*.  If this condition is `true` a *warning* message will be logged.
 
 So let's first starting looking into the actual **azure-env** Nuclei template below:
 
@@ -124,11 +124,11 @@ code:
           - '"Azure CLI is properly configured for environment \"" + environmentname + "\"."'
 # digest: 490a0046304402207bf332a0f7de6876768c2772dcac7c909873dd60a265c517ee8927b9c62f652902200f13766da38ea080f0bc1efadf056b760b3fe1b654e6244ac8a811f508471bc0:922c64590222798bb761d5b6d8e72950
 ```
-The **YAML** file contains *id*, *info* Array, *flow* Array and atual *code* Array to execute and report results. Important *Variable* here is *self-contained*, which actually means that it's a stand-alone template that does not require any input parameter, such as a target or URL. Instead it requires you to have a valid logged-in **Azure CLI** available. Something to keep in mind, that actually **Azure CLI** is a dependency here.
+The **YAML** file contains *id*, *info Array*, *flow Array* and the actual *code Array* to execute and report results. Important *Variable* that is set here is *self-contained*, this actually means that it's a *stand-alone template* that does not require any input parameter, such as a target or URL. Instead it requires you to have a *valid logged-in Azure CLI* available. Something to keep in mind during this blog, that actually the *Azure CLI* is a dependency here.
 
-You may also noticed the last line where a *digest* is set. This *digest* is actually the signature of the *Nuclei template*. New template always have to be signed, before they can be executed. Actually this *core* template is already signed, so we can easily execute this to verify our connection.
+You may also noticed that the last line a *digest* has been set. This *digest* is actually the signature of the *Nuclei template*. New templates always have to be signed, before you can execute them. Actually *azure-env* is a *core* template which already has been signed, so we can safely execute this to verify our connection.
 
-Let's get ready to execute this piece of code to validate our **Azure CLI** connection is set and ready to execute our **Configuration scans**. 
+Let's now get ready to execute this piece of code to validate that our *Azure CLI* connection is properly set and you are ready to successfully execute the **Configuration scans** against **Microsoft Azure**.
 
 ```
 nuclei -id azure-env -code
