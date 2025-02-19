@@ -276,7 +276,7 @@ code:
 
 ```
 
-Additional keep in mind we didn't’te yet signed the template. Below the full nuclei command that does the initial signing. You may want to increase Debug logging.
+Additionally keep in mind we didn’t’ yet sign the template. Below is an example how to do the initial signing. You may want to increase Debug logging.
 ```
 nuclei -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code --debug -sign
 ```
