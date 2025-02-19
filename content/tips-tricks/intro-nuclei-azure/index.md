@@ -331,7 +331,7 @@ The following Azure resources are going to be part of the deployment:
 - Log Analytics Workspace (`LAW`), including a custom *Kusto table* for storing the actual *JSON* formatted reports.
 - Azure Monitor Data Collection Rule (`DCR`) that handles the data flow, additional parsing/transformation and underlying schema storing the data into the *Kusto table*.
 - Azure Monitor Data Collection Endpoint (`DCE`) that actually is the receiving endpoint, which is used by the tool called `Ingest2LAW` and forwards towards the newly setup DCR.
-- Authentication of publishing data from the `DCR` into the `LAW` we are going to use a Service Principal (`SPN`), which you have to create first in Entra ID. An addtional PowerShell script for this is included.
+- Authentication of publishing data from the `DCR` into the `LAW` we are going to use a Service Principal (`SPN`), which you have to create first in Entra ID. An addtional *PowerShell* script for this is included.
 
 Below a picture of the deployed solution architecture:
 ![Solution Architecture](img/solution-architecture.png "Solution Architecture")
@@ -346,7 +346,7 @@ git clone https://github.com/avwsolutions/nuclei-kusto-db-integration.git
 
 #### Create your required Entra ID Service Principal Name.
 
-Let's first create Service Principal. Additional ensure that you are logged in the **Azure CLI**.  For convinience I've added a PowerShell script to create the object. Look into the script and execute the following command.
+Let's first create the `SPN`. Additional ensure that you are logged in the **Azure CLI**.  For convinience I've added a *PowerShell* script to create the object. Take a look at the script and execute the following command.
 
 ```
 pwsh ./deployment/entra/createSPN.ps1
