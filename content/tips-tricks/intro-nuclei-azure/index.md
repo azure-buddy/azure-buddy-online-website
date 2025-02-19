@@ -14,7 +14,7 @@ authors:
 This blog post I’m going to look into Nuclei. Nuclei is one of the popular tools used by Penetration Testers. Pentesting in-short is important because it helps identify security vulnerabilities before attackers can exploit them. It simulates real-world cyberattacks that help to assess and get an understanding of the effectiveness of defenses, validates your system hardening, reduces the risk of data breaches, and ensures compliance with security standards. All these activities like vulnerability scans and configuration reviews can be automated using this multifunctional called Nuclei.
 
 {{< alert >}}
-Enjoy reading and you can always share your **ideas** with `AzureBuddy` on Social Media like LinkedIn!
+Enjoy reading and you can always share your **learnings** and developed **Kusto Queries** with `AzureBuddy` on Social Media like LinkedIn!
 {{< /alert >}}
 
 ## What is Nuclei?
