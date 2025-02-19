@@ -321,19 +321,19 @@ You have reached the last part of the blog. This last chapter you are going to s
 
 Let's start to setup `Ingest2LAW`. It's a simple tool, which I created with Python using official **PyPI Microsoft packages** to ingest Azure Monitor data.
 
-During the following sections I'm going to explain how to setup the required infrastructure for collecting and storing your scan data, followed by some *real examples* explaining how various scan results can enter your newly created table. Let's get started.
+During the following sections I'm going to explain how to set up the required infrastructure for collecting and storing your scan data, followed by some *real examples* explaining how various scan results can enter your newly created table. Let's get started.
 
 ### Required Azure Infrastructure Setup
 
-To deploy the required *Azure Infrastructure* I've created some supporting *Bicep* code, but first look into the *architecture*.
+To deploy the required *Azure Infrastructure* I've created some supporting *Bicep* code, but we first look into the *solution architecture*.
 
-The following Azure resources are going to be deployment:
-- Log Analytics Workspace (LAW), including a custom *Kusto table* for storing the actual *JSON* formatted reports.
-- Azure Monitor Data Collection Rule (DCR) that handles the data flow, additional parsing/transformation and underlying schema storing the data into the *Kusto table*.
-- Azure Monitor Data Collection Endpoint (DCE) that actually is the receiving endpoint, which is used by the tool called `Ingest2LAW` and forwards towards the newly setup DCR.
-- Authentication of publishing data from the DCR into the LAW we are going to use a Service Principal (SPN), which you have to create first in Entra ID. An addtional PowerShell script for this is included.
+The following Azure resources are going to be part of the deployment:
+- Log Analytics Workspace (`LAW`), including a custom *Kusto table* for storing the actual *JSON* formatted reports.
+- Azure Monitor Data Collection Rule (`DCR`) that handles the data flow, additional parsing/transformation and underlying schema storing the data into the *Kusto table*.
+- Azure Monitor Data Collection Endpoint (`DCE`) that actually is the receiving endpoint, which is used by the tool called `Ingest2LAW` and forwards towards the newly setup DCR.
+- Authentication of publishing data from the `DCR` into the `LAW` we are going to use a Service Principal (`SPN`), which you have to create first in Entra ID. An addtional PowerShell script for this is included.
 
-Below a picture of the architecture:
+Below a picture of the deployed solution architecture:
 ![Solution Architecture](img/solution-architecture.png "Solution Architecture")
 
 ### Solution approach to deploy Azure Resources
