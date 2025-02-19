@@ -204,9 +204,9 @@ The scan completes after approx. a minute and returns the following output with 
 [azure-aks-network-contrib-unassigned] [code] [medium]  ["sandbox in resource group azure-buddy-playground-sandbox does not have Network Contributor role assigned"]
 ```
 
-You even can scan **cluster objects** by have a configured **kubectl** available. Great isn't it?
+You can even include scanning **cluster objects** by have a configured `kubectl` available. Great isn't it?
 
-Let's start with developing our own **Nuclei Template**.
+Now it's time to start developing your own **Nuclei Template**.
 
 ### Developing our own Nuclei Template for Azure Monitor
 
