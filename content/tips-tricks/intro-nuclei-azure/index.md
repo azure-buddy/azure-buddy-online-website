@@ -317,11 +317,11 @@ With this *hands-on example* I try to show you how easily you can extend functio
 
 ## Storing Nuclei results into a Kusto table
 
-You have reached the last part of the blog. This chapter we are going to store our `Nuclei` scan results into a *Kusto Table*, so you can combine it with other important datasets from Microsoft Defender (XDR) or Microsoft Sentinel (SIEM/SOAR). Storing your scan results can help you as *Security Engineer* or *Security Analysts* to further analyze, report and visualize by using *Kusto Query Language* over time. Another use case would be period endpoints scans and storing *historical data* for audit trail. These are just two simple examples. 
+You have reached the last part of the blog. This last chapter you are going to store your `Nuclei` scan results into a *Kusto Table*, so you can combine it with other important datasets from Microsoft Defender (XDR) or Microsoft Sentinel (SIEM/SOAR). Forward and storing your scan results helps you as *Security Engineer* or *Security Analysts* to further analyze, visualize and report by using *Kusto Query Language*. Think about other use cases like forwarding *period vulnerability scans* and storing *historical data* for audit trail. These are just two simple examples that come to mind.
 
-Let's start to setup `Ingest2LAW`. It's a simple tool, created with Python using official **PyPI** Microsoft packages to ingest Azure Monitor data.
+Let's start to setup `Ingest2LAW`. It's a simple tool, which I created with Python using official **PyPI Microsoft packages** to ingest Azure Monitor data.
 
-During the following subchapters I'm going to explain how to setup the required infrastructure, followed by some real examples shoing scan results entering your newly created tables. Let's get started.
+During the following sections I'm going to explain how to setup the required infrastructure for collecting and storing your scan data, followed by some *real examples* explaining how various scan results can enter your newly created table. Let's get started.
 
 ### Required Azure Infrastructure Setup
 
