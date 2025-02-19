@@ -214,7 +214,7 @@ Some cases a template isn't yet available.These situations you can easily develo
 
 Did you recognize sections like *info*, *flow* and *code*? Writing templates isn't hard if you are familiar with PowerShell, Python or have *basic* coding skills.
 
-As Id we have set **azure-monitor-law-public-network-acces-enabled**.  
+As *Id* you can set *azure-monitor-law-public-network-acces-enabled*, which is often the same as the filename.
 
 Below the actual code. The *Nuclei Template* can be saved under filename: `azure-monitor-law-public-network-acces-enabled.yaml`.
 
