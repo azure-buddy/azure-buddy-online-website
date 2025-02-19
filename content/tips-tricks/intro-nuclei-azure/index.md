@@ -448,21 +448,21 @@ Let's now try some other `KQL` queries to play with the scan results. To build a
 During the following example queries I assume that you have used *azurebuddy.online* as scan target. Other cases, you just have to replace *azurebuddy.online* with your own scan target.
 
 **Example 1**
-*Display only the HTTP type related records within the last 30 minutes from my current scan target.*
+*Show only the HTTP related records recorded within the last 30 minutes for my current scan target..*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type == 'http' and TimeGenerated > ago(30m)
 ```
 
 **Example 2**
-*Display all other types related records except HTTP within the last 30 minutes from my current scan target.*
+*Show all other related record types, except HTTP, within the last 30 minutes for my current scan target.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type != 'http' and TimeGenerated > ago(30m)
 ```
 
 **Example 3**
-*Summarize the total numeber of checks of every type within the last 30 minutes ordered by Total number count.*
+*Summarizes the total number of checks of each type in the last 30 minutes, sorted by total count.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and TimeGenerated > ago(30m)
@@ -471,7 +471,7 @@ nuclei_CL
 ```
 
 **Example 4**
-*Display the records of SSL checks that report the use of older TLS Versions.*
+*Show records of SSL audits that report the use of older TLS versions*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type == 'ssl' and info contains "TLS Version" and
@@ -479,7 +479,7 @@ nuclei_CL
 ```
 
 **Example 5**
-*Display the record if any WAF is detected.*
+*Show the record if any WAF is detected.*
 ```
 nuclei_CL
 | where host == 'azurebuddy.online' and nuclei_type == 'http' and
@@ -487,24 +487,28 @@ nuclei_CL
 | project info
 ```
 
-As you may suspect you aren't limited to storing *network target* scans.
+As you may suspect you aren't limited to forward and store *network target* scans.
 
-For example storing the [AKS Code Review](#azure-cloud-community-templates-for-aks-config-review) results in youru `LAW` for analysis.
+For example you can also forward and store the [AKS Code Review](#azure-cloud-community-templates-for-aks-config-review) results in your `LAW` for analysis.
+Let's try it out yourself!
 
 ```
 nuclei -silent -tags aks -code -esc -j | ingest2LAW
 ```
 
-After a successfull scan you can review the newly added records using this **KQL**.
+After a successfull scan you can review the newly added records using `KQL` again. See again some examples below.
 
+**Example 6**
+*Show only the AKS related records recorded within the last 30 minutes.*
 ```
 nuclei_CL
 | where template_id contains 'azure-aks' and TimeGenerated > ago(30m)
 | project extracted_results
 ```
 
-Now let's format a table of the actual *scan results* using **KQL**.
+Now let's format an actual table with the *scan results* using `KQL`.
 
+**Example 7**
 ```
 nuclei_CL
 | where template_id contains 'azure-aks' and TimeGenerated > ago(30m)
@@ -512,14 +516,16 @@ nuclei_CL
 | project Name = ScanInfo.name, Description = ScanInfo.description, Impact = ScanInfo.impact, Severity = ScanInfo.severity, Reference = ScanInfo.reference, Remediation = ScanInfo.remediation
 ```
 
-We can repeat this exercise for our own developed template. 
+We can repeat this exercise for your own developed template. 
 
+**Example 8**
 ```
 nuclei -silent -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code -j | ingest2LAW
 ```
 
-Now run a **KQL** to only get our specific *Nuclei Template* results. Here I'm filtering on *author*.
+You can even run a *`KQL` to only get specific *Nuclei Template* related results. For example filtering on *author*.
 
+**Example 9**
 ```
 nuclei_CL
 | where info contains 'avwsolutions' and TimeGenerated > ago(365d)
