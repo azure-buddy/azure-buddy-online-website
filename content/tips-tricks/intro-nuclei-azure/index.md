@@ -287,13 +287,13 @@ The following output is returned. You may recognize a new comment at the last li
 [INF] All templates signatures were elaborated success=1 failed=0
 ```
 
-This is the moment that you are ready to execute this newly developed template for the first time. You can directly point to the actual template file using the '-t' parameter. Additional you may want to include *Debug* logging for troubleshooting.
+This is the moment that you are ready to execute this newly developed template for the first time. You can directly point to the actual template file using the '-t' parameter. Additionally you may want to include *Debug* logging for troubleshooting.
 
 ```
 nuclei -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code [-debug]
 ```
 
-After a successfull execution the following output is shown around a minute. 
+After a successful execution the following output is shown around a minute. 
 
 ```
                      __     _
