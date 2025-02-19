@@ -29,7 +29,7 @@ Credits to [Project Discovery](https://github.com/projectdiscovery) for developi
 
 ### Get familiar with the Network Vulnerability Scanning capabilities
 
-Let's first start using Nuclei as a simple *network vulnerability scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*', which can even contain *multiple targets* to scan.
+Let's first start using Nuclei as a simple *network vulnerability scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*' parameter, which can even contain *multiple targets* to scan.
 
 Example below shows how you can execute a scan against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
 
