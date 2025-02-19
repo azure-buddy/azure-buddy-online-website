@@ -516,7 +516,7 @@ nuclei_CL
 | project Name = ScanInfo.name, Description = ScanInfo.description, Impact = ScanInfo.impact, Severity = ScanInfo.severity, Reference = ScanInfo.reference, Remediation = ScanInfo.remediation
 ```
 
-We can repeat this exercise for your own developed template. 
+We can repeat these exercises for your own developed template. 
 
 **Example 8**
 ```
