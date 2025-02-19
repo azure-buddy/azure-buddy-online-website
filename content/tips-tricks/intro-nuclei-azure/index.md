@@ -134,7 +134,7 @@ Let's now get ready to execute this piece of code to validate that our *Azure CL
 nuclei -id azure-env -code
 ```
 
-The following will be show when the **Azure CLI** is already logged in using `az login`.
+The following will be show when the **Azure CLI** is successfully logged in using `az login`.
 
 ```
                      __     _
