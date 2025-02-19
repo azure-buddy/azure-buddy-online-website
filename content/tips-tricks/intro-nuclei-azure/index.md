@@ -276,25 +276,24 @@ code:
 
 ```
 
-Also keep in mind we didn'te yet signed the template. Below the full nuclei command that does the initial signing. You may want to increase *Debug* logging.
-
+Additional keep in mind we didn't’te yet signed the template. Below the full nuclei command that does the initial signing. You may want to increase Debug logging.
 ```
 nuclei -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code --debug -sign
 ```
 
-The following output is returned. You may recognize a new comment line called *Digest* has been added, which contains the signature.
+The following output is returned. You may recognize a new comment at the last line starting with *Digest* has been added, which contains the actual *signature*.
 
 ```
 [INF] All templates signatures were elaborated success=1 failed=0
 ```
 
-Now we are ready to execute this newly developed template. We will now directly point to the actual template file using the '-t' flag. You may want to include *Debug* logging.
+This is the moment that you are ready to execute this newly developed template for the first time. You can directly point to the actual template file using the '-t' parameter. Additional you may want to include *Debug* logging for troubleshooting.
 
 ```
 nuclei -t azure-monitor-law-public-network-acces-enabled.yaml -esc -code [-debug]
 ```
 
-The following ourput is shown within a minute. 
+After a successfull execution the following output is shown around a minute. 
 
 ```
                      __     _
