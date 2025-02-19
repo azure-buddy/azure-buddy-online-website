@@ -535,7 +535,7 @@ nuclei_CL
 
 ## Conclusion
 
-Going through this blog, working with *Nuclei* gives us a good understanding of the *value* it provides during *penetration testing*. It's can support both *Security Engineers* and *Security Analysts* to include these *data sets* for further analysis. Besides the *powerful* scan engine and simplicity adding new functionality you can easily *integrate* scan results with your *Microsoft Security Toolsl* using a `LAW`.
+Going through this blog, working with *Nuclei* gives us a good understanding of the *value* it provides during *penetration testing*. It's can support both *Security Engineers* and *Security Analysts* to include these *data sets* for further analysis. Besides the *powerful* scan engine and simplicity adding new functionality you can easily *integrate* scan results with your *Microsoft Security Toolsl* using a `LAW`. Hopefully you also experienced this value going through this blog. Let me know what you think about `Nuclei` and the `Ingest2LAW` tool I've created.
 
 # Interested in the code?
 
