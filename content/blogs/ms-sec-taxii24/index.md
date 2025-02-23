@@ -47,7 +47,7 @@ The main goal of the TAXII protocol is to provide a simple, secure and scalable 
 
 Consuming *STIX Feeds* using a `TAXII Client` based on the *Collection* sharing model is commonly used practice and already implemented by many security vendors.
 
-On the other hand, as we learned *Channels* are still in a more *conceptual state*. They shall bring many benefits for *Threat Intelligence Platforms* like improved Performance due *efficient data handling* and improved *Reliability* and *Scalability* due the nature of an *Event-driven Architecture*. This shall help National CERT's, CSP's or MSSP's to easily exchange *TI data* near real-time.
+On the other hand, we have *channels* which are still in a more *conceptual state*. For the future of Cyber Threat Intelligence its exposes many great benefits for *Threat Intelligence Platforms* like improved Performance due *efficient data handling* and improved *Reliability* and *Scalability* due the nature of an *Event-driven Architecture*. This shall help National CERT's, CSP's or MSSP's to easily exchange *TI data* near real-time.
 
 In short we see that *Collections* can be seen as API's which requires a more *Pull* approach, potentially including pagination. *Channels* seem to be more *Pub/Sub* approach, where you only get pushed new messages.
 
