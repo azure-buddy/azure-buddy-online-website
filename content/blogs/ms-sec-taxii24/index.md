@@ -26,9 +26,25 @@ Below an logical overview of the model:
 
 ![TAXII Logical Overview](img/taxii-model.jpg "TAXII Logical Overview")
 
-TAXII protocol defines a set of specifications for both the `TAXII Server` and `TAXII Client` component. Two sharing models exist:
-- Collection(s) to pull Objects.
-- Channel(s) to subscribe to Messages.
+TAXII protocol defines a set of specifications for both the `TAXII Server` and `TAXII Client` component. An `TAXII Server` instance provides supporting services and primary sharing capabilities. Supporting services that are provided are:
+
+- *API Root* endpoint which provides a way to create a logical grouping of your sharing types, such as collections and channels.
+- *Discovery* that Help to *Discover* newly available collections through *DNS* or a specific endpoint.
+- Monitor the actual `TAXII Client` request *Status*.
+
+Primary sharing capabilities are built up by two sharing models. Currently those models are:
+- Collection(s) which help to *pull* Objects over HTTP(S), including support for pagination.
+- Channel(s) to subscribe to Messages, which provide a *Pub/Sub* way of exchanging TI data through messaging.
+
+Most of the time *Collections* are known and implmented by vendors like Microsoft.
+
+## TAXII?
+
+Abbreviation stands for Trusted Automated eXchange of Intelligence Information. 
+
+## Goal of the TAXII Implmentation?
+
+The purpose of the TAXII protocol is to provide a simple, secure and scalable way of communicating cyber threat intelligence through a standardized set of RESTful API definitions.
 
 The use of *Collections* is commonly used and implemented. Looking into the future *Channel* model seems to fill-in a gap for National CERT's, CSP's or MSSP's.
 
@@ -38,15 +54,6 @@ TAXII components are the **TAXII Server** and **TAXII Client**. Most *SIEM* and 
 
 *TAXII Servers* are mostly known as a Threat Intelligence Platform (TIP). Example *TIP* vendors are *Filigran*, *MISP and *EclecticIQ*. *Microsoft Defender for Threat Intelligence (MDTI)* does not yet support creating your own *TAXII Server*.
 
-Microsoft Unified Security Platform.
-
-## TAXII?
-
-Abbreviation stands for Trusted Automated eXchange of Intelligence Information. 
-
-## Goal of the TAXII Implmentation?
-
-The purpose of the TAXII protocol is to provide a simple, secure and scalable way of communicating cyber threat intelligence through a standardized set of RESTful API definitions.
 
 
 ## Microsoft Security products with TAXII (Client) Support
