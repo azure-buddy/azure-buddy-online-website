@@ -42,18 +42,19 @@ Most of the time *Collections* are known and implmented by vendors like Microsof
 
 Abbreviation stands for Trusted Automated eXchange of Intelligence Information. 
 
-## Goal of the TAXII Implmentation?
+## Goals of the TAXII Implementation standard
 
-The purpose of the TAXII protocol is to provide a simple, secure and scalable way of communicating cyber threat intelligence through a standardized set of RESTful API definitions.
+The main goal of the TAXII protocol is to provide a simple, secure and scalable way of communicating cyber threat intelligence through a set of implementation standards like RESTful API definitions.
 
-The use of *Collections* is commonly used and implemented. Looking into the future *Channel* model seems to fill-in a gap for National CERT's, CSP's or MSSP's.
+Consuming *STIX Feeds* using a `TAXII Client` based on the *Collection* sharing model is commonly used practice and already implemented by many security vendors.
+
+On the other hand, *Channels* are still in a more *conceptual state*. They shall bring many benefits for *Threat Intelligence Platforms* like improved Performance due *efficient data handling* and improved *Reliability* and *Scalability* due the nature of an *Event-driven Architecture*. This shall help National CERT's, CSP's or MSSP's to easily exchange *TI data* near real-time.
 
 In short we see that *Collections* can be seen as API's which requires a more *Pull* approach, potentially including pagination. *Channels* seem to be more *Pub/Sub* approach, where you only get pushed new messages.
 
 TAXII components are the **TAXII Server** and **TAXII Client**. Most *SIEM* and *SOAR* vendors like *Microsoft* support subscribe and ingesting TAXII based Threat Intelligence (TI) Feeds. They act as a *TAXII Client* by consuming TI Feeds. As you may expect TI objects defined using STIX, which is the common sharing model for IOC data.
 
 *TAXII Servers* are mostly known as a Threat Intelligence Platform (TIP). Example *TIP* vendors are *Filigran*, *MISP and *EclecticIQ*. *Microsoft Defender for Threat Intelligence (MDTI)* does not yet support creating your own *TAXII Server*.
-
 
 
 ## Microsoft Security products with TAXII (Client) Support
