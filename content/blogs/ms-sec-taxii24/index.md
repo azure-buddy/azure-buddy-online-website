@@ -49,17 +49,29 @@ Consuming *STIX Feeds* using a `TAXII Client` based on the *Collection* sharing 
 
 On the other hand, we have *channels* which are still in a more *conceptual state*. For the future of Cyber Threat Intelligence it exposes many benefits for *Threat Intelligence Platforms* like improved Performance due *efficient data handling* and greater *Reliability* and *Scalability* due the nature of an *Event-driven Architecture*. This shall enable National CERT's, CSP's or MSSP's to exchange more *TI data* near real-time and increase confidence due the possibilites of improving quality by easier reporting of *Sightings* or new *Observables*. 
 
-In short we see that *Collections* can be seen as API's which requires a more *Pull* approach, potentially including pagination. *Channels* seem to be more of a *Pub/Sub* approach, where you only get pushed new or updated messages.
+### To summarize
 
-*TAXII* components are the **TAXII Server** and **TAXII Client**. Most *SIEM* and *SOAR* vendors like *Microsoft* support subscribe and ingesting TAXII based Threat Intelligence (TI) Feeds. They act as a *TAXII Client* by consuming TI Feeds. As you may expect TI objects defined using STIX, which is the common sharing model for IOC data.
+We see that *collections* can be seen as API's which requires a more *Pull* approach for objects, potentially including pagination while *channels* seem to be more future proof by using a event-driven *Pub/Sub* approach, where you only get pushed new or updated *messages*.
+
+Main *TAXII* components are the **TAXII Server** and **TAXII Client**. Most *SIEM* and *SOAR* vendors like *Microsoft* support subscribe and ingesting TAXII based Threat Intelligence (TI) Feeds. They act as a *TAXII Client* by consuming TI Feeds. As you may expect TI objects defined using STIX, which is the common sharing model for IOC data.
 
 *TAXII Servers* are mostly known as a *Threat Intelligence Platform* (TIP). Example *TIP* vendors are *Filigran*, *MISP and *EclecticIQ*. *Microsoft Defender for Threat Intelligence (MDTI)* does not yet support creating your own *TAXII Server*.
 
+## Microsoft Defender for Threat Intelligence (MDTI)
+
+Microsoft also provides a *Threat Intelligence solution*, which is part of Microsoft's Unified SecOps Platform. It's TI capabilities are fully integrated with *Microsoft Sentinel*, *Microsoft Security Copilot* and other *Defender* products like *Defender XDR*.  It provides unique capabilities such as *Intel profiles* and *Intel projects* to improve the security posture. You can easily add new *TI Feeds* based on a *TAXII Feed*. 
+
+If you want to use MDTI and have *Microsoft IOC's* included you must have the *Premium* instead of the *Standard* (Free) license. Unfortunately MDTI doesn't yet support creating your own *TAXII Server*. 
+
+## TAXII Servers on the market.
+
+Well-known vendors that provide a *Threat Intelligence Platform* (TIP) have a built-in `TAXII Server`. Example *TIP* vendors are *Filigran* (better known as OpenCTI), *MISP* and *EclecticIQ*. 
 
 ## Microsoft Security products with TAXII (Client) Support
 
 - [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/)
 - [Microsoft Defender](https://learn.microsoft.com/en-us/unified-secops-platform/threat-intelligence-overview/)
+- [Microsoft Defender Threat Intelligence](https://learn.microsoft.com/en-us/defender/threat-intelligence/what-is-microsoft-defender-threat-intelligence-defender-ti)
 
 The next post in the series will follow soon! Then we will dive into the `TAXII Implementation`.
 
