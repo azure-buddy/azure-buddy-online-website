@@ -32,8 +32,8 @@ TAXII protocol defines a set of specifications for both the `TAXII Server` and `
 - Monitor the actual `TAXII Client` requests through the **Status** endpoint.
 
 Primary sharing capabilities are built up by two sharing models. Currently those models are:
-- **TAXII Collection(s)** which help to *Pull* objects over HTTP(S), including support for pagination.
-- **TAXII Channel(s)** to *Publish or Subscribe to* messages, which provide a *Pub/Sub* way of exchanging TI data through messaging.
+- **TAXII Collection(s)** which help to *Pull* **objects** over HTTP(S), including support for pagination.
+- **TAXII Channel(s)** to *Publish or Subscribe to* **messages**, which provide a *Pub/Sub* way of exchanging TI data through messaging.
 
 `TAXII Client` mainly *pull* and *ingest* objects from collections into a local SIEM or SOAR such as `Microsoft Sentinel`. Channels require a more *Pub/Sub* capable `TAXII Client`, which only a *reference implementation* is available.
 
