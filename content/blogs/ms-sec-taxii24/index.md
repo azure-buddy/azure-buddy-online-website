@@ -15,7 +15,7 @@ series_order: 2
 
 
 {{< alert >}}
-This is the second post in this series, we will explain what is TAXII and explain the purpose!
+This is the second post in this series, we will explain what is TAXII and explain the goals of this implementation standard!
 {{< /alert >}}
 
 ## What is TAXII?
