@@ -1,6 +1,6 @@
 ---
 title: "Exchanging Threat Intelligence using TAXII in Microsoft's Unified Security Operations Platform"
-date: 2025-02-21
+date: 2025-02-23
 draft: false
 description: "Blog about the various available TAXII integration options within Microsoft's Unified SecOps Platform products."
 slug: "ms-sec-taxii24"
@@ -22,15 +22,15 @@ This is the second post in this series, we will explain what is TAXII and explai
 
 TAXII is an application-layer protocol that serves as a transport mechanism for sharing cyber threat intelligence.
 
-Below an logical overview of the model:
+***Below an logical overview of the model:***
 
 ![TAXII Logical Overview](img/taxii-model.jpg "TAXII Logical Overview")
 
 TAXII protocol defines a set of specifications for both the `TAXII Server` and `TAXII Client` component. An `TAXII Server` instance provides supporting services and primary sharing capabilities. Supporting services that are provided are:
 
 - *API Root* endpoint which provides a way to create a logical grouping of your sharing types, such as collections and channels.
-- *Discovery* that Help to *Discover* newly available collections through *DNS* or a specific endpoint.
-- Monitor the actual `TAXII Client` request *Status*.
+- *Discovery* helps you to *Discover* newly available collections through *DNS* or a specific endpoint.
+- Monitor the actual `TAXII Client` requests through the *Status* endpoint.
 
 Primary sharing capabilities are built up by two sharing models. Currently those models are:
 - Collection(s) which help to *pull* Objects over HTTP(S), including support for pagination.
