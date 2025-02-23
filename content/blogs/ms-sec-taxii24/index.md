@@ -25,17 +25,17 @@ TAXII is an application-layer protocol that serves as a transport mechanism for 
 ***Below an logical overview of the model:***
 ![TAXII Logical Overview](img/taxii-model.jpg "TAXII Logical Overview")
 
-TAXII protocol defines a set of specifications for both the `TAXII Server` and `TAXII Client` component. An `TAXII Server` instance provides supporting services and primary sharing capabilities. Supporting services that are provided are:
+TAXII protocol defines a set of specifications for both the `TAXII Server` and `TAXII Client` components. An `TAXII Server` instance provides supporting services and primary sharing capabilities. Supporting services that are provided are:
 
 - **API Root** endpoint which provides a way to create a logical grouping of your sharing types, such as collections and channels.
 - **Discovery** helps you to discover newly available collections through *DNS* or a specific endpoint.
 - Monitor the actual `TAXII Client` requests through the **Status** endpoint.
 
 Primary sharing capabilities are built up by two sharing models. Currently those models are:
-- **TAXII Collection(s)** which help to *Pull* **objects** over HTTP(S), including support for pagination.
-- **TAXII Channel(s)** to *Publish or Subscribe to* **messages**, which provide a *Pub/Sub* way of exchanging TI data through messaging.
+- **TAXII Collection(s)**, which requires you to *Pull* **objects** over HTTP(S), including *optional* pagination.
+- **TAXII Channel(s)**, requires you to *Publish or Subscribe to* **messages**, which provide a *Event-driven* approach of exchanging TI data through *Push* messages.
 
-`TAXII Client` mainly *pull* and *ingest* objects from collections into a local SIEM or SOAR such as `Microsoft Sentinel`. Channels require a more *Pub/Sub* capable `TAXII Client`, which only a *reference implementation* is available.
+`TAXII Client` mainly *pulls* and *ingest* objects from collections into a local SIEM or SOAR such as `Microsoft Sentinel`. Channels require a more *Pub/Sub* capable `TAXII Client`, which only a *reference implementation* is available.
 
 ## TAXII?
 
