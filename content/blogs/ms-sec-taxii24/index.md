@@ -5,9 +5,11 @@ draft: false
 description: "Blog about the various available TAXII integration options within Microsoft's Unified SecOps Platform products."
 slug: "ms-sec-taxii24"
 tags: ["blogs", "Defender", "Sentinel", "SecOps", "Cyber Security", "STIX", "TAXII", "Unified"]
-series: ["Using STIX in Microsoft's Unified SecOps Platform"]
+series: ["Using STIX-TAXII in Microsoft's Unified SecOps Platform"]
 series_order: 2
 ---
+
+# Using STIX-TAXII in Microsoft's Unified SecOps Platform
 
 ## Introduction
 
