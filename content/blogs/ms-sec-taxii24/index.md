@@ -67,7 +67,7 @@ If you want to use MDTI and have *Microsoft IOC's* included you must have the *P
 
 ## TAXII Servers on the market.
 
-There are many Opensource initiatives, but keep in mind that it's *stable* and based on the *latest release* (TAXII 2.X).
+There are many Opensource initiatives, but keep in mind that it's *stable* and based on the *latest release* (TAXII version 2.1).
 Well-known *Threat Intelligence Platform* (TIP) vendors provide a compatible built-in `TAXII Server`. Example supporting platforms are *OpenCTI*, *MISP* or *EclecticIQ*. 
 
 ## Microsoft Security products with TAXII (Client) Support
