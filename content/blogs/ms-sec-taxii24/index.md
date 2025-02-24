@@ -37,6 +37,8 @@ Primary sharing capabilities are built up by two sharing models. Currently those
 
 Last part to look into is the `TAXII Client`. `TAXII Client` capabilities differ per sharing model. Looking into *collections*, it mainly *pulls* and *ingest* objects from collections into a local SIEM or SOAR such as `Microsoft Sentinel`. For channels it requires a *Pub/Sub* capable `TAXII Client`, for which(at the moment of writing) only a *reference implementation* is available.
 
+ Currently **TAXII version 2.1** is released.
+
 ## TAXII?
 
 Abbreviation stands for Trusted Automated eXchange of Intelligence Information. 
@@ -59,13 +61,14 @@ Vendors that adopted the `STIX-TAXII` standard integrate using the `TAXII Client
 
 ## Microsoft Defender for Threat Intelligence (MDTI)
 
-Microsoft also provides a *Threat Intelligence solution*, which is part of Microsoft's Unified SecOps Platform. It's TI capabilities are fully integrated with *Microsoft Sentinel*, *Microsoft Security Copilot* and other *Defender* products like *Defender XDR*.  It provides unique capabilities such as *Intel profiles* and *Intel projects* to improve the security posture. You can easily add new *TI Feeds* based on a *TAXII Feed*. 
+Microsoft also provides a *Threat Intelligence solution*, which is part of Microsoft's Unified SecOps Platform. It's TI capabilities are fully integrated with *Microsoft Sentinel*, *Microsoft Security Copilot* and other *Defender* products like *Defender XDR*.  It provides unique capabilities such as *Intel profiles* and *Intel projects* to improve the security posture. You can easily add new *TI Feeds* based on the *TAXII protocol*. 
 
 If you want to use MDTI and have *Microsoft IOC's* included you must have the *Premium* instead of the *Standard* (Free) license. Unfortunately MDTI doesn't yet support creating your own *TAXII Server*. 
 
 ## TAXII Servers on the market.
 
-Well-known vendors that provide a *Threat Intelligence Platform* (TIP) have a built-in `TAXII Server`. Example *TIP* vendors are *Filigran* (better known as OpenCTI), *MISP* and *EclecticIQ*. 
+There are many Opensource initiatives, but keep in mind that it's *stable* and based on the *latest release* (TAXII 2.X).
+Well-known *Threat Intelligence Platform* (TIP) vendors provide a compatible built-in `TAXII Server`. Example supporting platforms are *OpenCTI*, *MISP* or *EclecticIQ*. 
 
 ## Microsoft Security products with TAXII (Client) Support
 
