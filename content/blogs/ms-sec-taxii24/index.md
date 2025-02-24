@@ -9,9 +9,7 @@ series: ["Using STIX-TAXII in Microsoft's Unified SecOps Platform"]
 series_order: 2
 ---
 
-# Using STIX-TAXII in Microsoft's Unified SecOps Platform
-
-## Introduction
+# STIX-TAXII in Microsoft's Unified SecOps Platform
 
 🔥 This is our second part in the series on using STIX in Microsoft's Unified SecOps Platform, where we guide you through basic topics in short digestible posts. This time we'll look at the TAXII portion of the `STIX-TAXII` standard.
 

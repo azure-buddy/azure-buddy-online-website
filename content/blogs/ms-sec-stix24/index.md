@@ -4,14 +4,12 @@ date: 2025-02-21
 draft: false
 description: "Blog about the various available STIX integration with Microsoft's Unified SecOps Platform products."
 slug: "ms-sec-stix24"
-tags: ["blogs", "Defender", "Sentinel", "SecOps", "Cyber Security", "STIX", "Unified"]
+tags: ["blogs", "Defender", "Sentinel", "SecOps", "Cyber Security", "STIX", "TAXII", "Unified"]
 series: ["Using STIX-TAXII in Microsoft's Unified SecOps Platform"]
 series_order: 1
 ---
 
-# Using STIX-TAXII in Microsoft's Unified SecOps Platform
-
-## Introduction
+# STIX-TAXII in Microsoft's Unified SecOps Platform
 
 🔥 Now that STIX enters the Microsoft's Unified SecOps Platform, it’s good to get informed about the `STIX-TAXII` standard. In this series I will guide you through the basic topics using short digestible posts.
 
