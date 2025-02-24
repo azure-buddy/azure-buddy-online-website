@@ -1,6 +1,6 @@
 ---
 title: "Threat Modeling by Example using STRIDE"
-date: 2025-02-25
+date: 2025-02-24
 draft: false
 description: "An introduction in Threat Modeling using the STRIDE model"
 slug: "stride-tm-intro"
