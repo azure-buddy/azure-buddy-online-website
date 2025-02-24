@@ -20,7 +20,7 @@ This is the second post in this series, we will explain what is TAXII and explai
 
 ## What is TAXII?
 
-TAXII is an application-layer protocol that serves as a *JSON* based transport mechanism for sharing cyber threat intelligence.
+TAXII is an application-layer protocol that serves as a *JSON* based transport mechanism for sharing cyber threat intelligence in STIX format.
 
 ***Below an logical overview of the model:***
 ![TAXII Logical Overview](img/taxii-model.jpg "TAXII Logical Overview")
