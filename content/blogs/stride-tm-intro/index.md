@@ -1,7 +1,7 @@
 ---
 title: "Threat Modeling by Example using STRIDE"
-date: 2025-02-04
-draft: true
+date: 2025-02-25
+draft: false
 description: "An introduction in Threat Modeling using the STRIDE model"
 slug: "stride-tm-intro"
 tags: ["blogs", "threat", "modeling", "OWASP", "Stride", "Cybersecurity", "Security", "Process", "Introductiom", "Microsoft" ]
