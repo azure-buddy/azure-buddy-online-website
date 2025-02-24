@@ -20,7 +20,7 @@ This is the second post in this series, we will explain what is TAXII and explai
 
 ## What is TAXII?
 
-TAXII is an application-layer protocol that serves as a transport mechanism for sharing cyber threat intelligence.
+TAXII is an application-layer protocol that serves as a *JSON* based transport mechanism for sharing cyber threat intelligence.
 
 ***Below an logical overview of the model:***
 ![TAXII Logical Overview](img/taxii-model.jpg "TAXII Logical Overview")
@@ -51,11 +51,11 @@ On the other hand, we have *channels* which are still in a more *conceptual stat
 
 ### To summarize
 
-We see that *collections* can be seen as API's which requires a more *Pull* approach for objects, potentially including pagination while *channels* seem to be more future proof by using a event-driven *Pub/Sub* approach, where you only get pushed new or updated *messages*.
+We see that *collections* can be seen as API's which requires a more *pull* approach for objects, potentially including pagination while *channels* seem to be more *future proof* by using a event-driven *Pub/Sub* approach, where you only get pushed new or updated messages.
 
-Main *TAXII* components are the **TAXII Server** and **TAXII Client**. Most *SIEM* and *SOAR* vendors like *Microsoft* support subscribe and ingesting TAXII based Threat Intelligence (TI) Feeds. They act as a *TAXII Client* by consuming TI Feeds. As you may expect TI objects defined using STIX, which is the common sharing model for IOC data.
+## Vendor Adoption
 
-*TAXII Servers* are mostly known as a *Threat Intelligence Platform* (TIP). Example *TIP* vendors are *Filigran*, *MISP and *EclecticIQ*. *Microsoft Defender for Threat Intelligence (MDTI)* does not yet support creating your own *TAXII Server*.
+Vendors that adopted the `STIX-TAXII` standard integrate using the `TAXII Client` component. *SIEM* and *SOAR* vendors like *Microsoft* support consume and ingesting from Threat Intelligence (TI) Feeds. Most consumed TI Feeds contain *IOC's* like *Indicators* of type *ipv4*, *ipv6*, *domain-name* and *url*. As you may expect TI objects defined using *JSON* in STIX format, which is the common sharing model for IOC data.
 
 ## Microsoft Defender for Threat Intelligence (MDTI)
 
