@@ -88,9 +88,9 @@ Impact of *Spoofing* is that it could lead to unauthorized access to confidentia
 #### Elevation of Privilege
 *Elevation of Privilege* is all about gaining authorizations to compromise the system. *Elevation of Privilege* occurs when an attacker may *exploit vulnerabilities* with the intention to gain high privileges like administrative rights. When elevation succeeds, the attacker could manipulate system settings, control access to sensitive data or even cause damage to the application or the data. Imagine how this could have serious implications for the security, integrity and availability of an application. Addressing and fixing these vulnerabilities is crucial for maintaining a secure application system.
 
-# Threat Modeling in Action
+# Threat Modeling Process
 
-This last chapter we are going to walk through the *Threat Modeling* process and apply the *STRIDE* model against a typical web application. At the start we are going to ask ourself four key questions:
+This chapter we are going to walk through the *Threat Modeling* process and apply the *STRIDE* model against a typical web application. At the start we are going to ask ourself four key questions:
 
 - What are we working on?
 - What can go wrong?
@@ -139,8 +139,18 @@ Review and assess your work - *Outcome*
 
 
 
-Coming chapter we are going through the 
+# Threat Modeling in Action
+
+Finally you have entered the last chapter. Here we are going through the whole *threat modeling* process using an example use case.
+You are the Product Owner of a team that's respnsible for developing and maintaining healthcare applications. In this specific use case you are going to look into an integration API.
+
+## Use case description
+
+Healthy is a company that provides a central registration service for personal health information about heart diseas. The information has been classified as Protected Health Information (PHI) and only used for research purposes. That's why only academic hospitals in the Netherlands are connected to the central registration through a Secure (API) RESTFul Web service.
+
 ### Data Flow Diagram (DFD)
+
+![Diagram (DFD) for the Health registration API service](img/dfd-example.jpg "Diagram (DFD) for the Health registration API service")
 
 A diagrams worth ten thousand words. Diagrams help to visualize 
 
