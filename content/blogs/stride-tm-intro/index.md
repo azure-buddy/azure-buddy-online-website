@@ -1,6 +1,6 @@
 ---
 title: "Threat Modeling by Example using STRIDE"
-date: 2025-02-24
+date: 2025-02-22
 draft: false
 description: "An introduction in Threat Modeling using the STRIDE model"
 slug: "stride-tm-intro"
@@ -97,31 +97,49 @@ This last chapter we are going to walk through the *Threat Modeling* process and
 - What are we going to do about it?
 - Did we do a good enough job?
 
-These four simple questions help us to focus, work to apply *Techniques*, such as provided by the *STRIDE model*. Most Threat Modeling Techniques will answer one or more of those questions. 
+You may recognize these four questions from the [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/). Simply asking ourselves these questions help us to *focus on*, work to apply *techniques*, such as provided by the *STRIDE model*. Most Threat Modeling Techniques will answer one or more of those questions. 
+
+To have a good representation of the user community it's good to have during the *Threat Modeling process* various stakeholders availabe, such as *Program Manager, *Product Owner*, *Tester, *Software Developer* and *Security Engineer*.
+
 Let's quickly look into the process itself.
 
-## Process steps
+## Process flow
 
-Like every process it's a good practice to have a good understanding of the steps and activities taken place. *Continuous Improvement* is key for high-quality Input and meaningful and measurable outcomes. Below we are going to look into the process.
+Like every process it's a good practice to have a good understanding of the steps and activities taken place. *Continuous Improvement* is key for high-quality, meaningful and measurable outcomes. As process flow we are going to use the [Microsoft Security Development Lifecycle (SDL)](https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling) as reference implementation.
 
-The process is built on four steps:
+The actual process flow is built on four steps:
 
-- Prepare on Scope - Your Input
+### Define
+
+First step is about preparing on scope. Choosing a correct scope is important for delivering relevant input for jumpstarting towards the next step. Here the outcome are a set of requirements. Requirements are driven by an use-case that provides value to the business. Besides the use-case, don't forget to take security requirements into account.
+
+### Diagram
+
+Secondly you as group are going to model our input and create a common ground. A diagrams worth ten thousand words. Diagrams help to visualize and guide the involved participants. Things to look into are:
+- *Scenarios* of typical interactions with the system.
+- *Data Flow Diagrams* (DFD), such as Architecture Models that include the known *Entry Points* and *Exit Points* of the system.
+- List of involved *Assets* that include a brief Description and their corresponding Trust Levels.
+
+### Identify
+
+Finally you have reached the step to identify risks and determine threats. Do you still have the 4 questions on top of your mind? Now ask yourself these questions when going through all *STRIDE* categories.
+
+### Mitigate
+
+Here you are going to look for *Countermeasures*, eventually *Fixes* and *Mitigations*. 
+
+### Validate
+
+Review and assess your work - *Outcome*
+
+- Prepare on Scope - *Defining the input based on requirememts*
 - Determine Threats
 - Look for Countermeasures, eventually Fixes and Mitigations
-- Review and assess your work - Outcome
+- Review and assess your work - *Outcome*
 
-## Scope
 
-We always start with deciding the actual scope. A good scope is important for delivering high-quality input. Input here can be seen in the context of:
 
-- *Use cases* that provide Business value.
-- *Scenarios* of typical interactions with the system.
-- List of involved *Assets* that include a brief Description and their corresponding Trust Levels.
-- Data Flow Diagrams* (DFD), such as Architecture Models that include the known *Entry Points* and *Exit Points* of the system.
-
-Below we are going to explain and show examples of *Input* we will provide during scoping.
-
+Coming chapter we are going through the 
 ### Data Flow Diagram (DFD)
 
 A diagrams worth ten thousand words. Diagrams help to visualize 
