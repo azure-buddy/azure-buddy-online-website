@@ -19,17 +19,17 @@ Enjoy reading and you can always share your **learnings** and developed **Kusto 
 
 ## What is Nuclei?
 
-Nuclei is an *Open Source CLI-based tool* to perform those *vulnerability scans* against targets like network resources. It *leverages YAML* based *templates* to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific *Nuclei templates*, used for *configuration review* and how they are executed. After getting a basic understanding of the **foundational concepts** using templates, I will guide you through some **hands-on examples**.
+Nuclei is an *Open Source CLI-based tool* to perform those *vulnerability assessments* against targets like network resources. It *leverages YAML* based *templates* to add further capabilities to the Nuclei engine. Nuclei templates as they are called, contain information, execution flows and the actual execution code. We will have a look into some Azure specific *Nuclei templates*, used for *configuration review* and how they are executed. After getting a basic understanding of the **foundational concepts** using templates, I will guide you through some **hands-on examples**.
 
 {{< alert >}}
-Credits to [Project Discovery](https://github.com/projectdiscovery) for developing such powerful `Nuclei` CLI Tool.
+Credits to [Project Discovery](https://github.com/projectdiscovery) for developing such powerful vulnerability assessment tool.
 {{< /alert >}}
 
 ## Quickly getting started
 
-### Get familiar with the Network Vulnerability Scanning capabilities
+### Get familiar with the Network Vulnerability Assessment capabilities
 
-Let's first start using Nuclei as a simple *network vulnerability scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*' parameter, which can even contain *multiple targets* to scan.
+Let's first start using Nuclei as a simple *network vulnerability assessment scanner* against a *single web host*, such as your own website. This is the easiest way to get familiar with `Nuclei` as Pentesting tool. In more real-life scenarios you may use a target list '*-l file*' parameter, which can even contain *multiple targets* to scan.
 
 Example below shows how you can execute a scan against **Azure Buddy Online**, which is actually a *Hugo-based* static website hosted on **Github**.
 
