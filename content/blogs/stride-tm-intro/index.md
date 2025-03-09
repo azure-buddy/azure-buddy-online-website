@@ -7,9 +7,9 @@ slug: "stride-tm-intro"
 tags: ["blogs", "threat", "modeling", "OWASP", "Stride", "Cybersecurity", "Security", "Process", "Introductiom", "Microsoft" ]
 ---
 
-# Cybersecurity threats  became a business risk
+## Cybersecurity threats  became a business risk
 
-## Introduction
+### Introduction
 
 Nowadays worldwide Cybersecurity attacks happen almost every 10 seconds. Attacks vary from *fishing*, *malware*, *cryptojacking*, *ransomware* till *Denial of Service* and don’t soly target online companies anymore. The business risks related to these threats can be enormous. Not only from a financial view, but certainly from the *impact* on *reputation* and *trust*.
 
@@ -23,13 +23,13 @@ It's all about properly organizing *Threat Modeling* sessions and how we can ens
 
 This blog is for everybody that is concerned about privacy, security and building secure software systems.
 
-## Software Delivery Lifecycle (SDL) towards DevSecOps
+### Waterfall towards DevSecOps
 
 As already mentioned you want to start with *DevSecOps* as early in the SDL as possible. *DevSecOps* is a *shift-left approach* that has the goal to integrate Security into all SDL phases, supporting Development, Security and Operations. It's about *Shared Responsibility* and reducing the risk of releasing vulnerable software to production.
 
 *Threat Modeling* becomes an important part of *Continuous Security* and especially around the phases of *Planning and Development* of secure software artifacts. Learn more about DevSecOps at the [Microsoft Security 101](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops) Primer.
 
-# Essential Threat Modeling Resources
+## Essential Threat Modeling Resources
 
 Now that you have learned the importance of *Threat Modeling* and creating a solid foundation with *DevSecOps* it's time to look into some essential resources. Below the list of resources.
 
@@ -37,7 +37,7 @@ Now that you have learned the importance of *Threat Modeling* and creating a sol
 - OWASP Threat Modeling Project
 - Microsoft Security SDL
 
-## Threat Modeling Manifesto
+### Threat Modeling Manifesto
 
 First resource is a manifesto that was created in 2020 by a group of individuals with years of experience in *Threat Modeling* for security or privacy.
 The manifest describes the *strategy* (What, who, how and why) and explains the *value* (importance, why you should and things matter) and which *principles* describe the fundamental truths of *Threat Modeling*.
@@ -46,19 +46,23 @@ In 2023 another page was introduced about threat modeling capabilities. Capabili
 
 If you want to learn more, just visit the [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/) website.
 
-## OWASP Threat Modeling Project
+### OWASP Threat Modeling Project
 
-Everyone working as engineer in the *DevOps* space is familiar with the *OWASP Top Ten for Web Applications*, but there is more. Actually composing this list needs a well-thought process to properly identifying and addressing software vulnerabilities like documented in the *OWASP Threat Modeling Project*. In short the project is built upon *Best Practices* and *Guiding Principles*.
+Most engineers working in the *DevOps* space must already be familiar with the *OWASP Top Ten for Web Applications*, but there is actually another great fundamental project. Actually composing these *Top Ten lists* require a well-thought process to properly identifying and addressing software vulnerabilities. This process is documented by the *OWASP Threat Modeling Project*. Process is based on *best practices* and *guiding principles*.
 
-As an open community it provides good guidance about *Techniques*, *Methodologies* and *Tools*. Additionally real world examples are provided, so you can easily start *Threat Modeling* yourself.
+The open community provides good guidance about *techniques*, *methodologies* and *tools*. Also real world examples are provided, so you can easily start with *Threat Modeling* yourself. A side project is called *OWASP Threat Dragon*, which is an Opensource modeling tool. 
 
-Guiding principle here that it's all about collaboration and open discussions without focussing on vendor specific solutions.
+Main learning here is that it's all about *collaboration* and *open discussions* without focussing on vendor specific solutions.
 
-As you may expect, *STRIDE* is referenced as a *Methodology* that provided a *structured way* of determining these *threats* and looking into *mitigation* techniques.
+### Microsoft Security SDL
+
+Last resource we are going to look into is the Microsoft Security SDL. It's actually a modern approach based on *DevSecOps*. As you may expect, *STRIDE* plays an important part to identify *threats* and looking into *mitigation* techniques.
 
 But what does *STRIDE* as mnemonic stands for?
 
-## What is the STRIDE model
+## Exploring STRIDE model
+
+### What is the STRIDE model
 
 The STRIDE model is a widely used threat modeling framework, developed at **Microsoft** to identify potential security threats in software systems. The name is a mnemonic that stands for six categories called:
 
