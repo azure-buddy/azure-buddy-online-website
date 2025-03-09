@@ -11,25 +11,23 @@ tags: ["blogs", "threat", "modeling", "OWASP", "Stride", "Cybersecurity", "Secur
 
 ## Introduction
 
-Nowadays worldwide Cybersecurity attacks happen almost every 10 seconds. Attacks vary from *fishing*, *malware, *cryptojacking*, *ransomware* till *Denial of Service* and don’t soly target online companies anymore. The business risks related to these threats can be enormous. Not only from a financial view, but certainly from the *impact* on *reputation* and *trust*.
+Nowadays worldwide Cybersecurity attacks happen almost every 10 seconds. Attacks vary from *fishing*, *malware*, *cryptojacking*, *ransomware* till *Denial of Service* and don’t soly target online companies anymore. The business risks related to these threats can be enormous. Not only from a financial view, but certainly from the *impact* on *reputation* and *trust*.
 
-Taking the *shift-left approach* with *DevSecOps* we want to look into these potential threats as early as Development is started, before they become *Zero-Day Vulnerabilities* and learn from these. Some questions arise here:
+Taking the *shift-left approach* with *DevSecOps* we want to look into these potential threats as early as development is started, before they become *Zero-Day Vulnerabilities* and learn from these. Some questions arise here:
 
 - From a system perspective what are the business risks and related security threats introduced by the application underlying software system?
 - Can we quickly identify such technical threats, take mitigation measures and continuously validate these?
 - Are there any best practices, examples or other resources available to organize and support such proces?
 
-It's all about properly organizing *Threat Modeling* sessions and how we can ensure *Threat Modeling* becomes part of the Software Delivery Lifecyle. Actually performing *Threat Modeling*, you begin to recognize what can go wrong in a software system. It helps to easily pinpoint potential issues in your design or implementation that require mitigation, whether it's during *Development* or throughout the lifetime of the Software system.
+It's all about properly organizing *Threat Modeling* sessions and how we can ensure *Threat Modeling* becomes part of the Software Delivery Lifecycle, SDL in-short. Actually performing *Threat Modeling*, you begin to recognize what can go wrong in a software system. It helps to easily pinpoint potential issues in your design or implementation that require mitigation, whether it's during *development* or throughout the lifetime of the software system.
 
-This blog is for everybody that is concerned about the Privacy, Safety and Security of their Software system.
+This blog is for everybody that is concerned about the privacy, security and building secure software systems.
 
 ## Software Delivery Lifecycle (SDL) towards DevSecOps
 
-As already mentioned with *DevSecOps* want to start as early in the SDL as possible. *DevSecOps* is a *shift-left approach* based framework that has the goal to integrate Security into all SDL phases, supporting Development, Security and Operations. It's about *Shared Responsibility* and reducing the risk of releasing software with vulnerabilities.
+As already mentioned you want to start with *DevSecOps* as early in the SDL as possible. *DevSecOps* is a *shift-left approach* that has the goal to integrate Security into all SDL phases, supporting Development, Security and Operations. It's about *Shared Responsibility* and reducing the risk of releasing vulnerable software to production.
 
-Threat Modeling becomes an important part of *Continuous Security* and especially around *Planning and Development* of Secure Software. More about DevSecOps can be read [here](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops)
-
-For many years as Product Owner I've been using the *OWASP Threat Modeling Project* as blueprint for the Threat Modeling process. It provides a structured way to identify threats, get common understanding of the risks and later fix those findings in our Software system.  Let’s first look into what *OWASP Threat Modeling Project* delivers and it's leverages the *STRIDE Model* for discovering these potential threats.
+*Threat Modeling* becomes an important part of *Continuous Security* and especially around the phases of *Planning and Development* of secure software artifacts. Learn more about the DevSecOps at [Microsoft Security 101](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops) Primer.
 
 # Useful Threat Modeling Resources
 
