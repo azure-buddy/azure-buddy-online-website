@@ -21,7 +21,7 @@ Taking the *shift-left approach* with *DevSecOps* we want to look into these pot
 
 It's all about properly organizing *Threat Modeling* sessions and how we can ensure *Threat Modeling* becomes part of the Software Delivery Lifecycle, SDL in-short. Actually performing *Threat Modeling*, you begin to recognize what can go wrong in a software system. It helps to easily pinpoint potential issues in your design or implementation that require mitigation, whether it's during *development* or throughout the lifetime of the software system.
 
-This blog is for everybody that is concerned about the privacy, security and building secure software systems.
+This blog is for everybody that is concerned about privacy, security and building secure software systems.
 
 ## Software Delivery Lifecycle (SDL) towards DevSecOps
 
