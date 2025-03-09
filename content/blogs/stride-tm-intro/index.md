@@ -79,7 +79,7 @@ Impact of *Spoofing* is that it could lead to unauthorized access to confidentia
 #### Repudiation
 *Repudiation* can be a user that denies whether a certain action did or did not take place by somebody. Somebody like an internal employee, citizen or system actor can submit or modify data. Without a proper *audit trail*, we *lack visibility*, it’s difficult to track those user actions and results in the fact we can’t validate their activities and hold the user *accountable* for their actions. Any modern workload must be able to provide such information.
 
-### Information Disclosure
+#### Information Disclosure
 *Information disclosure* takes care about *Confidentiality*. Usual threats are that users may expose information to someone not authorized to see it. This can happen due insufficient encryption, misconfigurations on access level or application vulnerabilities. If this happens you may introduce *privacy violations*, *leakage of classified*, *sensitive data* like pii/phi or other critical information which can even *harm national security*. 
 
 #### Denial of Service
@@ -103,11 +103,11 @@ To have a good representation of the user community it's good to have during the
 
 Let's quickly look into the process itself.
 
-## Process flow
+## Microsoft Security SDL as Process Reference Implementation
 
-Like every process it's a good practice to have a good understanding of the steps and activities taken place. *Continuous Improvement* is key for high-quality, meaningful and measurable outcomes. As process flow we are going to use the [Microsoft Security Development Lifecycle (SDL)](https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling) as reference implementation.
+Like every process it's a good practice to have a good understanding of the steps and activities taken place. *Continuous Improvement* is key for meaningful, measurable and high-quality outcomes. As flow we are going to adopt the [Microsoft Security Development Lifecycle (SDL)](https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling) as Process Reference Implementation.
 
-The actual process flow is built on four steps:
+This process flow is actually built on four steps:
 
 ### Define
 
@@ -136,7 +136,6 @@ Review and assess your work - *Outcome*
 - Determine Threats
 - Look for Countermeasures, eventually Fixes and Mitigations
 - Review and assess your work - *Outcome*
-
 
 
 # Threat Modeling in Action
