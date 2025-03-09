@@ -39,8 +39,8 @@ Now that you have learned the importance of *Threat Modeling* and creating a sol
 
 ## Threat Modeling Manifesto
 
-First resource is a manifesto that was created in 2020 by a group of individuals with years of experience threat modeling for security or privacy.
-The manifest describes the strategy (What, who, how and why) and explains the *value* (importance, why you should and things matter) and which *principles* describe the fundamental truths of  *Threat Modeling*.
+First resource is a manifesto that was created in 2020 by a group of individuals with years of experience in *Threat Modeling* for security or privacy.
+The manifest describes the *strategy* (What, who, how and why) and explains the *value* (importance, why you should and things matter) and which *principles* describe the fundamental truths of *Threat Modeling*.
 
 In 2023 another page was introduced about threat modeling capabilities. Capabilities are organized by a common objective. Due this, capabilities practically help to fulfil towards these goals.
 
