@@ -17,7 +17,7 @@ Taking the *shift-left approach* with *DevSecOps* we want to look into these pot
 
 - From a system perspective what are the business risks and related security threats introduced by the application underlying software system?
 - Can we quickly identify such technical threats, take mitigation measures and continuously validate these?
-- Are there any best practices, examples or other resources available to organize and support such proces?
+- Are there any best practices, examples or other resources available to organize and support such process?
 
 It's all about properly organizing *Threat Modeling* sessions and how we can ensure *Threat Modeling* becomes part of the Software Delivery Lifecycle, SDL in-short. Actually performing *Threat Modeling*, you begin to recognize what can go wrong in a software system. It helps to easily pinpoint potential issues in your design or implementation that require mitigation, whether it's during *development* or throughout the lifetime of the software system.
 
