@@ -29,7 +29,22 @@ As already mentioned you want to start with *DevSecOps* as early in the SDL as p
 
 *Threat Modeling* becomes an important part of *Continuous Security* and especially around the phases of *Planning and Development* of secure software artifacts. Learn more about DevSecOps at the [Microsoft Security 101](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops) Primer.
 
-# Useful Threat Modeling Resources
+# Essential Threat Modeling Resources
+
+Now that you have learned the importance of *Threat Modeling* and creating a solid foundation with *DevSecOps* it's time to look into some essential resources. Below the list of resources.
+
+- Threat Modeling Manifesto 
+- OWASP Threat Modeling Project
+- Microsoft Security SDL
+
+## Threat Modeling Manifesto
+
+First resource is a manifesto that was created in 2020 by a group of individuals with years of experience threat modeling for security or privacy.
+The manifest describes the strategy (What, who, how and why) and explains the *value* (importance, why you should and things matter) and which *principles* describe the fundamental truths of  *Threat Modeling*.
+
+In 2023 another page was introduced about threat modeling capabilities. Capabilities are organized by a common objective. Due this, capabilities practically help to fulfil towards these goals.
+
+If you want to learn more, just visit the [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/) website.
 
 ## OWASP Threat Modeling Project
 
