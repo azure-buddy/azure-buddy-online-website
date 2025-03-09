@@ -188,7 +188,7 @@ You may see that we already included the following *trust boundaries*.
 Additional let's create an initial list of assets. Assets should be seen as things that provides value to you and in that sense interesting for hackers. In this use case I've wrote down the following.
 
 | Assets | Description of value                                                                          | Trust Level |
-|-----------------------------|--------------------------------------------------------------------------|
+|-----------------------------|--------------------------------------------------------------------------|-------------|
 | User authentication details | Should provide a safe way of login into the Rest API .                   | API Consumer, AKS Container process, AAG Instance, DevOps Team |
 | Login session details       | Should be the trusted connection between the Client and Server.          | API Consumer, AKS Container process, AAG Instance, DevOps Team |
 | Registration data           | Users most confidential information about their personal heart diseas.   | API Consumer, Database Administrator, Database R/W user, AKS Container process |
