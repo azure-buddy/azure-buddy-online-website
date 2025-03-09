@@ -1,5 +1,5 @@
 ---
-title: "Azure Buddy at Yellowhat The Microsoft Security Conference"
+title: "Azure Buddy recap of Yellowhat The Microsoft Security Conference"
 date: 2025-03-09
 draft: false
 description: "Personal recap of my visit to Yellowhat conference at the Microsoft's headquarters Schiphol (Amsterdam)."
