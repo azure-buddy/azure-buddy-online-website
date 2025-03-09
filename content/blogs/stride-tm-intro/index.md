@@ -146,6 +146,8 @@ You are the Product Owner of a team that's respnsible for developing and maintai
 
 Healthy is a company that provides a central registration service for personal health information about heart diseas. The information has been classified as Protected Health Information (PHI) and only used for research purposes. That's why only academic hospitals in the Netherlands are connected to the central registration through a Secure (API) RESTFul Web service.
 
+### Walking through Threat Modeling Process
+
 As Security professional you have identified the following to define the scope:
 - Use case required Health registration RESTFul API Architecture.
 - Security requirements that cover **NEN 7510** and ensure the protection of PHI data.
