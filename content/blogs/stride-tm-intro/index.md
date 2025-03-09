@@ -27,7 +27,7 @@ This blog is for everybody that is concerned about privacy, security and buildin
 
 As already mentioned you want to start with *DevSecOps* as early in the SDL as possible. *DevSecOps* is a *shift-left approach* that has the goal to integrate Security into all SDL phases, supporting Development, Security and Operations. It's about *Shared Responsibility* and reducing the risk of releasing vulnerable software to production.
 
-*Threat Modeling* becomes an important part of *Continuous Security* and especially around the phases of *Planning and Development* of secure software artifacts. Learn more about the DevSecOps at [Microsoft Security 101](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops) Primer.
+*Threat Modeling* becomes an important part of *Continuous Security* and especially around the phases of *Planning and Development* of secure software artifacts. Learn more about DevSecOps at the [Microsoft Security 101](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops) Primer.
 
 # Useful Threat Modeling Resources
 
