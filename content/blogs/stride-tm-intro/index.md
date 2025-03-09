@@ -37,9 +37,9 @@ For many years as Product Owner I've been using the *OWASP Threat Modeling Proje
 
 Everyone working as engineer in the *DevOps* space is familiar with the *OWASP Top Ten for Web Applications*, but there is more. Actually composing this list needs a well-thought process to properly identifying and addressing software vulnerabilities like documented in the *OWASP Threat Modeling Project*. In short the project is built upon *Best Practices* and *Guiding Principles*.
 
-As an open Community it provides good guidance about *Techniques*, *Methodologies* and *Tools*. Additionally real world examples are provided, so you can easily start *Threat Modeling* yourself.
+As an open community it provides good guidance about *Techniques*, *Methodologies* and *Tools*. Additionally real world examples are provided, so you can easily start *Threat Modeling* yourself.
 
-Guiding principle here that it's all about Collaboration and open Discussion without focussing on vendor solutions.
+Guiding principle here that it's all about collaboration and open discussions without focussing on vendor specific solutions.
 
 As you may expect, *STRIDE* is referenced as a *Methodology* that provided a *structured way* of determining these *threats* and looking into *mitigation* techniques.
 
