@@ -58,13 +58,13 @@ The STRIDE model is a widely used threat modeling framework, developed at **Micr
 
 in short **STRIDE**. But when do you choose *STRIDE* compared to others?
 
-### Comparing the STRIDE model with Others
+### Comparing STRIDE with others
 
 Besides STRIDE there are other interesting models, which all have their strengths like *DREAD* and *PASTA*.  While *DREAD* focuses on addressing high-severity concerns within computer systems first, calculating a score, *PASTA* is more evidence-based.
 
 Did you know that *DREAD* was the previously developed threat modeling technique by Microsoft, which over-time was replaced with the more software-centric approach *STRIDE*.
 
-### Explaining the STRIDE model Categories
+### Explaining STRIDE categories
 
 Below we are going through every category. We explain them using common *generic threats*. These already help you later during *Threat Analysis*.
 
@@ -137,7 +137,6 @@ Review and assess your work - *Outcome*
 - Look for Countermeasures, eventually Fixes and Mitigations
 - Review and assess your work - *Outcome*
 
-
 ## Threat Modeling in Action
 
 Finally you have entered the last chapter. Here we are going through the whole *threat modeling* process using an example use case.
@@ -147,10 +146,41 @@ You are the Product Owner of a team that's respnsible for developing and maintai
 
 Healthy is a company that provides a central registration service for personal health information about heart diseas. The information has been classified as Protected Health Information (PHI) and only used for research purposes. That's why only academic hospitals in the Netherlands are connected to the central registration through a Secure (API) RESTFul Web service.
 
+As Security professional you have identified the following to define the scope:
+- Use case required Health registration RESTFul API Architecture.
+- Security requirements that cover **NEN 7510** and ensure the protection of PHI data.
+
+The scope should help you starting with the next step defining a diagram.
+
 #### Data Flow Diagram (DFD)
+
+A diagrams worth ten thousand words. Diagrams help to visualize the requirements and create a mutual understanding regarding the functional interaction, architecture and expected flows (entry / exit points).
+
+Below an example diagram that could be created. Of course other tools can be used for this.
 
 ![Diagram (DFD) for the Health registration API service](img/dfd-example.jpg "Diagram (DFD) for the Health registration API service")
 
-A diagrams worth ten thousand words. Diagrams help to visualize 
+You may see that we already included the following *trust boundaries*.
+- Entra ID Tenant
+- Workload Subscription
+- Customer
+- Public Internet
+
+Additional let's create an initial list of assets. Assets should be seen as things that provides value to you and in that sense interesting for hackers. In this use case I've wrote down the following.
+
+| Assets | Description of value                                                                          | Trust Level |
+|-----------------------------|--------------------------------------------------------------------------|
+| User authentication details | Should provide a safe way of login into the Rest API .                   | API Consumer, AKS Container process, AAG Instance, DevOps Team |
+| Login session details       | Should be the trusted connection between the Client and Server.          | API Consumer, AKS Container process, AAG Instance, DevOps Team |
+| Registration data           | Users most confidential information about their personal heart diseas.   | API Consumer, Database Administrator, Database R/W user, AKS Container process |
+| Database access             | Should be a trusted location for storing PHI data.                       | Database Administrator, Database R/W user, AKS Container process |
+| API availability            | Should provide a stable and garanteed way of integration.                | Database Administrator, DevOps Team |
+| API client details          | Should ensure that the actual API client is known (registered).          | API Consumer, Database Administrator, Database R/W user, DevOps Team, AKS Container process, AAG Instance |
+
+#### Threats and risks
+
+Now that we have a diagram, trust boundaries and assets we can step into the identifying threats & risks.
+
+
 
 -Azure Buddy
