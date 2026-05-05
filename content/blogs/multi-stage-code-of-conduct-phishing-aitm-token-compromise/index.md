@@ -56,6 +56,8 @@ To defend against these advanced techniques, organizations should:
 
 Phishing attacks are evolving rapidly. The focus has shifted from stealing credentials to stealing authenticated sessions. Organizations must adapt by strengthening identity security, improving visibility, and embracing modern detection strategies.
 
+Take a moment to read the full blog post and learn more about this topic at the [Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2026/05/04/breaking-the-code-multi-stage-code-of-conduct-phishing-campaign-leads-to-aitm-token-compromise/).
+
 ---
 
 **Did you know that Azure Buddy is a Microsoft Most Valuable Professional**.
