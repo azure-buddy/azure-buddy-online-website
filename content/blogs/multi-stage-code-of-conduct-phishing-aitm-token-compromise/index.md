@@ -59,7 +59,7 @@ Phishing attacks are evolving rapidly. The focus has shifted from stealing crede
 ---
 
 **Did you know that Azure Buddy is a Microsoft Most Valuable Professional**.
-**Last years he helped several client with Cybersecurity and Observability AI challenges! and getting more value from Threat Intelligence!**  
+**Last year he helped several clients with Cybersecurity and Observability AI challenges! and getting more value from Threat Intelligence!**  
 
 **We love to hear more about your AI Observability and Cybersecurity challenges!**
 
