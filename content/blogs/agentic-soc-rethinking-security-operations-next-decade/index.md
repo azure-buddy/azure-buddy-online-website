@@ -11,7 +11,7 @@ tags: ["blogs", "Microsoft", "Security", "Defender", "Sentinel", "Copilot", "Age
 
 ## Introduction
 
-Security operations centres have always been reactive by design: an alert fires, an analyst investigates, a decision is made. That model worked when attackers moved at human speed. It no longer does. In an [April 2026 post on the Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/), Rob Lefferts and David Weston set out Microsoft's vision for the **agentic SOC**: a fundamentally different operating model where autonomous defences and AI agents handle high-volume, high-confidence work so that human analysts can focus on judgement, strategy, and the decisions that genuinely require human expertise. This is not a product announcement. It is a structural argument about how defence must change to keep pace with machine-speed attacks.
+Security operations centres have always been reactive by design: an alert fires, an analyst investigates, a decision is made. That model worked when attackers moved at human speed. It no longer does. In an [April 2026 post on the Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/), Rob Lefferts and David Weston set out Microsoft's vision for the **agentic SOC**: a fundamentally different operating model where autonomous defenses and AI agents handle high-volume, high-confidence work so that human analysts can focus on judgement, strategy, and the decisions that genuinely require human expertise. This is not a product announcement. It is a structural argument about how defence must change to keep pace with machine-speed attacks.
 
 ## The Asymmetry Problem
 
